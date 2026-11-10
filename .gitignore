@@ -1,0 +1,8 @@
+.DS_Store
+.vercel
+.wrangler
+*.local
+coverage
+data-src/.osm-raw.json
+dist
+node_modules

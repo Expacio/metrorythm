@@ -1,0 +1,944 @@
+{
+  "source": "OpenStreetMap via Overpass API (ODbL). Fetched once at build time; not used at runtime.",
+  "license": "© OpenStreetMap contributors, ODbL 1.0",
+  "fetchedAt": "2026-11-10",
+  "matched": 224,
+  "missing": [
+    "Pulbangash",
+    "Dilshad Garden",
+    "Shahid Nagar",
+    "Chawri Bazar",
+    "INA",
+    "AIIMS",
+    "MG Road",
+    "Barakhamba Road",
+    "Akshardham",
+    "Mayur Vihar Extension",
+    "Golf Course",
+    "Maharaja Surajmal Stadium",
+    "Satguru Ram Singh Marg",
+    "Lal Qila",
+    "Jama Masjid",
+    "Jasola Apollo",
+    "Sarita Vihar",
+    "Tughlakabad Station",
+    "Badarpur Border",
+    "NHPC Chowk",
+    "Mewala Maharajpur",
+    "Sector 28 Faridabad",
+    "Badkal Mor",
+    "Old Faridabad",
+    "Neelam Chowk Ajronda",
+    "Bata Chowk",
+    "Escorts Mujesar",
+    "Sant Surdas (Sihi)",
+    "ESI Hospital",
+    "Durgabai Deshmukh South Campus",
+    "Sir Vishweshwaraiah Moti Bagh",
+    "Mayur Vihar Pocket 1",
+    "Okhla NSIC",
+    "Noida Sector 142",
+    "Knowledge Park II",
+    "Pari Chowk",
+    "Phase 2",
+    "Phase 1"
+  ],
+  "coords": {
+    "rithala": {
+      "lat": 28.7208064,
+      "lng": 77.1071813
+    },
+    "rohini-west": {
+      "lat": 28.7149569,
+      "lng": 77.115385
+    },
+    "rohini-east": {
+      "lat": 28.7075774,
+      "lng": 77.1259971
+    },
+    "pitampura": {
+      "lat": 28.7032676,
+      "lng": 77.1322497
+    },
+    "kohat-enclave": {
+      "lat": 28.6980415,
+      "lng": 77.1405393
+    },
+    "netaji-subhash-place": {
+      "lat": 28.6960485,
+      "lng": 77.1524856
+    },
+    "keshav-puram": {
+      "lat": 28.6889264,
+      "lng": 77.1616833
+    },
+    "kanhaiya-nagar": {
+      "lat": 28.6824082,
+      "lng": 77.1647754
+    },
+    "inderlok": {
+      "lat": 28.6735891,
+      "lng": 77.1703467
+    },
+    "shastri-nagar": {
+      "lat": 28.6700885,
+      "lng": 77.1818589
+    },
+    "pratap-nagar": {
+      "lat": 28.6667177,
+      "lng": 77.1988974
+    },
+    "tis-hazari": {
+      "lat": 28.6671626,
+      "lng": 77.2166306
+    },
+    "kashmere-gate": {
+      "lat": 28.6674493,
+      "lng": 77.2282488
+    },
+    "shastri-park": {
+      "lat": 28.6684339,
+      "lng": 77.2505301
+    },
+    "seelampur": {
+      "lat": 28.6698165,
+      "lng": 77.2668137
+    },
+    "welcome": {
+      "lat": 28.6717907,
+      "lng": 77.2778473
+    },
+    "shahdara": {
+      "lat": 28.6734298,
+      "lng": 77.2898858
+    },
+    "mansarovar-park": {
+      "lat": 28.675385,
+      "lng": 77.3008678
+    },
+    "jhilmil": {
+      "lat": 28.6757197,
+      "lng": 77.3123949
+    },
+    "raj-bagh": {
+      "lat": 28.6770876,
+      "lng": 77.3468279
+    },
+    "rajendra-nagar": {
+      "lat": 28.6776112,
+      "lng": 77.3581426
+    },
+    "shyam-park": {
+      "lat": 28.6782281,
+      "lng": 77.3706454
+    },
+    "mohan-nagar": {
+      "lat": 28.6785372,
+      "lng": 77.3840026
+    },
+    "arthala": {
+      "lat": 28.676999,
+      "lng": 77.3918919
+    },
+    "hindon-river": {
+      "lat": 28.6734288,
+      "lng": 77.4065374
+    },
+    "shaheed-sthal-new-bus-adda": {
+      "lat": 28.6706449,
+      "lng": 77.4154736
+    },
+    "samaypur-badli": {
+      "lat": 28.7446411,
+      "lng": 77.1382701
+    },
+    "rohini-sector-18-19": {
+      "lat": 28.7383795,
+      "lng": 77.1398526
+    },
+    "haiderpur-badli-mor": {
+      "lat": 28.7299398,
+      "lng": 77.1491044
+    },
+    "jahangirpuri": {
+      "lat": 28.7259717,
+      "lng": 77.162658
+    },
+    "adarsh-nagar": {
+      "lat": 28.7165805,
+      "lng": 77.1704223
+    },
+    "azadpur": {
+      "lat": 28.7057821,
+      "lng": 77.1819488
+    },
+    "model-town": {
+      "lat": 28.7027136,
+      "lng": 77.1939912
+    },
+    "gtb-nagar": {
+      "lat": 28.6981333,
+      "lng": 77.2063998
+    },
+    "vishwavidyalaya": {
+      "lat": 28.6950772,
+      "lng": 77.2147459
+    },
+    "vidhan-sabha": {
+      "lat": 28.6863222,
+      "lng": 77.2217271
+    },
+    "civil-lines": {
+      "lat": 28.6768508,
+      "lng": 77.2250299
+    },
+    "chandni-chowk": {
+      "lat": 28.6584227,
+      "lng": 77.2303375
+    },
+    "new-delhi": {
+      "lat": 28.6434826,
+      "lng": 77.2227421
+    },
+    "rajiv-chowk": {
+      "lat": 28.6327062,
+      "lng": 77.2193123
+    },
+    "patel-chowk": {
+      "lat": 28.6229664,
+      "lng": 77.214031
+    },
+    "central-secretariat": {
+      "lat": 28.6158794,
+      "lng": 77.2122822
+    },
+    "udyog-bhawan": {
+      "lat": 28.6095136,
+      "lng": 77.211796
+    },
+    "lok-kalyan-marg": {
+      "lat": 28.5973513,
+      "lng": 77.2110967
+    },
+    "jor-bagh": {
+      "lat": 28.5865094,
+      "lng": 77.2125273
+    },
+    "green-park": {
+      "lat": 28.5580071,
+      "lng": 77.2067933
+    },
+    "hauz-khas": {
+      "lat": 28.5442564,
+      "lng": 77.2067072
+    },
+    "malviya-nagar": {
+      "lat": 28.5290656,
+      "lng": 77.2048241
+    },
+    "saket": {
+      "lat": 28.521168,
+      "lng": 77.2022237
+    },
+    "qutab-minar": {
+      "lat": 28.512951,
+      "lng": 77.1864532
+    },
+    "chhatarpur": {
+      "lat": 28.5067242,
+      "lng": 77.1750019
+    },
+    "sultanpur": {
+      "lat": 28.4991235,
+      "lng": 77.1613745
+    },
+    "ghitorni": {
+      "lat": 28.493751,
+      "lng": 77.1491866
+    },
+    "arjan-garh": {
+      "lat": 28.4807352,
+      "lng": 77.1257622
+    },
+    "guru-dronacharya": {
+      "lat": 28.4820212,
+      "lng": 77.1022685
+    },
+    "sikanderpur": {
+      "lat": 28.4812716,
+      "lng": 77.0930017
+    },
+    "iffco-chowk": {
+      "lat": 28.4723277,
+      "lng": 77.0724222
+    },
+    "millennium-city-centre-gurugram": {
+      "lat": 28.4593429,
+      "lng": 77.0726571
+    },
+    "dwarka-sector-21": {
+      "lat": 28.5519218,
+      "lng": 77.0585605
+    },
+    "dwarka-sector-8": {
+      "lat": 28.5656109,
+      "lng": 77.0670366
+    },
+    "dwarka-sector-9": {
+      "lat": 28.574272,
+      "lng": 77.0653316
+    },
+    "dwarka-sector-10": {
+      "lat": 28.5810577,
+      "lng": 77.0574996
+    },
+    "dwarka-sector-11": {
+      "lat": 28.586443,
+      "lng": 77.0494433
+    },
+    "dwarka-sector-12": {
+      "lat": 28.5922362,
+      "lng": 77.0407315
+    },
+    "dwarka-sector-13": {
+      "lat": 28.597009,
+      "lng": 77.0335407
+    },
+    "dwarka-sector-14": {
+      "lat": 28.6022218,
+      "lng": 77.0259765
+    },
+    "dwarka": {
+      "lat": 28.6158874,
+      "lng": 77.0224342
+    },
+    "dwarka-mor": {
+      "lat": 28.61931,
+      "lng": 77.0332792
+    },
+    "nawada": {
+      "lat": 28.6202758,
+      "lng": 77.0450787
+    },
+    "uttam-nagar-west": {
+      "lat": 28.621757,
+      "lng": 77.0557122
+    },
+    "uttam-nagar-east": {
+      "lat": 28.6248465,
+      "lng": 77.0652861
+    },
+    "janak-puri-west": {
+      "lat": 28.6289471,
+      "lng": 77.0779492
+    },
+    "janak-puri-east": {
+      "lat": 28.633021,
+      "lng": 77.086757
+    },
+    "tilak-nagar": {
+      "lat": 28.6365482,
+      "lng": 77.0964961
+    },
+    "subhash-nagar": {
+      "lat": 28.6404593,
+      "lng": 77.1051815
+    },
+    "tagore-garden": {
+      "lat": 28.6437265,
+      "lng": 77.11282
+    },
+    "rajouri-garden": {
+      "lat": 28.6511896,
+      "lng": 77.1242597
+    },
+    "ramesh-nagar": {
+      "lat": 28.6527444,
+      "lng": 77.1316496
+    },
+    "moti-nagar": {
+      "lat": 28.657859,
+      "lng": 77.1424288
+    },
+    "kirti-nagar": {
+      "lat": 28.655746,
+      "lng": 77.1506635
+    },
+    "shadipur": {
+      "lat": 28.6515829,
+      "lng": 77.1582587
+    },
+    "patel-nagar": {
+      "lat": 28.6450127,
+      "lng": 77.1692817
+    },
+    "rajendra-place": {
+      "lat": 28.6424955,
+      "lng": 77.1782756
+    },
+    "karol-bagh": {
+      "lat": 28.6440122,
+      "lng": 77.1885235
+    },
+    "jhandewalan": {
+      "lat": 28.6443188,
+      "lng": 77.1999165
+    },
+    "ramakrishna-ashram-marg": {
+      "lat": 28.6392436,
+      "lng": 77.2085787
+    },
+    "mandi-house": {
+      "lat": 28.6256122,
+      "lng": 77.2341966
+    },
+    "supreme-court": {
+      "lat": 28.6234752,
+      "lng": 77.2425278
+    },
+    "indraprastha": {
+      "lat": 28.6206019,
+      "lng": 77.249551
+    },
+    "yamuna-bank": {
+      "lat": 28.6233124,
+      "lng": 77.268013
+    },
+    "mayur-vihar-i": {
+      "lat": 28.6036425,
+      "lng": 77.2909319
+    },
+    "new-ashok-nagar": {
+      "lat": 28.5890885,
+      "lng": 77.3015085
+    },
+    "noida-sector-15": {
+      "lat": 28.5848835,
+      "lng": 77.3116118
+    },
+    "noida-sector-16": {
+      "lat": 28.578081,
+      "lng": 77.3177778
+    },
+    "noida-sector-18": {
+      "lat": 28.5707583,
+      "lng": 77.3260756
+    },
+    "botanical-garden": {
+      "lat": 28.5639051,
+      "lng": 77.3338373
+    },
+    "noida-city-centre": {
+      "lat": 28.5747334,
+      "lng": 77.3561638
+    },
+    "noida-sector-34": {
+      "lat": 28.5802538,
+      "lng": 77.3634917
+    },
+    "noida-sector-52": {
+      "lat": 28.5868739,
+      "lng": 77.3730237
+    },
+    "noida-sector-61": {
+      "lat": 28.5975854,
+      "lng": 77.3722663
+    },
+    "noida-sector-59": {
+      "lat": 28.6065279,
+      "lng": 77.3726828
+    },
+    "noida-sector-62": {
+      "lat": 28.6169861,
+      "lng": 77.3735885
+    },
+    "noida-electronic-city": {
+      "lat": 28.6282627,
+      "lng": 77.3750033
+    },
+    "laxmi-nagar": {
+      "lat": 28.6305974,
+      "lng": 77.277523
+    },
+    "nirman-vihar": {
+      "lat": 28.6364592,
+      "lng": 77.2868145
+    },
+    "preet-vihar": {
+      "lat": 28.6414176,
+      "lng": 77.2952819
+    },
+    "karkarduma": {
+      "lat": 28.6493434,
+      "lng": 77.3060686
+    },
+    "anand-vihar-isbt": {
+      "lat": 28.6468336,
+      "lng": 77.3158749
+    },
+    "kaushambi": {
+      "lat": 28.6452857,
+      "lng": 77.3243429
+    },
+    "vaishali": {
+      "lat": 28.6496701,
+      "lng": 77.339575
+    },
+    "ashok-park-main": {
+      "lat": 28.6716045,
+      "lng": 77.155291
+    },
+    "punjabi-bagh": {
+      "lat": 28.672995,
+      "lng": 77.1461239
+    },
+    "shivaji-park": {
+      "lat": 28.6750317,
+      "lng": 77.1304722
+    },
+    "madipur": {
+      "lat": 28.6764752,
+      "lng": 77.1193599
+    },
+    "paschim-vihar-east": {
+      "lat": 28.6773563,
+      "lng": 77.1122823
+    },
+    "paschim-vihar-west": {
+      "lat": 28.6786018,
+      "lng": 77.1022154
+    },
+    "peera-garhi": {
+      "lat": 28.6798074,
+      "lng": 77.0926793
+    },
+    "udyog-nagar": {
+      "lat": 28.681103,
+      "lng": 77.0808492
+    },
+    "nangloi": {
+      "lat": 28.6824007,
+      "lng": 77.0647319
+    },
+    "nangloi-railway-station": {
+      "lat": 28.6822009,
+      "lng": 77.0562463
+    },
+    "rajdhani-park": {
+      "lat": 28.6823085,
+      "lng": 77.0439437
+    },
+    "mundka": {
+      "lat": 28.6824341,
+      "lng": 77.0305741
+    },
+    "mundka-industrial-area": {
+      "lat": 28.6833701,
+      "lng": 77.0171485
+    },
+    "ghevra": {
+      "lat": 28.6852384,
+      "lng": 76.9961591
+    },
+    "tikri-kalan": {
+      "lat": 28.6868849,
+      "lng": 76.9772082
+    },
+    "tikri-border": {
+      "lat": 28.6880254,
+      "lng": 76.9640828
+    },
+    "pandit-shree-ram-sharma": {
+      "lat": 28.689281,
+      "lng": 76.9511988
+    },
+    "bahadurgarh-city": {
+      "lat": 28.6907783,
+      "lng": 76.9354807
+    },
+    "brigadier-hoshiyar-singh": {
+      "lat": 28.6974603,
+      "lng": 76.9192027
+    },
+    "delhi-gate": {
+      "lat": 28.6392174,
+      "lng": 77.2407795
+    },
+    "ito": {
+      "lat": 28.6281909,
+      "lng": 77.2410437
+    },
+    "janpath": {
+      "lat": 28.6240485,
+      "lng": 77.2192587
+    },
+    "khan-market": {
+      "lat": 28.6022446,
+      "lng": 77.2291281
+    },
+    "jawaharlal-nehru-stadium": {
+      "lat": 28.5882347,
+      "lng": 77.2337833
+    },
+    "jangpura": {
+      "lat": 28.5830386,
+      "lng": 77.2393151
+    },
+    "lajpat-nagar": {
+      "lat": 28.56958,
+      "lng": 77.2385055
+    },
+    "moolchand": {
+      "lat": 28.5644044,
+      "lng": 77.2342555
+    },
+    "kailash-colony": {
+      "lat": 28.5553298,
+      "lng": 77.2419637
+    },
+    "nehru-place": {
+      "lat": 28.5514171,
+      "lng": 77.2517386
+    },
+    "kalkaji-mandir": {
+      "lat": 28.5494785,
+      "lng": 77.25909
+    },
+    "govind-puri": {
+      "lat": 28.5445521,
+      "lng": 77.2642761
+    },
+    "harkesh-nagar-okhla": {
+      "lat": 28.5429338,
+      "lng": 77.2750407
+    },
+    "mohan-estate": {
+      "lat": 28.5195804,
+      "lng": 77.2946029
+    },
+    "sarai": {
+      "lat": 28.5887494,
+      "lng": 77.2572494
+    },
+    "raja-nahar-singh": {
+      "lat": 28.340002,
+      "lng": 77.3164509
+    },
+    "majlis-park": {
+      "lat": 28.724403,
+      "lng": 77.1818406
+    },
+    "shalimar-bagh": {
+      "lat": 28.7019574,
+      "lng": 77.1654317
+    },
+    "shakurpur": {
+      "lat": 28.6857668,
+      "lng": 77.1496094
+    },
+    "punjabi-bagh-west": {
+      "lat": 28.6727671,
+      "lng": 77.1391976
+    },
+    "mayapuri": {
+      "lat": 28.6371795,
+      "lng": 77.1297333
+    },
+    "naraina-vihar": {
+      "lat": 28.6243852,
+      "lng": 77.1364438
+    },
+    "delhi-cantt": {
+      "lat": 28.6086201,
+      "lng": 77.1404187
+    },
+    "bhikaji-cama-place": {
+      "lat": 28.5702618,
+      "lng": 77.1878709
+    },
+    "sarojini-nagar": {
+      "lat": 28.575817,
+      "lng": 77.1980786
+    },
+    "south-extension": {
+      "lat": 28.5685664,
+      "lng": 77.2205677
+    },
+    "vinobapuri": {
+      "lat": 28.565871,
+      "lng": 77.2492973
+    },
+    "ashram": {
+      "lat": 28.5724231,
+      "lng": 77.2585979
+    },
+    "hazrat-nizamuddin": {
+      "lat": 28.5887494,
+      "lng": 77.2572494
+    },
+    "trilokpuri-sanjay-lake": {
+      "lat": 28.613453,
+      "lng": 77.3088549
+    },
+    "east-vinod-nagar-mayur-vihar-ii": {
+      "lat": 28.6200437,
+      "lng": 77.3054069
+    },
+    "mandawali-west-vinod-nagar": {
+      "lat": 28.624979,
+      "lng": 77.3044525
+    },
+    "ip-extension": {
+      "lat": 28.6319032,
+      "lng": 77.310718
+    },
+    "karkarduma-court": {
+      "lat": 28.6536001,
+      "lng": 77.2957877
+    },
+    "krishna-nagar": {
+      "lat": 28.6578127,
+      "lng": 77.2901199
+    },
+    "east-azad-nagar": {
+      "lat": 28.6646764,
+      "lng": 77.2848431
+    },
+    "jaffrabad": {
+      "lat": 28.6826822,
+      "lng": 77.2748055
+    },
+    "maujpur-babarpur": {
+      "lat": 28.6920781,
+      "lng": 77.2796973
+    },
+    "gokulpuri": {
+      "lat": 28.7024752,
+      "lng": 77.2861253
+    },
+    "johri-enclave": {
+      "lat": 28.7128806,
+      "lng": 77.2901293
+    },
+    "shiv-vihar": {
+      "lat": 28.721381,
+      "lng": 77.2894599
+    },
+    "dabri-mor-janakpuri-south": {
+      "lat": 28.61572,
+      "lng": 77.0851893
+    },
+    "dashrath-puri": {
+      "lat": 28.60185,
+      "lng": 77.0823751
+    },
+    "palam": {
+      "lat": 28.5889102,
+      "lng": 77.0830764
+    },
+    "sadar-bazaar-cantonment": {
+      "lat": 28.5771145,
+      "lng": 77.1111279
+    },
+    "terminal-1-igi-airport": {
+      "lat": 28.564835,
+      "lng": 77.1226566
+    },
+    "shankar-vihar": {
+      "lat": 28.5608462,
+      "lng": 77.1402814
+    },
+    "vasant-vihar": {
+      "lat": 28.557827,
+      "lng": 77.1611168
+    },
+    "munirka": {
+      "lat": 28.5568967,
+      "lng": 77.1750592
+    },
+    "r-k-puram": {
+      "lat": 28.5503805,
+      "lng": 77.1855231
+    },
+    "iit-delhi": {
+      "lat": 28.5470121,
+      "lng": 77.1945546
+    },
+    "panchsheel-park": {
+      "lat": 28.5423747,
+      "lng": 77.2210916
+    },
+    "chirag-delhi": {
+      "lat": 28.5411108,
+      "lng": 77.2303164
+    },
+    "greater-kailash": {
+      "lat": 28.5419077,
+      "lng": 77.2384925
+    },
+    "nehru-enclave": {
+      "lat": 28.5460584,
+      "lng": 77.2515057
+    },
+    "sukhdev-vihar": {
+      "lat": 28.5597477,
+      "lng": 77.2749004
+    },
+    "jamia-millia-islamia": {
+      "lat": 28.5630488,
+      "lng": 77.2863387
+    },
+    "okhla-vihar": {
+      "lat": 28.5612999,
+      "lng": 77.291877
+    },
+    "jasola-vihar-shaheen-bagh": {
+      "lat": 28.5458279,
+      "lng": 77.2966578
+    },
+    "kalindi-kunj": {
+      "lat": 28.542916,
+      "lng": 77.3101107
+    },
+    "okhla-bird-sanctuary": {
+      "lat": 28.5529418,
+      "lng": 77.321595
+    },
+    "nangli": {
+      "lat": 28.6173003,
+      "lng": 77.0104375
+    },
+    "najafgarh": {
+      "lat": 28.6124504,
+      "lng": 76.9865067
+    },
+    "dhansa-bus-stand": {
+      "lat": 28.6119086,
+      "lng": 76.9785264
+    },
+    "shivaji-stadium": {
+      "lat": 28.6288963,
+      "lng": 77.2113218
+    },
+    "dhaula-kuan": {
+      "lat": 28.5918719,
+      "lng": 77.1617158
+    },
+    "delhi-aerocity": {
+      "lat": 28.5487786,
+      "lng": 77.1207949
+    },
+    "igi-airport-terminal-3": {
+      "lat": 28.5564626,
+      "lng": 77.0866995
+    },
+    "yashobhoomi-dwarka-sector-25": {
+      "lat": 28.5508323,
+      "lng": 77.0453073
+    },
+    "noida-sector-51": {
+      "lat": 28.5857189,
+      "lng": 77.3752593
+    },
+    "noida-sector-50": {
+      "lat": 28.5743583,
+      "lng": 77.3782348
+    },
+    "noida-sector-76": {
+      "lat": 28.5653305,
+      "lng": 77.3796581
+    },
+    "noida-sector-101": {
+      "lat": 28.5560481,
+      "lng": 77.3849489
+    },
+    "noida-sector-81": {
+      "lat": 28.5492993,
+      "lng": 77.3899489
+    },
+    "nsez": {
+      "lat": 28.5324041,
+      "lng": 77.3947544
+    },
+    "noida-sector-83": {
+      "lat": 28.5222688,
+      "lng": 77.3964456
+    },
+    "noida-sector-137": {
+      "lat": 28.5107689,
+      "lng": 77.4036068
+    },
+    "noida-sector-143": {
+      "lat": 28.4942558,
+      "lng": 77.4223772
+    },
+    "noida-sector-144": {
+      "lat": 28.4862877,
+      "lng": 77.433077
+    },
+    "noida-sector-145": {
+      "lat": 28.4789957,
+      "lng": 77.44241
+    },
+    "noida-sector-146": {
+      "lat": 28.4688192,
+      "lng": 77.4552077
+    },
+    "noida-sector-147": {
+      "lat": 28.4593549,
+      "lng": 77.466115
+    },
+    "noida-sector-148": {
+      "lat": 28.4480552,
+      "lng": 77.4766042
+    },
+    "alpha-1": {
+      "lat": 28.4710345,
+      "lng": 77.5127373
+    },
+    "delta-1": {
+      "lat": 28.4784766,
+      "lng": 77.5257314
+    },
+    "gnida-office": {
+      "lat": 28.4846826,
+      "lng": 77.5365039
+    },
+    "depot-station": {
+      "lat": 28.4890137,
+      "lng": 77.5440093
+    },
+    "sector-55-56": {
+      "lat": 28.4233556,
+      "lng": 77.1051327
+    },
+    "sector-54-chowk": {
+      "lat": 28.4329768,
+      "lng": 77.1048971
+    },
+    "sector-53-54": {
+      "lat": 28.4463829,
+      "lng": 77.1004632
+    },
+    "sector-42-43": {
+      "lat": 28.4574254,
+      "lng": 77.0969529
+    },
+    "belvedere-towers": {
+      "lat": 28.4917023,
+      "lng": 77.0881318
+    },
+    "cyber-city": {
+      "lat": 28.4980703,
+      "lng": 77.0892567
+    },
+    "moulsari-avenue": {
+      "lat": 28.5007775,
+      "lng": 77.0946306
+    },
+    "phase-3": {
+      "lat": 28.4935677,
+      "lng": 77.093661
+    }
+  }
+}

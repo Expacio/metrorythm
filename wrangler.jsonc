@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "metrorythm",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-11-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Misses are handled in worker/index.ts so that a missing font or icon
+    // returns a real 404 instead of the SPA shell with a 200.
+    "not_found_handling": "none"
+  },
+  "observability": { "enabled": true }
+}

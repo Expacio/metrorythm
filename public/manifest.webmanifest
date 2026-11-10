@@ -1,0 +1,29 @@
+{
+  "name": "Metrorythm \u2014 Indian Metro Route Planner",
+  "short_name": "Metrorythm",
+  "description": "Offline metro route planner for Delhi NCR. Fastest, cheapest and fewest-interchange routes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0efe7",
+  "theme_color": "#ffd200",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
