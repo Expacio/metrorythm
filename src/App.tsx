@@ -4,8 +4,8 @@ import {
   AlertCircle, Info, Map as MapIcon, ListOrdered, ReceiptText, CreditCard, Ticket, BadgeCheck, TriangleAlert,
 } from 'lucide-react';
 
-import { delhi } from './data';
-import type { Station } from './data/types';
+import { CITIES, getCity } from './data';
+import type { CityDataset, Station } from './data/types';
 import { createPlanner, type Journey, type RouteMode } from './engine/planner';
 import { payableFare, type FarePreference } from './engine/fare';
 import { FARE_CONFIGS, FARE_DATA_VERSION } from './data/fares';
@@ -19,20 +19,50 @@ import { JourneyTimeline } from './components/JourneyTimeline';
 import { MetroMap } from './components/MetroMap';
 import { LineDot } from './components/LineDot';
 
-const dataset = delhi;
-const planner = createPlanner(dataset);
-const search = createSearch(dataset);
-const stationsById = new Map(dataset.stations.map((s) => [s.id, s]));
-const linesById = new Map(dataset.lines.map((l) => [l.id, l]));
+/**
+ * Engines are expensive to build (the Delhi graph alone is ~1,300 platform
+ * nodes), so each city's is constructed once and reused.
+ */
+const engineCache = new Map<string, {
+  dataset: CityDataset;
+  planner: ReturnType<typeof createPlanner>;
+  search: ReturnType<typeof createSearch>;
+  stationsById: Map<string, Station>;
+  linesById: Map<string, CityDataset['lines'][number]>;
+}>();
 
-/** A few genuinely useful starting points rather than arbitrary filler. */
-const QUICK_PAIRS: { label: string; from: string; to: string }[] = [
-  { label: 'DEL T3 → Connaught Place', from: 'igi-airport-terminal-3', to: 'rajiv-chowk' },
-  { label: 'DEL T3 → Hindon River', from: 'igi-airport-terminal-3', to: 'hindon-river' },
-  { label: 'New Delhi → Gurugram', from: 'new-delhi', to: 'millennium-city-centre-gurugram' },
-  { label: 'Noida City Centre → Dwarka', from: 'noida-city-centre', to: 'dwarka-sector-21' },
-  { label: 'Kashmere Gate → Lotus Temple', from: 'kashmere-gate', to: 'kalkaji-mandir' },
-];
+function engineFor(cityId: string) {
+  const cached = engineCache.get(cityId);
+  if (cached) return cached;
+  const dataset = getCity(cityId);
+  const built = {
+    dataset,
+    planner: createPlanner(dataset),
+    search: createSearch(dataset),
+    stationsById: new Map(dataset.stations.map((s) => [s.id, s])),
+    linesById: new Map(dataset.lines.map((l) => [l.id, l])),
+  };
+  engineCache.set(cityId, built);
+  return built;
+}
+
+/** A few genuinely useful starting points per city, rather than filler. */
+const QUICK_PAIRS: Record<string, { label: string; from: string; to: string }[]> = {
+  delhi: [
+    { label: 'DEL T3 → Connaught Place', from: 'igi-airport-terminal-3', to: 'rajiv-chowk' },
+    { label: 'DEL T3 → Hindon River', from: 'igi-airport-terminal-3', to: 'hindon-river' },
+    { label: 'New Delhi → Gurugram', from: 'new-delhi', to: 'millennium-city-centre-gurugram' },
+    { label: 'Noida City Centre → Dwarka', from: 'noida-city-centre', to: 'dwarka-sector-21' },
+    { label: 'Kashmere Gate → Lotus Temple', from: 'kashmere-gate', to: 'kalkaji-mandir' },
+  ],
+  chennai: [
+    { label: 'MAA Airport → Chennai Central', from: 'chennai-airport', to: 'mgr-central' },
+    { label: 'Chennai Central → CMBT', from: 'mgr-central', to: 'cmbt' },
+    { label: 'Egmore → St. Thomas Mount', from: 'egmore', to: 'st-thomas-mount' },
+    { label: 'Poonamallee → Vadapalani', from: 'poonamallee-bypass', to: 'vadapalani' },
+    { label: 'Guindy → Anna Nagar Tower', from: 'guindy', to: 'anna-nagar-tower' },
+  ],
+};
 
 export default function App() {
   const { theme, toggle } = useTheme();
@@ -44,6 +74,13 @@ export default function App() {
   const [selectedMode, setSelectedMode] = useState<RouteMode>('fastest');
   const [mobileTab, setMobileTab] = useState<'route' | 'map'>('route');
   const [highlight, setHighlight] = useState<Station | null>(null);
+  const [cityId, setCityId] = useLocalStorage<string>('metrogo.city', 'delhi');
+
+  const { dataset, planner, search, stationsById, linesById } = useMemo(
+    () => engineFor(cityId),
+    [cityId],
+  );
+  const quickPairs = QUICK_PAIRS[cityId] ?? [];
   const [farePreference, setFarePreference] = useLocalStorage<FarePreference>(
     'metrogo.farePreference',
     'token',
@@ -56,7 +93,7 @@ export default function App() {
       setSelectedMode(res.journeys[0].mode);
       addRecent({ fromId: a.id, fromName: a.name, toId: b.id, toName: b.name });
     }
-  }, [addRecent]);
+  }, [addRecent, planner]);
 
   const onSearch = () => {
     if (from && to) runPlan(from, to);
@@ -77,25 +114,56 @@ export default function App() {
     runPlan(a, b);
   };
 
+  const switchCity = (next: string) => {
+    if (next === cityId) return;
+    setCityId(next);
+    setFrom(null);
+    setTo(null);
+    setResult(null);
+    setHighlight(null);
+  };
+
   // Clear a stale result when the endpoints change.
   useEffect(() => {
     setResult(null);
   }, [from?.id, to?.id]);
 
   /**
-   * Shareable deep links: /?from=<stationId>&to=<stationId>
-   * Read once on mount. Purely local — no network involved.
+   * Shareable deep links: /?city=<id>&from=<stationId>&to=<stationId>
+   *
+   * `city` is optional — if it is missing or wrong, the city that actually
+   * contains BOTH stations wins, so an old single-city link still resolves.
+   * Read once on mount. Purely local, no network involved.
    */
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const a = stationsById.get(params.get('from') ?? '');
-    const b = stationsById.get(params.get('to') ?? '');
-    if (a && b) {
-      setFrom(a);
-      setTo(b);
-      // Defer so the "clear on endpoint change" effect above runs first.
-      queueMicrotask(() => runPlan(a, b));
-    }
+    const fromId = params.get('from') ?? '';
+    const toId = params.get('to') ?? '';
+    if (!fromId || !toId) return;
+
+    const wanted = params.get('city');
+    const ordered = [
+      ...CITIES.filter((c) => c.city.cityId === wanted),
+      ...CITIES.filter((c) => c.city.cityId !== wanted),
+    ];
+    const host = ordered.find(
+      (c) => c.stations.some((s) => s.id === fromId) && c.stations.some((s) => s.id === toId),
+    );
+    if (!host) return;
+
+    const eng = engineFor(host.city.cityId);
+    const a = eng.stationsById.get(fromId)!;
+    const b = eng.stationsById.get(toId)!;
+    setCityId(host.city.cityId);
+    setFrom(a);
+    setTo(b);
+    // Defer so the "clear on endpoint change" effect above runs first, and so
+    // the planner for the (possibly just-switched) city is the one used.
+    queueMicrotask(() => {
+      const res = eng.planner.plan(a.id, b.id);
+      setResult(res);
+      if (res.journeys.length > 0) setSelectedMode(res.journeys[0].mode);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -103,14 +171,16 @@ export default function App() {
   useEffect(() => {
     const url = new URL(window.location.href);
     if (from && to) {
+      url.searchParams.set('city', cityId);
       url.searchParams.set('from', from.id);
       url.searchParams.set('to', to.id);
     } else {
+      url.searchParams.delete('city');
       url.searchParams.delete('from');
       url.searchParams.delete('to');
     }
     window.history.replaceState(null, '', url);
-  }, [from?.id, to?.id]);
+  }, [from?.id, to?.id, cityId]);
 
   /**
    * Group journeys so a route produced by several modes shows one card with
@@ -148,6 +218,25 @@ export default function App() {
             </div>
           </div>
 
+          {/* City switcher */}
+          <div className="ml-1 flex gap-0.5 rounded-lg bg-ink-100 p-0.5 dark:bg-ink-800">
+            {CITIES.map((c) => (
+              <button
+                key={c.city.cityId}
+                type="button"
+                onClick={() => switchCity(c.city.cityId)}
+                aria-pressed={c.city.cityId === cityId}
+                className={`rounded-md px-2.5 py-1.5 text-[12px] font-semibold transition ${
+                  c.city.cityId === cityId
+                    ? 'bg-accent text-black'
+                    : 'text-ink-600 hover:text-ink-900 dark:text-ink-300 dark:hover:text-white'
+                }`}
+              >
+                {c.city.cityName}
+              </button>
+            ))}
+          </div>
+
           <div className="ml-auto flex items-center gap-2">
             <span className="hidden items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-black sm:inline-flex">
               <span className="size-1.5 rounded-full bg-black" aria-hidden />
@@ -177,6 +266,8 @@ export default function App() {
                   onChange={setFrom}
                   search={search}
                   linesById={linesById}
+                  onSwitchCity={switchCity}
+                  cityNameFor={(id) => CITIES.find((c) => c.city.cityId === id)?.city.cityName}
                   autoFocus
                 />
                 <StationInput
@@ -185,6 +276,8 @@ export default function App() {
                   onChange={setTo}
                   search={search}
                   linesById={linesById}
+                  onSwitchCity={switchCity}
+                  cityNameFor={(id) => CITIES.find((c) => c.city.cityId === id)?.city.cityName}
                 />
                 <button
                   type="button"
@@ -212,7 +305,7 @@ export default function App() {
                     Try one of these
                   </div>
                   <div className="flex flex-wrap gap-1.5">
-                    {QUICK_PAIRS.map((q) => (
+                    {quickPairs.map((q) => (
                       <button
                         key={q.label}
                         type="button"

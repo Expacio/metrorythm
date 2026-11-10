@@ -6,28 +6,32 @@
  *
  * To add a city:
  *   1. Author data-src/<city>.source.mjs
- *   2. Extend scripts/build-data.mjs to emit src/data/cities/<city>.json
- *   3. Import it below and add it to CITIES
+ *   2. Add its id to CITY_IDS in scripts/build-data.mjs
+ *   3. Add its fare config to src/data/fares
+ *   4. Import the generated JSON below and add it to CITIES
  */
 
 import delhiJson from './cities/delhi.json';
+import chennaiJson from './cities/chennai.json';
 import type { CityDataset } from './types';
 
 export const delhi = delhiJson as unknown as CityDataset;
+export const chennai = chennaiJson as unknown as CityDataset;
 
-export const CITIES: Record<string, CityDataset> = {
-  delhi,
-};
+/** Ordered — this is the order the city switcher shows them in. */
+export const CITIES: CityDataset[] = [delhi, chennai];
+
+export const CITIES_BY_ID: Record<string, CityDataset> = Object.fromEntries(
+  CITIES.map((c) => [c.city.cityId, c]),
+);
 
 export const DEFAULT_CITY_ID = 'delhi';
 
 export function getCity(cityId: string = DEFAULT_CITY_ID): CityDataset {
-  const city = CITIES[cityId];
-  if (!city) throw new Error(`Unknown city "${cityId}". Available: ${Object.keys(CITIES).join(', ')}`);
-  return city;
+  return CITIES_BY_ID[cityId] ?? CITIES_BY_ID[DEFAULT_CITY_ID];
 }
 
-/** Cities referenced by airport codes but not present in this build. */
+/** Cities referenced by an airport code but absent from this build. */
 export function citiesNotIncluded(dataset: CityDataset): string[] {
   return dataset.airports.filter((a) => !a.inThisDataset).map((a) => a.city);
 }

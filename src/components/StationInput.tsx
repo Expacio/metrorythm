@@ -13,6 +13,9 @@ interface Props {
   linesById: Map<string, Line>;
   placeholder?: string;
   autoFocus?: boolean;
+  /** Called when the user accepts a suggested city switch. */
+  onSwitchCity?: (cityId: string) => void;
+  cityNameFor?: (cityId: string) => string | undefined;
 }
 
 const KIND_ICON = {
@@ -31,6 +34,8 @@ export function StationInput({
   linesById,
   placeholder = 'Station, airport code or landmark',
   autoFocus,
+  onSwitchCity,
+  cityNameFor,
 }: Props) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
@@ -160,6 +165,16 @@ export function StationInput({
               <span>
                 <b>{unavailable.code}</b> is {unavailable.airportName}, {unavailable.city}.{' '}
                 {unavailable.note}
+                {unavailable.availableInCityId && onSwitchCity && (
+                  <button
+                    type="button"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => onSwitchCity(unavailable.availableInCityId!)}
+                    className="mt-1.5 block rounded-md bg-ink-900 px-2 py-1 text-[11.5px] font-semibold text-white transition hover:bg-ink-700 dark:bg-white dark:text-black dark:hover:bg-ink-200"
+                  >
+                    Switch to {cityNameFor?.(unavailable.availableInCityId) ?? unavailable.city}
+                  </button>
+                )}
               </span>
             </li>
           )}

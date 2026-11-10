@@ -1,0 +1,1199 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "chennai",
+    "cityName": "Chennai",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Chennai Metro Rail Limited (CMRL)"
+    ],
+    "notes": "Covers the operational Chennai Metro network: Phase 1 (Blue and Green lines) and the Poonamallee Bypass - Vadapalani section of the Phase 2 Yellow Line, which opened on 11 October 2026. Under-construction corridors are not included."
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikipedia (MediaWiki API) article coordinates, CC BY-SA. Fetched once at build time; not used at runtime.",
+    "fetchedAt": "2026-11-10",
+    "surveyed": 34,
+    "interpolated": 17,
+    "matched": 51,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "blue",
+      "name": "Blue Line",
+      "code": "Line 1",
+      "color": "#0A6FBA",
+      "operator": "CMRL",
+      "fareSystem": "cmrl",
+      "avgHopSeconds": 135,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "wimco-nagar-depot",
+        "wimco-nagar",
+        "tiruvottriyur",
+        "tiruvottriyur-theradi",
+        "kaladipet",
+        "tollgate",
+        "new-washermanpet",
+        "tondiarpet",
+        "sir-theagaraya-college",
+        "washermanpet",
+        "mannadi",
+        "high-court",
+        "mgr-central",
+        "government-estate",
+        "lic",
+        "thousand-lights",
+        "ag-dms",
+        "teynampet",
+        "nandanam",
+        "saidapet",
+        "little-mount",
+        "guindy",
+        "alandur",
+        "nanganallur-road",
+        "meenambakkam",
+        "chennai-airport"
+      ]
+    },
+    {
+      "id": "green",
+      "name": "Green Line",
+      "code": "Line 2",
+      "color": "#31A14B",
+      "operator": "CMRL",
+      "fareSystem": "cmrl",
+      "avgHopSeconds": 135,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "mgr-central",
+        "egmore",
+        "nehru-park",
+        "kilpauk-medical-college",
+        "pachaiyappa-s-college",
+        "shenoy-nagar",
+        "anna-nagar-east",
+        "anna-nagar-tower",
+        "thirumangalam",
+        "koyambedu",
+        "cmbt",
+        "arumbakkam",
+        "vadapalani",
+        "ashok-nagar",
+        "ekkattuthangal",
+        "alandur",
+        "st-thomas-mount"
+      ]
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow Line",
+      "code": "Line 5",
+      "color": "#F7C600",
+      "operator": "CMRL",
+      "fareSystem": "cmrl",
+      "avgHopSeconds": 135,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "poonamallee-bypass",
+        "poonamallee-bus-stand",
+        "poonamallee-government-hospital",
+        "karayanchavadi",
+        "kumananchavadi",
+        "kattupakkam",
+        "iyyapanthangal",
+        "thelliyaragaram",
+        "porur-bypass",
+        "porur-junction",
+        "vadapalani"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "ag-dms",
+      "name": "AG-DMS",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [
+        "AG DMS",
+        "Anna Government Hospital"
+      ],
+      "lat": 13.049374,
+      "lng": 80.24628,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "alandur",
+      "name": "Alandur",
+      "lines": [
+        "blue",
+        "green"
+      ],
+      "aliases": [
+        "Arignar Anna Alandur"
+      ],
+      "lat": 13.004202,
+      "lng": 80.201471,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "anna-nagar-east",
+      "name": "Anna Nagar East",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.0846,
+      "lng": 80.2194,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "anna-nagar-tower",
+      "name": "Anna Nagar Tower",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.085041,
+      "lng": 80.208728,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "arumbakkam",
+      "name": "Arumbakkam",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.062222,
+      "lng": 80.211667,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ashok-nagar",
+      "name": "Ashok Nagar",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.035483,
+      "lng": 80.211329,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chennai-airport",
+      "name": "Chennai Airport",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [
+        "Airport",
+        "MAA",
+        "Meenambakkam Airport"
+      ],
+      "lat": 12.980806,
+      "lng": 80.164197,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "cmbt",
+      "name": "CMBT",
+      "lines": [
+        "green"
+      ],
+      "aliases": [
+        "Puratchi Thalaivi Dr. J. Jayalalithaa CMBT",
+        "Koyambedu Bus Terminus",
+        "Chennai Mofussil Bus Terminus"
+      ],
+      "lat": 13.0685,
+      "lng": 80.2041,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "egmore",
+      "name": "Egmore",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.079973,
+      "lng": 80.262789,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "ekkattuthangal",
+      "name": "Ekkattuthangal",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.017128,
+      "lng": 80.205302,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "government-estate",
+      "name": "Government Estate",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [
+        "Govt Estate"
+      ],
+      "lat": 13.073442,
+      "lng": 80.266134,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "guindy",
+      "name": "Guindy",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.009262,
+      "lng": 80.213189,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "high-court",
+      "name": "High Court",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.09021,
+      "lng": 80.275368,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "iyyapanthangal",
+      "name": "Iyyapanthangal",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.039484,
+      "lng": 80.13382,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "kaladipet",
+      "name": "Kaladipet",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.1509,
+      "lng": 80.2994,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "karayanchavadi",
+      "name": "Karayanchavadi",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.047206,
+      "lng": 80.11009,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "kattupakkam",
+      "name": "Kattupakkam",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.042058,
+      "lng": 80.12591,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "kilpauk-medical-college",
+      "name": "Kilpauk Medical College",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.076991,
+      "lng": 80.242863,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "koyambedu",
+      "name": "Koyambedu",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.0736,
+      "lng": 80.1948,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kumananchavadi",
+      "name": "Kumananchavadi",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.044632,
+      "lng": 80.118,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "lic",
+      "name": "LIC",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.06542,
+      "lng": 80.259516,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "little-mount",
+      "name": "Little Mount",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.017284,
+      "lng": 80.219808,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "mannadi",
+      "name": "Mannadi",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.098955,
+      "lng": 80.277984,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "meenambakkam",
+      "name": "Meenambakkam",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 12.987664,
+      "lng": 80.176459,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mgr-central",
+      "name": "MGR Central",
+      "lines": [
+        "blue",
+        "green"
+      ],
+      "aliases": [
+        "Chennai Central",
+        "Central",
+        "Puratchi Thalaivar Dr. M.G. Ramachandran Central",
+        "MGR Chennai Central"
+      ],
+      "lat": 13.081464,
+      "lng": 80.272752,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nandanam",
+      "name": "Nandanam",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.03333,
+      "lng": 80.233044,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "nanganallur-road",
+      "name": "Nanganallur Road",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 12.999843,
+      "lng": 80.193975,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nehru-park",
+      "name": "Nehru Park",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.078482,
+      "lng": 80.252826,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "new-washermanpet",
+      "name": "New Washermanpet",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [
+        "New Washermenpet"
+      ],
+      "lat": 13.1343,
+      "lng": 80.2929,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pachaiyappa-s-college",
+      "name": "Pachaiyappa's College",
+      "lines": [
+        "green"
+      ],
+      "aliases": [
+        "Pachaiyappas College",
+        "Pachaiyappa College"
+      ],
+      "lat": 13.0755,
+      "lng": 80.2329,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "poonamallee-bus-stand",
+      "name": "Poonamallee Bus Stand",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.05082,
+      "lng": 80.0955,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "poonamallee-bypass",
+      "name": "Poonamallee Bypass",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.048,
+      "lng": 80.0818,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "poonamallee-government-hospital",
+      "name": "Poonamallee Government Hospital",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.04978,
+      "lng": 80.10218,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "porur-bypass",
+      "name": "Porur Bypass",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.03628,
+      "lng": 80.15017,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "porur-junction",
+      "name": "Porur Junction",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.03587,
+      "lng": 80.15683,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "saidapet",
+      "name": "Saidapet",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.025307,
+      "lng": 80.226426,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "shenoy-nagar",
+      "name": "Shenoy Nagar",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.078799,
+      "lng": 80.225093,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sir-theagaraya-college",
+      "name": "Sir Theagaraya College",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.1158,
+      "lng": 80.2847,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "st-thomas-mount",
+      "name": "St. Thomas Mount",
+      "lines": [
+        "green"
+      ],
+      "aliases": [
+        "St Thomas Mount",
+        "Parangi Malai"
+      ],
+      "lat": 12.994722,
+      "lng": 80.198889,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "teynampet",
+      "name": "Teynampet",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.041352,
+      "lng": 80.239662,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "thelliyaragaram",
+      "name": "Thelliyaragaram",
+      "lines": [
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.03691,
+      "lng": 80.14173,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "thirumangalam",
+      "name": "Thirumangalam",
+      "lines": [
+        "green"
+      ],
+      "aliases": [],
+      "lat": 13.085479,
+      "lng": 80.200981,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "thousand-lights",
+      "name": "Thousand Lights",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.057397,
+      "lng": 80.252898,
+      "coordSource": "interpolated"
+    },
+    {
+      "id": "tiruvottriyur",
+      "name": "Tiruvottriyur",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [
+        "Thiruvottiyur"
+      ],
+      "lat": 13.1718,
+      "lng": 80.3052,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "tiruvottriyur-theradi",
+      "name": "Tiruvottriyur Theradi",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [
+        "Thiruvottiyur Theradi"
+      ],
+      "lat": 13.159873,
+      "lng": 80.299827,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "tollgate",
+      "name": "Tollgate",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.1432,
+      "lng": 80.2963,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "tondiarpet",
+      "name": "Tondiarpet",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.1244,
+      "lng": 80.2888,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vadapalani",
+      "name": "Vadapalani",
+      "lines": [
+        "green",
+        "yellow"
+      ],
+      "aliases": [],
+      "lat": 13.0505,
+      "lng": 80.21208,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "washermanpet",
+      "name": "Washermanpet",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [
+        "Washermenpet"
+      ],
+      "lat": 13.1077,
+      "lng": 80.2806,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "wimco-nagar",
+      "name": "Wimco Nagar",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.17913,
+      "lng": 80.30719,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "wimco-nagar-depot",
+      "name": "Wimco Nagar Depot",
+      "lines": [
+        "blue"
+      ],
+      "aliases": [],
+      "lat": 13.18341,
+      "lng": 80.30854,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "wimco-nagar-depot",
+      "to": "wimco-nagar",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "wimco-nagar",
+      "to": "tiruvottriyur",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "tiruvottriyur",
+      "to": "tiruvottriyur-theradi",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "tiruvottriyur-theradi",
+      "to": "kaladipet",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "kaladipet",
+      "to": "tollgate",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "tollgate",
+      "to": "new-washermanpet",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "new-washermanpet",
+      "to": "tondiarpet",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "tondiarpet",
+      "to": "sir-theagaraya-college",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "sir-theagaraya-college",
+      "to": "washermanpet",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "washermanpet",
+      "to": "mannadi",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "mannadi",
+      "to": "high-court",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "high-court",
+      "to": "mgr-central",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "mgr-central",
+      "to": "government-estate",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "government-estate",
+      "to": "lic",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "lic",
+      "to": "thousand-lights",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "thousand-lights",
+      "to": "ag-dms",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "ag-dms",
+      "to": "teynampet",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "teynampet",
+      "to": "nandanam",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "nandanam",
+      "to": "saidapet",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "saidapet",
+      "to": "little-mount",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "little-mount",
+      "to": "guindy",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "guindy",
+      "to": "alandur",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "alandur",
+      "to": "nanganallur-road",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "nanganallur-road",
+      "to": "meenambakkam",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "blue",
+      "from": "meenambakkam",
+      "to": "chennai-airport",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "mgr-central",
+      "to": "egmore",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "egmore",
+      "to": "nehru-park",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "nehru-park",
+      "to": "kilpauk-medical-college",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "kilpauk-medical-college",
+      "to": "pachaiyappa-s-college",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "pachaiyappa-s-college",
+      "to": "shenoy-nagar",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "shenoy-nagar",
+      "to": "anna-nagar-east",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "anna-nagar-east",
+      "to": "anna-nagar-tower",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "anna-nagar-tower",
+      "to": "thirumangalam",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "thirumangalam",
+      "to": "koyambedu",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "koyambedu",
+      "to": "cmbt",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "cmbt",
+      "to": "arumbakkam",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "arumbakkam",
+      "to": "vadapalani",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "vadapalani",
+      "to": "ashok-nagar",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "ashok-nagar",
+      "to": "ekkattuthangal",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "ekkattuthangal",
+      "to": "alandur",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "green",
+      "from": "alandur",
+      "to": "st-thomas-mount",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "poonamallee-bypass",
+      "to": "poonamallee-bus-stand",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "poonamallee-bus-stand",
+      "to": "poonamallee-government-hospital",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "poonamallee-government-hospital",
+      "to": "karayanchavadi",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "karayanchavadi",
+      "to": "kumananchavadi",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "kumananchavadi",
+      "to": "kattupakkam",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "kattupakkam",
+      "to": "iyyapanthangal",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "iyyapanthangal",
+      "to": "thelliyaragaram",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "thelliyaragaram",
+      "to": "porur-bypass",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "porur-bypass",
+      "to": "porur-junction",
+      "seconds": 135
+    },
+    {
+      "kind": "ride",
+      "line": "yellow",
+      "from": "porur-junction",
+      "to": "vadapalani",
+      "seconds": 135
+    },
+    {
+      "kind": "interchange",
+      "from": "mgr-central",
+      "to": "mgr-central",
+      "fromLine": "blue",
+      "toLine": "green",
+      "seconds": 240,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "alandur",
+      "to": "alandur",
+      "fromLine": "blue",
+      "toLine": "green",
+      "seconds": 240,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "vadapalani",
+      "to": "vadapalani",
+      "fromLine": "green",
+      "toLine": "yellow",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "mgr-central",
+      "lines": [
+        "blue",
+        "green"
+      ],
+      "walkSeconds": 240
+    },
+    {
+      "station": "alandur",
+      "lines": [
+        "blue",
+        "green"
+      ],
+      "walkSeconds": 240
+    },
+    {
+      "station": "vadapalani",
+      "lines": [
+        "green",
+        "yellow"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [
+    {
+      "iata": "MAA",
+      "icao": "VOMM",
+      "name": "Chennai International Airport",
+      "city": "Chennai",
+      "inThisDataset": true,
+      "terminals": [
+        {
+          "terminal": "All terminals",
+          "aliases": [
+            "Chennai Airport",
+            "MAA Airport",
+            "Meenambakkam Airport"
+          ],
+          "station": "chennai-airport",
+          "note": "The Blue Line terminates inside the airport complex, serving both the domestic and international terminals."
+        }
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "label": "Chennai Central Railway Station",
+      "station": "mgr-central"
+    },
+    {
+      "label": "Egmore Railway Station",
+      "station": "egmore"
+    },
+    {
+      "label": "Koyambedu Bus Terminus",
+      "station": "cmbt"
+    },
+    {
+      "label": "Chennai Mofussil Bus Terminus",
+      "station": "cmbt"
+    },
+    {
+      "label": "Guindy Railway Station",
+      "station": "guindy"
+    },
+    {
+      "label": "Vadapalani Murugan Temple",
+      "station": "vadapalani"
+    },
+    {
+      "label": "Anna Nagar Tower Park",
+      "station": "anna-nagar-tower"
+    },
+    {
+      "label": "Thousand Lights Mosque",
+      "station": "thousand-lights"
+    },
+    {
+      "label": "St. Thomas Mount Church",
+      "station": "st-thomas-mount"
+    },
+    {
+      "label": "Porur Lake",
+      "station": "porur-junction"
+    }
+  ]
+}

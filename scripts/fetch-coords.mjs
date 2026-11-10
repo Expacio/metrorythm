@@ -24,20 +24,29 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LINES, STATION_ALIASES } from '../data-src/delhi.source.mjs';
 import { slug } from './build-data.mjs';
+
+// Usage: node scripts/fetch-coords.mjs [cityId]
+const CITY_ID = process.argv[2] ?? 'delhi';
+const { LINES, STATION_ALIASES } = await import(`../data-src/${CITY_ID}.source.mjs`);
+
+/** Bounding boxes: south, west, north, east. */
+const BBOXES = {
+  delhi: '28.20,76.70,29.10,77.95',
+  chennai: '12.75,79.95,13.35,80.40',
+};
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const OUT = path.join(ROOT, 'data-src/coords.delhi.json');
+const OUT = path.join(ROOT, `data-src/coords.${CITY_ID}.json`);
 
 const ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',
   'https://overpass.kumi.systems/api/interpreter',
 ];
 
-// Delhi NCR bounding box (south, west, north, east)
-const BBOX = '28.20,76.70,29.10,77.95';
+const BBOX = BBOXES[CITY_ID];
+if (!BBOX) throw new Error(`No bounding box configured for city "${CITY_ID}"`);
 
 // Delhi Metro stations are mapped inconsistently in OSM — some are nodes, many
 // are ways (station buildings) or relations (station areas). `out center` gives
@@ -49,13 +58,13 @@ const QUERY = `
   nwr["railway"="station"]["subway"="yes"](${BBOX});
   nwr["railway"="halt"]["station"="subway"](${BBOX});
   nwr["public_transport"="station"]["subway"="yes"](${BBOX});
-  nwr["railway"="station"]["operator"~"Delhi Metro|DMRC|Noida Metro|NMRC|Rapid Metro",i](${BBOX});
-  nwr["public_transport"="station"]["network"~"Delhi Metro|Noida Metro|Rapid Metro",i](${BBOX});
+  nwr["railway"="station"]["operator"~"Metro|DMRC|NMRC|CMRL",i](${BBOX});
+  nwr["public_transport"="station"]["network"~"Metro",i](${BBOX});
 );
 out center tags;
 `;
 
-const RAW_CACHE = path.join(ROOT, 'data-src/.osm-raw.json');
+const RAW_CACHE = path.join(ROOT, `data-src/.osm-raw.${CITY_ID}.json`);
 
 /** Normalise a name for fuzzy matching against OSM's spellings. */
 function norm(s) {
@@ -178,6 +187,7 @@ async function main() {
     else missing.push(st.name);
   }
 
+  fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(
     OUT,
     JSON.stringify(

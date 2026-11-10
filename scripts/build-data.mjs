@@ -18,15 +18,19 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import {
-  DATA_VERSION, CITY, FARE_SYSTEMS, LINES, TRANSFERS,
-  INTERCHANGE_WALK_SECONDS, AIRPORTS, LANDMARKS, STATION_ALIASES,
-} from '../data-src/delhi.source.mjs';
+// Which cities to build. Adding one is: author data-src/<id>.source.mjs,
+// add its id here, and register it in src/data/index.ts.
+const CITY_IDS = ['delhi', 'chennai'];
+
+/** Fare system ids the engine knows about (src/data/fares). */
+const KNOWN_FARE_SYSTEMS = new Set([
+  'dmrc', 'airportExpress', 'nmrcAqua', 'rapidMetro', 'cmrl',
+]);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'src/data/cities');
-const COORDS_FILE = path.join(ROOT, 'data-src/coords.delhi.json');
+
 
 const DEFAULT_INTERCHANGE_SECONDS = 180;
 
@@ -39,7 +43,14 @@ export function slug(name) {
     .replace(/^-+|-+$/g, '');
 }
 
-function main() {
+async function buildCity(cityId) {
+  const src = await import(`../data-src/${cityId}.source.mjs`);
+  const {
+    DATA_VERSION, CITY, LINES, TRANSFERS,
+    INTERCHANGE_WALK_SECONDS, AIRPORTS, LANDMARKS, STATION_ALIASES,
+  } = src;
+  const COORDS_FILE = path.join(ROOT, `data-src/coords.${cityId}.json`);
+
   /* ---------------------------------------------------------------- stations */
   /** @type {Map<string, {id:string,name:string,lines:string[],aliases:string[],lat:number|null,lng:number|null}>} */
   const stations = new Map();
@@ -260,7 +271,7 @@ function main() {
       seen.add(name);
     }
     if (line.stations.length < 2) problems.push(`Line ${line.id} has fewer than 2 stations`);
-    if (!FARE_SYSTEMS[line.fareSystem]) problems.push(`Line ${line.id} references unknown fare system "${line.fareSystem}"`);
+    if (!KNOWN_FARE_SYSTEMS.has(line.fareSystem)) problems.push(`Line ${line.id} references unknown fare system "${line.fareSystem}"`);
   }
   // Connectivity check over the station-level graph.
   const adj = new Map();
@@ -304,12 +315,6 @@ function main() {
       missingCount: coordsMeta.missing.length,
       missing: coordsMeta.missing,
     },
-    fareSystems: Object.fromEntries(
-      Object.entries(FARE_SYSTEMS).map(([k, v]) => [
-        k,
-        { ...v, slabs: v.slabs.map((s) => ({ maxKm: s.maxKm === Infinity ? null : s.maxKm, fare: s.fare })) },
-      ]),
-    ),
     lines: LINES.map((l) => ({
       id: l.id,
       name: l.name,
@@ -332,11 +337,11 @@ function main() {
   };
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const outFile = path.join(OUT_DIR, 'delhi.json');
+  const outFile = path.join(OUT_DIR, `${cityId}.json`);
   fs.writeFileSync(outFile, JSON.stringify(dataset, null, 2) + '\n');
 
   const rideEdges = edges.filter((e) => e.kind === 'ride').length;
-  console.log('  Metrorythm data build complete');
+  console.log(`\n  ${CITY.cityName}`);
   console.log(`   dataset      ${path.relative(ROOT, outFile)}`);
   console.log(`   dataVersion  ${DATA_VERSION}`);
   console.log(`   lines        ${dataset.lines.length}`);
@@ -348,7 +353,12 @@ function main() {
     + (coordsMeta.missing.length ? ` (${coordsMeta.missing.length} still unknown)` : ''));
 }
 
+async function main() {
+  for (const id of CITY_IDS) await buildCity(id);
+  console.log('\n  Metrorythm data build complete');
+}
+
 // Only run the build when invoked directly, so other scripts can import slug().
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  main();
+  main().catch((e) => { console.error(e); process.exit(1); });
 }

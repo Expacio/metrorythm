@@ -37,6 +37,8 @@ export interface UnavailableCityHit {
   city: string;
   airportName: string;
   note: string;
+  /** Another city in this build that does cover it. */
+  availableInCityId?: string;
 }
 
 export function normalise(s: string): string {
@@ -177,6 +179,7 @@ export function createSearch(dataset: CityDataset) {
           city: a.city,
           airportName: a.name,
           note: a.note ?? `${a.city} is not included in this data build.`,
+          availableInCityId: a.availableInCityId,
         };
       }
     }

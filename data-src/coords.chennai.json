@@ -1,0 +1,163 @@
+{
+  "source": "Wikipedia (MediaWiki API) article coordinates, CC BY-SA. Fetched once at build time; not used at runtime.",
+  "license": "CC BY-SA 4.0 — © Wikipedia contributors",
+  "fetchedAt": "2026-11-10",
+  "matched": 34,
+  "missing": [
+    "Mannadi",
+    "High Court",
+    "Government Estate",
+    "LIC",
+    "Thousand Lights",
+    "AG-DMS",
+    "Teynampet",
+    "Nandanam",
+    "Saidapet",
+    "Little Mount",
+    "Egmore",
+    "Nehru Park",
+    "Kilpauk Medical College",
+    "Karayanchavadi",
+    "Kumananchavadi",
+    "Kattupakkam",
+    "Iyyapanthangal"
+  ],
+  "coords": {
+    "wimco-nagar-depot": {
+      "lat": 13.18341,
+      "lng": 80.30854
+    },
+    "wimco-nagar": {
+      "lat": 13.17913,
+      "lng": 80.30719
+    },
+    "tiruvottriyur": {
+      "lat": 13.1718,
+      "lng": 80.3052
+    },
+    "tiruvottriyur-theradi": {
+      "lat": 13.1598732,
+      "lng": 80.2998271
+    },
+    "kaladipet": {
+      "lat": 13.1509,
+      "lng": 80.2994
+    },
+    "tollgate": {
+      "lat": 13.1432,
+      "lng": 80.2963
+    },
+    "new-washermanpet": {
+      "lat": 13.1343,
+      "lng": 80.2929
+    },
+    "tondiarpet": {
+      "lat": 13.1244,
+      "lng": 80.2888
+    },
+    "sir-theagaraya-college": {
+      "lat": 13.1158,
+      "lng": 80.2847
+    },
+    "washermanpet": {
+      "lat": 13.1077,
+      "lng": 80.2806
+    },
+    "mgr-central": {
+      "lat": 13.081464,
+      "lng": 80.272752
+    },
+    "guindy": {
+      "lat": 13.009262,
+      "lng": 80.213189
+    },
+    "alandur": {
+      "lat": 13.004202,
+      "lng": 80.201471
+    },
+    "nanganallur-road": {
+      "lat": 12.999843,
+      "lng": 80.193975
+    },
+    "meenambakkam": {
+      "lat": 12.987664,
+      "lng": 80.176459
+    },
+    "chennai-airport": {
+      "lat": 12.980806,
+      "lng": 80.164197
+    },
+    "pachaiyappa-s-college": {
+      "lat": 13.0755,
+      "lng": 80.2329
+    },
+    "shenoy-nagar": {
+      "lat": 13.078799,
+      "lng": 80.225093
+    },
+    "anna-nagar-east": {
+      "lat": 13.0846,
+      "lng": 80.2194
+    },
+    "anna-nagar-tower": {
+      "lat": 13.085041,
+      "lng": 80.208728
+    },
+    "thirumangalam": {
+      "lat": 13.085479,
+      "lng": 80.200981
+    },
+    "koyambedu": {
+      "lat": 13.0736,
+      "lng": 80.1948
+    },
+    "cmbt": {
+      "lat": 13.0685,
+      "lng": 80.2041
+    },
+    "arumbakkam": {
+      "lat": 13.06222222,
+      "lng": 80.21166667
+    },
+    "vadapalani": {
+      "lat": 13.0505,
+      "lng": 80.21208
+    },
+    "ashok-nagar": {
+      "lat": 13.035483,
+      "lng": 80.211329
+    },
+    "ekkattuthangal": {
+      "lat": 13.017128,
+      "lng": 80.205302
+    },
+    "st-thomas-mount": {
+      "lat": 12.99472222,
+      "lng": 80.19888889
+    },
+    "poonamallee-bypass": {
+      "lat": 13.048,
+      "lng": 80.0818
+    },
+    "poonamallee-government-hospital": {
+      "lat": 13.04978,
+      "lng": 80.10218
+    },
+    "thelliyaragaram": {
+      "lat": 13.03691,
+      "lng": 80.14173
+    },
+    "porur-bypass": {
+      "lat": 13.03628,
+      "lng": 80.15017
+    },
+    "porur-junction": {
+      "lat": 13.03587,
+      "lng": 80.15683
+    },
+    "poonamallee-bus-stand": {
+      "lat": 13.05082,
+      "lng": 80.0955
+    }
+  }
+}

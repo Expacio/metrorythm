@@ -4,10 +4,15 @@ A fully offline Indian metro route planner. Search by station name, airport code
 terminal or landmark; get fastest / cheapest / fewest-interchange routes computed
 with Dijkstra's algorithm over a local station graph.
 
-**Currently ships: Delhi NCR** — Delhi Metro (Red, Yellow, Blue + Vaishali branch,
-Green + Kirti Nagar branch, Violet, Pink, Magenta, Grey), the Airport Express
-(Orange) line, the Gurugram Rapid Metro, and the NMRC Aqua Line.
-**262 stations · 11 lines · 25 interchange stations.**
+**Two cities ship today**, switchable in the header:
+
+| City | Network | Stations | Lines |
+|---|---|---|---|
+| **Delhi NCR** | Delhi Metro (Red, Yellow, Blue + Vaishali branch, Green + Kirti Nagar branch, Violet, Pink, Magenta, Grey), Airport Express, Gurugram Rapid Metro, NMRC Aqua Line | 262 | 11 |
+| **Chennai** | CMRL Blue, Green, and the Yellow Line's Poonamallee Bypass–Vadapalani section (opened 11 Oct 2026) | 51 | 3 |
+
+Each city has its own dataset, fare rules and engine instance; nothing is shared
+but the code.
 
 ---
 
@@ -88,6 +93,7 @@ entirely separate from routing logic.
 | **Airport Express** | published station-to-station fares, distance slabs as fallback | **estimated** ⚠ | effective 2025-08-25 |
 | **NMRC Aqua Line** | **number of stations** ₹10/15/20/30/40/50 | **official** | verified 2026-11-10 |
 | **Rapid Metro Gurugram** | flat ₹20 | **official** | verified 2026-11-10 |
+| **CMRL** (Chennai, all 3 lines) | distance slabs ₹10/20/30/40/50 | **estimated** ⚠ | verified 2026-11-10 |
 
 Supported: token fares, smart-card discounts (DMRC 10%, +10% off-peak),
 Sunday/national-holiday concessional slabs, and per-operator special rules.
@@ -110,7 +116,7 @@ Sunday/national-holiday concessional slabs, and per-operator special rules.
 - Falling back from a station-pair chart to a distance slab **downgrades
   confidence to `estimated`** and says why. It is never silent.
 
-### Known discrepancy ⚠
+### Known discrepancies ⚠
 
 The **Airport Express table is an estimate.** DMRC confirmed its fares rose by
 up to ₹5 on 25 Aug 2025 and now span ₹11–₹75, but no official post-revision
@@ -119,6 +125,12 @@ quotes a flat ₹60, another the ₹11–₹75 range). The values here are the w
 published pre-revision fares carried forward with the announced increase and
 bounded by that range. **They are labelled `estimated` everywhere in the UI.**
 Drop an official chart into `stationPairs` and nothing else needs to change.
+
+**CMRL's over-32 km slab is disputed.** Published sources give ₹10/20/30/40/50
+up to 32 km consistently, but disagree beyond it — some list ₹50, others quote a
+₹60 network maximum. Long Chennai journeys may therefore be ₹10 out, and the
+whole CMRL config is marked `estimated` because of it. CMRL's flat 20%
+smart-card/QR discount is well attested and applied.
 
 ---
 
@@ -134,7 +146,7 @@ Drop an official chart into `stationPairs` and nothing else needs to change.
 | Line names, colours, operators | **Factual** |
 | Station names and ordering | **Factual** |
 | Interchange stations | **Factual** |
-| Station coordinates | **Factual** — OpenStreetMap, ODbL. 224 of 262 matched; the rest carry `null` and are omitted from the map rather than guessed |
+| Station coordinates | **Mixed, and tagged per station.** `surveyed` = from OpenStreetMap or Wikipedia article coordinates. `interpolated` = placed proportionally between known neighbours on the line. Delhi: 255 surveyed + 7 interpolated. Chennai: 34 surveyed + 17 interpolated. Nothing is guessed |
 | **Journey times** | **ESTIMATED** — average running + dwell time per hop, per line. Excludes waiting for the first train |
 | **Interchange walking times** | **ESTIMATED** — per-station figures for large interchanges, 180 s default elsewhere |
 | **DMRC / NMRC / Rapid Metro fares** | **OFFICIAL** tables — see the fare-engine section above |
@@ -150,9 +162,10 @@ Everything estimated is labelled as such in the UI.
   the Golden Line) are omitted, not guessed.
 - **No invented connections.** The router can only use edges present in the data.
   If no route exists, it says so instead of inventing one.
-- **No invented coordinates.** A station without a verified position is left
-  `null`. The map breaks the polyline at that point rather than drawing a
-  straight line through territory the track does not follow.
+- **No invented coordinates.** A position is either `surveyed`, `interpolated`
+  from its known neighbours on the line, or `null` — and the dataset records
+  which. A `null` BREAKS the line on the map rather than bridging it, because
+  bridging would invent an alignment.
 - **Nearby ≠ interchange.** Station pairs that are close but have no signposted
   transfer (e.g. Punjabi Bagh vs Punjabi Bagh West) are deliberately *not*
   linked.
@@ -162,8 +175,9 @@ Everything estimated is labelled as such in the UI.
 
 ### Cities not in this build
 
-`BOM` (Mumbai) and `MAA` (Chennai) are recognised as airport codes, and the app
-tells you their networks are not included rather than producing a fake route.
+`BOM` (Mumbai) is recognised as an airport code, and the app says its network is
+not included rather than producing a fake route. Searching `MAA` from the Delhi
+dataset now offers a one-click switch to Chennai instead.
 
 ---
 
@@ -190,7 +204,7 @@ src/
     fare.ts               Distance-slab fares, per operator
     search.ts             Fuzzy search / autocomplete index
     fare.ts               Per-operator, rule-based fare calculation
-    __tests__/            112 unit tests
+    __tests__/            139 unit tests
   data/
     fares/index.ts        Versioned per-operator fare configs (no routing logic)
   components/             Presentational React
@@ -216,13 +230,17 @@ same graph produce the three optimisation modes:
 ## Adding a city
 
 1. Author `data-src/<city>.source.mjs` — lines, ordered stations, transfers,
-   fare systems, airports, landmarks.
-2. Extend `scripts/build-data.mjs` to emit `src/data/cities/<city>.json`.
-   The build **fails** if the graph is disconnected, a line references an unknown
-   fare system, or a landmark points at a station that does not exist.
-3. Import it in `src/data/index.ts` and add it to `CITIES`.
+   interchange walk times, airports, landmarks, aliases.
+2. Add its id to `CITY_IDS` in `scripts/build-data.mjs`, and a bounding box in
+   `scripts/fetch-coords.mjs` if you want OSM coordinates. The build **fails**
+   if the graph is disconnected, a line references an unknown fare system, or a
+   landmark points at a station that does not exist.
+3. Add the operator's fare config to `src/data/fares/index.ts`.
+4. Import the generated JSON in `src/data/index.ts` and add it to `CITIES`.
 
-No engine or UI changes are needed — both are city-agnostic.
+No engine or UI changes are needed — both are city-agnostic, and the city
+switcher is driven entirely by the `CITIES` array. Chennai was added in exactly
+these four steps.
 
 ---
 
@@ -231,12 +249,20 @@ No engine or UI changes are needed — both are city-agnostic.
 Only needed if you change the station list.
 
 ```bash
-npm run fetch:coords     # hits OpenStreetMap's Overpass API (rate-limited; retries with backoff)
-npm run build:data       # bakes them into src/data/cities/delhi.json
+node scripts/fetch-coords-wikipedia.mjs delhi     # Wikipedia article coordinates (preferred)
+node scripts/fetch-coords-wikipedia.mjs chennai
+npm run fetch:coords [city]                       # OpenStreetMap/Overpass (often unreachable)
+npm run build:data                                # bake into src/data/cities/*.json
 ```
 
-Coordinates are © OpenStreetMap contributors, ODbL 1.0. Overpass is heavily rate
-limited — if it fails, the committed cache is used and the app still works.
+Wikipedia's API is the better source: stable, batched, follows redirects (so
+alternative station spellings resolve themselves) and far less rate-limited than
+Overpass. Both scripts MERGE rather than clobber, and both leave an unresolved
+station out rather than guessing — `build:data` then interpolates it from its
+neighbours and tags it as such.
+
+Coordinates: © OpenStreetMap contributors (ODbL 1.0) and © Wikipedia
+contributors (CC BY-SA 4.0).
 
 ---
 
@@ -246,7 +272,7 @@ limited — if it fails, the committed cache is used and the app still works.
 npm test
 ```
 
-112 tests over graph construction, Dijkstra, the planner, search and the fare engine, including the six validation journeys from the brief (A–F) and:
+139 tests over graph construction, Dijkstra, the planner, search and the fare engine, including the six validation journeys from the brief (A–F) and:
 
 - every ride edge is bidirectional and the graph is fully connected
 - journey legs are contiguous (each leg starts where the last ended)

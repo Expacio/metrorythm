@@ -440,7 +440,8 @@ export const AIRPORTS = [
     name: 'Chennai International Airport',
     city: 'Chennai',
     inThisDataset: false,
-    note: 'Chennai Metro is not included in this data build. No route can be planned.',
+    availableInCityId: 'chennai',
+    note: 'Chennai Metro is a separate network — switch city to plan this journey.',
     terminals: [],
   },
   {

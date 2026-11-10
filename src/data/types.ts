@@ -103,8 +103,10 @@ export interface Airport {
   icao: string;
   name: string;
   city: string;
-  /** False when the city's metro network is not part of this build. */
+  /** False when this airport's city is not part of THIS city's dataset. */
   inThisDataset: boolean;
+  /** Set when another city in the app does cover it, so the UI can offer a switch. */
+  availableInCityId?: string;
   note?: string;
   terminals: AirportTerminal[];
 }

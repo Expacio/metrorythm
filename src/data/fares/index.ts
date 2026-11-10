@@ -292,11 +292,69 @@ export const RAPID_METRO: FareConfig = {
   ],
 };
 
+/* -------------------------------------------------------------- CMRL */
+
+/**
+ * Chennai Metro (CMRL) — Blue, Green and Yellow lines.
+ *
+ * One distance-based fare covers the whole network; changing between CMRL
+ * lines at MGR Central, Alandur or Vadapalani never costs extra.
+ *
+ * CMRL gives a flat 20% discount on smart cards and on digital QR tickets —
+ * twice DMRC's 10%, and with no separate off-peak tier.
+ */
+export const CMRL: FareConfig = {
+  fareSystemId: 'cmrl',
+  operator: 'CMRL',
+  label: 'Chennai Metro',
+  currency: 'INR',
+  fareType: 'token',
+  basis: 'distance',
+  effectiveDate: '2026-11-10',
+  effectiveDateIsPublished: false,
+  confidence: 'estimated',
+  sourceNote:
+    'CMRL publishes distance slabs of ₹10/20/30/40/50 up to 32 km, with a flat '
+    + '20% discount on smart cards and digital QR tickets. Sources disagree on the '
+    + 'over-32 km slab — some list ₹50, others quote a ₹60 network maximum — so '
+    + 'journeys beyond 32 km may be ₹10 out. CMRL publishes no effective date, so '
+    + 'the date above is when these figures were verified.',
+  slabs: [
+    { maxKm: 2, fare: 10 },
+    { maxKm: 5, fare: 20 },
+    { maxKm: 12, fare: 30 },
+    { maxKm: 21, fare: 40 },
+    { maxKm: 32, fare: 50 },
+    { maxKm: null, fare: 60 },
+  ],
+  discounts: { smartCard: 0.2, offPeakExtra: 0 },
+  specialRules: [
+    {
+      id: 'single-fare-across-network',
+      description:
+        'A single distance-based fare covers the whole Chennai Metro network. '
+        + 'Changing lines inside the paid area never triggers an additional fare.',
+    },
+    {
+      id: 'cmrl-long-distance-uncertain',
+      description:
+        'Journeys over 32 km: published sources disagree between ₹50 and ₹60, so '
+        + 'this fare is an estimate and may be ₹10 out.',
+    },
+    {
+      id: 'cmrl-qr-discount',
+      description:
+        'CMRL gives a flat 20% discount on smart cards and on digital QR tickets.',
+    },
+  ],
+};
+
 export const FARE_CONFIGS: Record<string, FareConfig> = {
   dmrc: DMRC,
   airportExpress: AIRPORT_EXPRESS,
   nmrcAqua: NMRC_AQUA,
   rapidMetro: RAPID_METRO,
+  cmrl: CMRL,
 };
 
 /** The newest effectiveDate across all operators — shown in the UI. */
