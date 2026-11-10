@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ArrowUpDown, Search, Moon, Sun, History, X,
-  AlertCircle, Info, Map as MapIcon, ListOrdered, ReceiptText, CreditCard, Ticket, BadgeCheck, TriangleAlert, ChevronDown,
+  AlertCircle, Info, Map as MapIcon, ListOrdered, ReceiptText, CreditCard, Ticket, BadgeCheck, TriangleAlert, ChevronDown, LocateFixed, Loader2,
 } from 'lucide-react';
 
 import { CITIES, getCity } from './data';
 import type { CityDataset, Station } from './data/types';
 import { createPlanner, type Journey, type RouteMode } from './engine/planner';
 import { payableFare, type FarePreference } from './engine/fare';
+import { findNearestCity, NEAREST_CITY_LIMIT_KM } from './engine/nearestCity';
+import { useGeolocation } from './hooks/useGeolocation';
 import { FARE_CONFIGS, FARE_DATA_VERSION } from './data/fares';
 import { createSearch } from './engine/search';
 import { useTheme } from './hooks/useTheme';
@@ -75,6 +77,10 @@ export default function App() {
   const [mobileTab, setMobileTab] = useState<'route' | 'map'>('route');
   const [highlight, setHighlight] = useState<Station | null>(null);
   const [cityId, setCityId] = useLocalStorage<string>('metrogo.city', 'delhi');
+  /** Set once the user has chosen a city, or declined to be located. */
+  const [citySettled, setCitySettled] = useLocalStorage<boolean>('metrogo.citySettled', false);
+  const geo = useGeolocation();
+  const [geoNote, setGeoNote] = useState<string | null>(null);
 
   const { dataset, planner, search, stationsById, linesById } = useMemo(
     () => engineFor(cityId),
@@ -128,9 +134,46 @@ export default function App() {
     runPlan(a, b);
   };
 
+  /**
+   * When a fix arrives, switch to whichever network has a station closest to
+   * it. All matching is local — the position is compared against the station
+   * coordinates already in the bundle, never sent anywhere.
+   */
+  useEffect(() => {
+    if (geo.status !== 'done' || !geo.coords) return;
+    const hit = findNearestCity(geo.coords.lat, geo.coords.lng, CITIES);
+    setCitySettled(true);
+    if (!hit) {
+      setGeoNote(
+        `No metro network within ${NEAREST_CITY_LIMIT_KM} km of you — showing ${getCity(cityId).city.cityName}.`,
+      );
+      return;
+    }
+    setGeoNote(
+      `Nearest network: ${hit.city.city.cityName} — ${hit.stationName} is about ${hit.distanceKm} km away.`,
+    );
+    if (hit.city.city.cityId !== cityId) {
+      setCityId(hit.city.city.cityId);
+      setFrom(null);
+      setTo(null);
+      setResult(null);
+      setHighlight(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [geo.status, geo.coords]);
+
+  useEffect(() => {
+    if (geo.status === 'denied' || geo.status === 'error' || geo.status === 'unavailable') {
+      setCitySettled(true);
+      setGeoNote(geo.message);
+    }
+  }, [geo.status, geo.message, setCitySettled]);
+
   const switchCity = (next: string) => {
     if (next === cityId) return;
     setCityId(next);
+    setCitySettled(true);
+    setGeoNote(null);
     setFrom(null);
     setTo(null);
     setResult(null);
@@ -252,6 +295,19 @@ export default function App() {
             />
           </label>
 
+          <button
+            type="button"
+            onClick={geo.request}
+            disabled={geo.status === 'locating'}
+            title="Find my nearest network"
+            aria-label="Find my nearest network"
+            className="grid size-9 shrink-0 place-items-center rounded-lg border border-ink-200 text-ink-600 transition hover:bg-ink-100 hover:text-ink-900 disabled:opacity-50 dark:border-ink-700 dark:text-ink-300 dark:hover:bg-ink-800 dark:hover:text-ink-50"
+          >
+            {geo.status === 'locating'
+              ? <Loader2 className="size-4 animate-spin" />
+              : <LocateFixed className="size-4" />}
+          </button>
+
           <div className="ml-auto flex items-center gap-2">
             <span className="hidden items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-black sm:inline-flex">
               <span className="size-1.5 rounded-full bg-black" aria-hidden />
@@ -272,6 +328,55 @@ export default function App() {
         <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-6">
           {/* ------------------------------------------------- left column */}
           <div className="min-w-0 space-y-4">
+            {/* First run: offer to locate. Never auto-prompts for permission. */}
+            {!citySettled && geo.status === 'idle' && (
+              <section className="mg-animate-in rounded-2xl border border-ink-300 bg-accent-soft p-4 dark:border-ink-700 dark:bg-accent/15">
+                <div className="flex items-start gap-2.5">
+                  <LocateFixed className="mt-0.5 size-4 shrink-0 text-ink-900 dark:text-accent" aria-hidden />
+                  <div className="min-w-0">
+                    <p className="text-[13.5px] font-semibold text-ink-900 dark:text-accent">
+                      Use your location to pick the nearest network?
+                    </p>
+                    <p className="mt-1 text-[12px] leading-relaxed text-ink-600 dark:text-ink-300">
+                      Matched on-device against {CITIES.length} networks. Your position is never
+                      sent anywhere — Metrorythm has no server to send it to.
+                    </p>
+                    <div className="mt-2.5 flex flex-wrap gap-1.5">
+                      <button
+                        type="button"
+                        onClick={geo.request}
+                        className="rounded-lg bg-accent px-3 py-1.5 text-[12.5px] font-bold text-black transition hover:bg-accent-strong"
+                      >
+                        Use my location
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => { setCitySettled(true); setGeoNote(null); }}
+                        className="rounded-lg px-3 py-1.5 text-[12.5px] font-semibold text-ink-600 transition hover:bg-ink-100 dark:text-ink-300 dark:hover:bg-ink-800"
+                      >
+                        Not now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {geoNote && (
+              <div className="flex items-start gap-2 rounded-xl border border-ink-200 bg-white px-3.5 py-2.5 text-[12.5px] text-ink-600 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-300">
+                <LocateFixed className="mt-0.5 size-3.5 shrink-0 text-ink-400" aria-hidden />
+                <span className="min-w-0 flex-1">{geoNote}</span>
+                <button
+                  type="button"
+                  onClick={() => setGeoNote(null)}
+                  aria-label="Dismiss"
+                  className="shrink-0 rounded p-0.5 text-ink-400 transition hover:text-ink-900 dark:hover:text-white"
+                >
+                  <X className="size-3.5" />
+                </button>
+              </div>
+            )}
+
             {/* Search panel */}
             <section className="rounded-2xl border border-ink-200 bg-white p-4 shadow-sm dark:border-ink-700 dark:bg-ink-900 sm:p-5">
               <div className="relative grid gap-3">

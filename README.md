@@ -91,7 +91,8 @@ bundled at build time.
 | Backend / server | none |
 | API keys | none |
 | Map tiles | none — the map is a locally-rendered SVG |
-| Persistence | `localStorage` only (recent searches, theme) |
+| Persistence | `localStorage` only (recent searches, theme, chosen city) |
+| Location | Browser Geolocation API only — a built-in capability, not a service. No key, no reverse-geocoding call. The position is matched on-device against bundled station coordinates and never leaves the browser |
 
 The only script that ever touches the network is `scripts/fetch-coords.mjs`, an
 **optional one-time developer tool** that bakes station coordinates into the
@@ -115,6 +116,31 @@ npm run test:coverage
 ```
 
 Requires Node 20.19+ (developed on Node 25).
+
+---
+
+## Finding your nearest network
+
+The city picker can be driven by location. It is **never** triggered
+automatically — firing a permission prompt at someone who has not asked for it
+is hostile — so a dismissible first-run card offers it, and a button beside the
+picker repeats the offer any time.
+
+Matching is pure local geometry:
+
+- Distance is measured to each city's **nearest station**, not to a city
+  centroid, because several Indian networks overlap. From Belapur the nearest
+  Navi Mumbai station is ~2 km away while Mumbai Metro's is much further — a
+  centroid comparison gets that backwards. Same for Meerut vs Delhi NCR.
+- Beyond **120 km** from any station it reports "no network near you" rather
+  than dropping you into a city hundreds of km away.
+- Denied, unavailable and timed-out permissions are all handled, each with a
+  message pointing at the manual picker.
+
+Verified end-to-end in a real browser with a spoofed GPS fix at Bengaluru MG
+Road: the app switched city, reported `MG Road is about 0 km away`, and
+regenerated the map and quick-picks. Covered by 18 unit tests using real
+landmark coordinates, including the overlapping-network cases.
 
 ---
 
@@ -266,7 +292,7 @@ src/
     fare.ts               Distance-slab fares, per operator
     search.ts             Fuzzy search / autocomplete index
     fare.ts               Per-operator, rule-based fare calculation
-    __tests__/            409 unit tests
+    __tests__/            427 unit tests
   data/
     fares/index.ts        Versioned per-operator fare configs (no routing logic)
   components/             Presentational React
@@ -334,7 +360,7 @@ contributors (CC BY-SA 4.0).
 npm test
 ```
 
-409 tests covering all 19 networks — graph construction, Dijkstra, the planner, search and the fare engine, including the six fare validation journeys and:
+427 tests covering all 19 networks — graph construction, Dijkstra, the planner, search and the fare engine, including the six fare validation journeys and:
 
 - every ride edge is bidirectional and the graph is fully connected
 - journey legs are contiguous (each leg starts where the last ended)
