@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "pune",
+    "cityName": "Pune",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Maharashtra Metro Rail Corporation (MahaMetro)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 28,
+    "interpolated": 0,
+    "matched": 28,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "aqua-line",
+      "name": "Aqua Line",
+      "code": "Aqua Line (Pune Metro)",
+      "color": "#00B6D3",
+      "operator": "Maharashtra Metro Rail Corporation (MahaMetro)",
+      "fareSystem": "puneMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "vanaz",
+        "anand-nagar",
+        "ideal-colony",
+        "nal-stop",
+        "garware-college",
+        "deccan-gymkhana",
+        "chhatrapati-sambhaji-udyan",
+        "pmc-bhavan",
+        "district-court-pune",
+        "mangalwar-peth",
+        "pune",
+        "ruby-hall-clinic",
+        "bund-garden",
+        "yerwada",
+        "kalyani-nagar",
+        "ramwadi"
+      ]
+    },
+    {
+      "id": "purple-line",
+      "name": "Purple Line",
+      "code": "Purple Line (Pune metro)",
+      "color": "#7B3F98",
+      "operator": "Maharashtra Metro Rail Corporation (MahaMetro)",
+      "fareSystem": "puneMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "pcmc-bhavan",
+        "sant-tukaram-nagar",
+        "nashik-phata",
+        "kasarwadi",
+        "phugewadi",
+        "dapodi",
+        "bopodi",
+        "khadki",
+        "shivaji-nagar",
+        "district-court-pune",
+        "kasba-peth",
+        "mandai",
+        "swargate"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "anand-nagar",
+      "name": "Anand Nagar",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.509562,
+      "lng": 73.814041,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bopodi",
+      "name": "Bopodi",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.569728,
+      "lng": 73.838144,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bund-garden",
+      "name": "Bund Garden",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.540554,
+      "lng": 73.88343,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chhatrapati-sambhaji-udyan",
+      "name": "Chhatrapati Sambhaji Udyan",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.520117,
+      "lng": 73.847595,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dapodi",
+      "name": "Dapodi",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.583772,
+      "lng": 73.833835,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "deccan-gymkhana",
+      "name": "Deccan Gymkhana",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.516332,
+      "lng": 73.844489,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "district-court-pune",
+      "name": "District Court Pune",
+      "lines": [
+        "aqua-line",
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.526909,
+      "lng": 73.858006,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "garware-college",
+      "name": "Garware College",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.511991,
+      "lng": 73.838023,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ideal-colony",
+      "name": "Ideal Colony",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.509041,
+      "lng": 73.822042,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kalyani-nagar",
+      "name": "Kalyani Nagar",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.544484,
+      "lng": 73.905763,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kasarwadi",
+      "name": "Kasarwadi",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.599738,
+      "lng": 73.827286,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kasba-peth",
+      "name": "Kasba Peth",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.521221,
+      "lng": 73.859546,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "khadki",
+      "name": "Khadki",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.562108,
+      "lng": 73.841531,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mandai",
+      "name": "Mandai",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.512997,
+      "lng": 73.856931,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mangalwar-peth",
+      "name": "Mangalwar Peth",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.530022,
+      "lng": 73.865231,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nal-stop",
+      "name": "Nal Stop",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.507313,
+      "lng": 73.828676,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nashik-phata",
+      "name": "Nashik Phata",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.607337,
+      "lng": 73.822314,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pcmc-bhavan",
+      "name": "PCMC Bhavan",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.626933,
+      "lng": 73.805497,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "phugewadi",
+      "name": "Phugewadi",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.591146,
+      "lng": 73.831227,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pmc-bhavan",
+      "name": "PMC Bhavan",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.522746,
+      "lng": 73.853488,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pune",
+      "name": "Pune",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.529689,
+      "lng": 73.872563,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ramwadi",
+      "name": "Ramwadi",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.557231,
+      "lng": 73.9087,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ruby-hall-clinic",
+      "name": "Ruby Hall Clinic",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.532704,
+      "lng": 73.877844,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sant-tukaram-nagar",
+      "name": "Sant Tukaram Nagar",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.614559,
+      "lng": 73.815639,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shivaji-nagar",
+      "name": "Shivaji Nagar",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.532716,
+      "lng": 73.849544,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "swargate",
+      "name": "Swargate",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 18.499626,
+      "lng": 73.857742,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vanaz",
+      "name": "Vanaz",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.507161,
+      "lng": 73.805238,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "yerwada",
+      "name": "Yerwada",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 18.545419,
+      "lng": 73.886721,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "vanaz",
+      "to": "anand-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "anand-nagar",
+      "to": "ideal-colony",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "ideal-colony",
+      "to": "nal-stop",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "nal-stop",
+      "to": "garware-college",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "garware-college",
+      "to": "deccan-gymkhana",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "deccan-gymkhana",
+      "to": "chhatrapati-sambhaji-udyan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "chhatrapati-sambhaji-udyan",
+      "to": "pmc-bhavan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "pmc-bhavan",
+      "to": "district-court-pune",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "district-court-pune",
+      "to": "mangalwar-peth",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "mangalwar-peth",
+      "to": "pune",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "pune",
+      "to": "ruby-hall-clinic",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "ruby-hall-clinic",
+      "to": "bund-garden",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "bund-garden",
+      "to": "yerwada",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "yerwada",
+      "to": "kalyani-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "kalyani-nagar",
+      "to": "ramwadi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "pcmc-bhavan",
+      "to": "sant-tukaram-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "sant-tukaram-nagar",
+      "to": "nashik-phata",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "nashik-phata",
+      "to": "kasarwadi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "kasarwadi",
+      "to": "phugewadi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "phugewadi",
+      "to": "dapodi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "dapodi",
+      "to": "bopodi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "bopodi",
+      "to": "khadki",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "khadki",
+      "to": "shivaji-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "shivaji-nagar",
+      "to": "district-court-pune",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "district-court-pune",
+      "to": "kasba-peth",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "kasba-peth",
+      "to": "mandai",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "mandai",
+      "to": "swargate",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "district-court-pune",
+      "to": "district-court-pune",
+      "fromLine": "aqua-line",
+      "toLine": "purple-line",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "district-court-pune",
+      "lines": [
+        "aqua-line",
+        "purple-line"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

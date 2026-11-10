@@ -1,0 +1,63 @@
+{
+  "cityId": "bhopal",
+  "cityName": "Bhopal",
+  "lines": [
+    {
+      "wikidataId": "Q121990156",
+      "name": "Orange Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q137511104",
+          "name": "Subhash Nagar",
+          "lat": 23.247828,
+          "lng": 77.429924
+        },
+        {
+          "id": "Q137511106",
+          "name": "Kendriya Vidyalaya",
+          "lat": 23.240286,
+          "lng": 77.431608
+        },
+        {
+          "id": "Q137511107",
+          "name": "Board Office Chauraha",
+          "lat": 23.232567,
+          "lng": 77.431576
+        },
+        {
+          "id": "Q137511109",
+          "name": "MP Nagar",
+          "lat": 23.227734,
+          "lng": 77.435162
+        },
+        {
+          "id": "Q137511110",
+          "name": "Rani Kamalapati Railway Station",
+          "lat": 23.221271,
+          "lng": 77.43837
+        },
+        {
+          "id": "Q137511112",
+          "name": "DRM Office",
+          "lat": 23.2161683,
+          "lng": 77.443378
+        },
+        {
+          "id": "Q137511113",
+          "name": "Alkapuri",
+          "lat": 23.2164851,
+          "lng": 77.4510343
+        },
+        {
+          "id": "Q137511115",
+          "name": "AIIMS",
+          "lat": 23.209914,
+          "lng": 77.456006
+        }
+      ]
+    }
+  ],
+  "expectedStations": 8,
+  "importedStations": 8
+}

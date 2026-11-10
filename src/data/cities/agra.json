@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "agra",
+    "cityName": "Agra",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Uttar Pradesh Metro Rail Corporation (UPMRC)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 6,
+    "interpolated": 0,
+    "matched": 6,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "yellow-line",
+      "name": "Yellow Line",
+      "code": "Yellow Line",
+      "color": "#F7C600",
+      "operator": "Uttar Pradesh Metro Rail Corporation (UPMRC)",
+      "fareSystem": "upMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "mankameshwar-mandir",
+        "dr-ambedkar-chowk",
+        "taj-mahal",
+        "fatehabad-road",
+        "basai",
+        "taj-east-gate"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "basai",
+      "name": "Basai",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 27.157718,
+      "lng": 78.050629,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dr-ambedkar-chowk",
+      "name": "Dr. Ambedkar Chowk",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 27.175022,
+      "lng": 78.022081,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "fatehabad-road",
+      "name": "Fatehabad Road",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 27.160174,
+      "lng": 78.042526,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mankameshwar-mandir",
+      "name": "Mankameshwar Mandir",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 27.178097,
+      "lng": 78.017414,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "taj-east-gate",
+      "name": "Taj East Gate",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 27.158295,
+      "lng": 78.057906,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "taj-mahal",
+      "name": "Taj Mahal",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 27.168326,
+      "lng": 78.035683,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "mankameshwar-mandir",
+      "to": "dr-ambedkar-chowk",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "dr-ambedkar-chowk",
+      "to": "taj-mahal",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "taj-mahal",
+      "to": "fatehabad-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "fatehabad-road",
+      "to": "basai",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "basai",
+      "to": "taj-east-gate",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

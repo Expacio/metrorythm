@@ -1,0 +1,1507 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "mumbai",
+    "cityName": "Mumbai",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Mumbai Metro Rail Corporation (MMRC)",
+      "Maha Mumbai Metro (MMMOCL)",
+      "Mumbai Metro One"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": false,
+    "components": 2
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 71,
+    "interpolated": 0,
+    "matched": 71,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "line-1-blue",
+      "name": "Line 1 (Blue)",
+      "code": "Line 1",
+      "color": "#0A6FBA",
+      "operator": "Mumbai Metro Rail Corporation (MMRC)",
+      "fareSystem": "mumbaiMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "ghatkopar",
+        "jagruti-nagar",
+        "asalpha",
+        "saki-naka",
+        "marol-naka",
+        "airport-road",
+        "chakala",
+        "western-express-highway",
+        "andheri",
+        "azad-nagar",
+        "d-n-nagar",
+        "versova"
+      ]
+    },
+    {
+      "id": "line-3-aqua",
+      "name": "Line 3 (Aqua)",
+      "code": "Line 3",
+      "color": "#00B6D3",
+      "operator": "Mumbai Metro Rail Corporation (MMRC)",
+      "fareSystem": "mumbaiMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "aarey-jvlr",
+        "seepz",
+        "midc-andheri",
+        "marol-naka",
+        "csmi-airport-t2",
+        "sahar-road",
+        "csmi-airport-t1",
+        "santacruz",
+        "bandra-colony",
+        "bandra-kurla-complex",
+        "dharavi",
+        "shitladevi-temple",
+        "dadar",
+        "siddhivinayak-temple",
+        "worli",
+        "acharya-atrey-chowk",
+        "science-centre",
+        "mahalaxmi",
+        "jagannath-shankar-sheth",
+        "grant-road",
+        "girgaon",
+        "kalbadevi",
+        "chhatrapati-shivaji-maharaj-terminus",
+        "hutatma-chowk",
+        "churchgate",
+        "vidhan-bhavan",
+        "cuffe-parade"
+      ]
+    },
+    {
+      "id": "line-2a-yellow",
+      "name": "Line 2A (Yellow)",
+      "code": "Line 2",
+      "color": "#F7C600",
+      "operator": "Mumbai Metro Rail Corporation (MMRC)",
+      "fareSystem": "mumbaiMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "andheri-west",
+        "lower-oshiwara",
+        "oshiwara",
+        "goregaon-west",
+        "pahadi-goregaon",
+        "lower-malad",
+        "malad-west",
+        "valnai",
+        "dahanukarwadi",
+        "kandivali-west",
+        "pahadi-eksar",
+        "borivali-west",
+        "eksar",
+        "mandapeshwar",
+        "kandarpada",
+        "anand-nagar",
+        "dahisar-east"
+      ]
+    },
+    {
+      "id": "line-7-red",
+      "name": "Line 7 (Red)",
+      "code": "Line 7",
+      "color": "#E4322B",
+      "operator": "Mumbai Metro Rail Corporation (MMRC)",
+      "fareSystem": "mumbaiMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "gundavali",
+        "mogra",
+        "jogeshwari-east",
+        "goregaon-east",
+        "aarey",
+        "dindoshi",
+        "kurar",
+        "akurli",
+        "poisar",
+        "magathane",
+        "devipada",
+        "rashtriya-udyan",
+        "ovaripada",
+        "dahisar-east"
+      ]
+    },
+    {
+      "id": "line-9-red",
+      "name": "Line 9 (Red)",
+      "code": "Line 9",
+      "color": "#C0392B",
+      "operator": "Mumbai Metro Rail Corporation (MMRC)",
+      "fareSystem": "mumbaiMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "dahisar-east",
+        "pandurang-wadi",
+        "miragaon",
+        "kashigaon"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "aarey",
+      "name": "Aarey",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.16942,
+      "lng": 72.85876,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "aarey-jvlr",
+      "name": "Aarey JVLR",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.131223,
+      "lng": 72.883864,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "acharya-atrey-chowk",
+      "name": "Acharya Atrey Chowk",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.997824,
+      "lng": 72.817704,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "airport-road",
+      "name": "Airport Road",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.110113,
+      "lng": 72.874117,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "akurli",
+      "name": "Akurli",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.19814,
+      "lng": 72.86057,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "anand-nagar",
+      "name": "Anand Nagar",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.25718,
+      "lng": 72.86633,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "andheri",
+      "name": "Andheri",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.120791,
+      "lng": 72.848132,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "andheri-west",
+      "name": "Andheri West",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.12914,
+      "lng": 72.83142,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "asalpha",
+      "name": "Asalpha",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.092544,
+      "lng": 72.901887,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "azad-nagar",
+      "name": "Azad Nagar",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.12693,
+      "lng": 72.837655,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bandra-colony",
+      "name": "Bandra Colony",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.069967,
+      "lng": 72.849344,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bandra-kurla-complex",
+      "name": "Bandra-Kurla Complex",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.060655,
+      "lng": 72.854666,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "borivali-west",
+      "name": "Borivali West",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.23136,
+      "lng": 72.84086,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chakala",
+      "name": "Chakala",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.112045,
+      "lng": 72.867696,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chhatrapati-shivaji-maharaj-terminus",
+      "name": "Chhatrapati Shivaji Maharaj Terminus",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.940827,
+      "lng": 72.831837,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "churchgate",
+      "name": "Churchgate",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.931484,
+      "lng": 72.826948,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "csmi-airport-t1",
+      "name": "CSMI-Airport - T1",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.093903,
+      "lng": 72.853571,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "csmi-airport-t2",
+      "name": "CSMI-Airport - T2",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.102348,
+      "lng": 72.874439,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "cuffe-parade",
+      "name": "Cuffe Parade",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.913568,
+      "lng": 72.820717,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "d-n-nagar",
+      "name": "D.N. Nagar",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.12829,
+      "lng": 72.83019,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dadar",
+      "name": "Dadar",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.023619,
+      "lng": 72.839227,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dahanukarwadi",
+      "name": "Dahanukarwadi",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.20652,
+      "lng": 72.83474,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dahisar-east",
+      "name": "Dahisar (East)",
+      "lines": [
+        "line-2a-yellow",
+        "line-7-red",
+        "line-9-red"
+      ],
+      "aliases": [],
+      "lat": 19.25171,
+      "lng": 72.86733,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "devipada",
+      "name": "Devipada",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.22404,
+      "lng": 72.86432,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dharavi",
+      "name": "Dharavi",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.046258,
+      "lng": 72.849742,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dindoshi",
+      "name": "Dindoshi",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.1798,
+      "lng": 72.85824,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "eksar",
+      "name": "Eksar",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.24039,
+      "lng": 72.84345,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ghatkopar",
+      "name": "Ghatkopar",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.08666,
+      "lng": 72.90799,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "girgaon",
+      "name": "Girgaon",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.952103,
+      "lng": 72.822195,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "goregaon-east",
+      "name": "Goregaon East",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.1524,
+      "lng": 72.8564,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "goregaon-west",
+      "name": "Goregaon West",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.15308,
+      "lng": 72.83578,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "grant-road",
+      "name": "Grant Road",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.963157,
+      "lng": 72.818037,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gundavali",
+      "name": "Gundavali",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.11453,
+      "lng": 72.85518,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hutatma-chowk",
+      "name": "Hutatma Chowk",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.934182,
+      "lng": 72.83251,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jagannath-shankar-sheth",
+      "name": "Jagannath Shankar Sheth",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.969992,
+      "lng": 72.821189,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jagruti-nagar",
+      "name": "Jagruti Nagar",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.092582,
+      "lng": 72.901866,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jogeshwari-east",
+      "name": "Jogeshwari (East)",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.14297,
+      "lng": 72.85507,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kalbadevi",
+      "name": "Kalbadevi",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.946334,
+      "lng": 72.8272,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kandarpada",
+      "name": "Kandarpada",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.25658,
+      "lng": 72.85054,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kandivali-west",
+      "name": "Kandivali West",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.21425,
+      "lng": 72.83746,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kashigaon",
+      "name": "Kashigaon",
+      "lines": [
+        "line-9-red"
+      ],
+      "aliases": [],
+      "lat": 19.277696,
+      "lng": 72.880222,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kurar",
+      "name": "Kurar",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.1873,
+      "lng": 72.85844,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "lower-malad",
+      "name": "Lower Malad",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.17313,
+      "lng": 72.83642,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "lower-oshiwara",
+      "name": "Lower Oshiwara",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.14071,
+      "lng": 72.83162,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "magathane",
+      "name": "Magathane",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.21681,
+      "lng": 72.86689,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mahalaxmi",
+      "name": "Mahalaxmi",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.979489,
+      "lng": 72.825408,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "malad-west",
+      "name": "Malad West",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.1853,
+      "lng": 72.8358,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mandapeshwar",
+      "name": "Mandapeshwar",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.24957,
+      "lng": 72.84573,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "marol-naka",
+      "name": "Marol Naka",
+      "lines": [
+        "line-1-blue",
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.108195,
+      "lng": 72.879536,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "midc-andheri",
+      "name": "MIDC-Andheri",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.117359,
+      "lng": 72.873613,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "miragaon",
+      "name": "Miragaon",
+      "lines": [
+        "line-9-red"
+      ],
+      "aliases": [],
+      "lat": 19.27096,
+      "lng": 72.880608,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mogra",
+      "name": "Mogra",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.12845,
+      "lng": 72.85531,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "oshiwara",
+      "name": "Oshiwara",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.14601,
+      "lng": 72.83396,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ovaripada",
+      "name": "Ovaripada",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.24314,
+      "lng": 72.86417,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pahadi-eksar",
+      "name": "Pahadi Eksar",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.22282,
+      "lng": 72.84094,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pahadi-goregaon",
+      "name": "Pahadi Goregaon",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.16246,
+      "lng": 72.83489,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pandurang-wadi",
+      "name": "Pandurang Wadi",
+      "lines": [
+        "line-9-red"
+      ],
+      "aliases": [],
+      "lat": 19.259781,
+      "lng": 72.872513,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "poisar",
+      "name": "Poisar",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.20352,
+      "lng": 72.86308,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rashtriya-udyan",
+      "name": "Rashtriya Udyan",
+      "lines": [
+        "line-7-red"
+      ],
+      "aliases": [],
+      "lat": 19.23481,
+      "lng": 72.86311,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sahar-road",
+      "name": "Sahar Road",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.102207,
+      "lng": 72.865201,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "saki-naka",
+      "name": "Saki Naka",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.103528,
+      "lng": 72.887962,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "santacruz",
+      "name": "Santacruz",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.079344,
+      "lng": 72.84707,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "science-centre",
+      "name": "Science Centre",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.990921,
+      "lng": 72.821363,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "seepz",
+      "name": "SEEPZ",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.126002,
+      "lng": 72.873731,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shitladevi-temple",
+      "name": "Shitladevi Temple",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.038464,
+      "lng": 72.84196,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "siddhivinayak-temple",
+      "name": "Siddhivinayak Temple",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.015883,
+      "lng": 72.830923,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "valnai",
+      "name": "Valnai",
+      "lines": [
+        "line-2a-yellow"
+      ],
+      "aliases": [],
+      "lat": 19.196934,
+      "lng": 72.834285,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "versova",
+      "name": "Versova",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.1303,
+      "lng": 72.8213,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vidhan-bhavan",
+      "name": "Vidhan Bhavan",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 18.924781,
+      "lng": 72.825486,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "western-express-highway",
+      "name": "Western Express Highway",
+      "lines": [
+        "line-1-blue"
+      ],
+      "aliases": [],
+      "lat": 19.115787,
+      "lng": 72.856394,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "worli",
+      "name": "Worli",
+      "lines": [
+        "line-3-aqua"
+      ],
+      "aliases": [],
+      "lat": 19.008605,
+      "lng": 72.819271,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "ghatkopar",
+      "to": "jagruti-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "jagruti-nagar",
+      "to": "asalpha",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "asalpha",
+      "to": "saki-naka",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "saki-naka",
+      "to": "marol-naka",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "marol-naka",
+      "to": "airport-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "airport-road",
+      "to": "chakala",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "chakala",
+      "to": "western-express-highway",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "western-express-highway",
+      "to": "andheri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "andheri",
+      "to": "azad-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "azad-nagar",
+      "to": "d-n-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1-blue",
+      "from": "d-n-nagar",
+      "to": "versova",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "aarey-jvlr",
+      "to": "seepz",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "seepz",
+      "to": "midc-andheri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "midc-andheri",
+      "to": "marol-naka",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "marol-naka",
+      "to": "csmi-airport-t2",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "csmi-airport-t2",
+      "to": "sahar-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "sahar-road",
+      "to": "csmi-airport-t1",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "csmi-airport-t1",
+      "to": "santacruz",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "santacruz",
+      "to": "bandra-colony",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "bandra-colony",
+      "to": "bandra-kurla-complex",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "bandra-kurla-complex",
+      "to": "dharavi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "dharavi",
+      "to": "shitladevi-temple",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "shitladevi-temple",
+      "to": "dadar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "dadar",
+      "to": "siddhivinayak-temple",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "siddhivinayak-temple",
+      "to": "worli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "worli",
+      "to": "acharya-atrey-chowk",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "acharya-atrey-chowk",
+      "to": "science-centre",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "science-centre",
+      "to": "mahalaxmi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "mahalaxmi",
+      "to": "jagannath-shankar-sheth",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "jagannath-shankar-sheth",
+      "to": "grant-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "grant-road",
+      "to": "girgaon",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "girgaon",
+      "to": "kalbadevi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "kalbadevi",
+      "to": "chhatrapati-shivaji-maharaj-terminus",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "chhatrapati-shivaji-maharaj-terminus",
+      "to": "hutatma-chowk",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "hutatma-chowk",
+      "to": "churchgate",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "churchgate",
+      "to": "vidhan-bhavan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-3-aqua",
+      "from": "vidhan-bhavan",
+      "to": "cuffe-parade",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "andheri-west",
+      "to": "lower-oshiwara",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "lower-oshiwara",
+      "to": "oshiwara",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "oshiwara",
+      "to": "goregaon-west",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "goregaon-west",
+      "to": "pahadi-goregaon",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "pahadi-goregaon",
+      "to": "lower-malad",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "lower-malad",
+      "to": "malad-west",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "malad-west",
+      "to": "valnai",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "valnai",
+      "to": "dahanukarwadi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "dahanukarwadi",
+      "to": "kandivali-west",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "kandivali-west",
+      "to": "pahadi-eksar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "pahadi-eksar",
+      "to": "borivali-west",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "borivali-west",
+      "to": "eksar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "eksar",
+      "to": "mandapeshwar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "mandapeshwar",
+      "to": "kandarpada",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "kandarpada",
+      "to": "anand-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-2a-yellow",
+      "from": "anand-nagar",
+      "to": "dahisar-east",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "gundavali",
+      "to": "mogra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "mogra",
+      "to": "jogeshwari-east",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "jogeshwari-east",
+      "to": "goregaon-east",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "goregaon-east",
+      "to": "aarey",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "aarey",
+      "to": "dindoshi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "dindoshi",
+      "to": "kurar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "kurar",
+      "to": "akurli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "akurli",
+      "to": "poisar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "poisar",
+      "to": "magathane",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "magathane",
+      "to": "devipada",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "devipada",
+      "to": "rashtriya-udyan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "rashtriya-udyan",
+      "to": "ovaripada",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-7-red",
+      "from": "ovaripada",
+      "to": "dahisar-east",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-9-red",
+      "from": "dahisar-east",
+      "to": "pandurang-wadi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-9-red",
+      "from": "pandurang-wadi",
+      "to": "miragaon",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-9-red",
+      "from": "miragaon",
+      "to": "kashigaon",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "marol-naka",
+      "to": "marol-naka",
+      "fromLine": "line-1-blue",
+      "toLine": "line-3-aqua",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "dahisar-east",
+      "to": "dahisar-east",
+      "fromLine": "line-2a-yellow",
+      "toLine": "line-7-red",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "dahisar-east",
+      "to": "dahisar-east",
+      "fromLine": "line-2a-yellow",
+      "toLine": "line-9-red",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "dahisar-east",
+      "to": "dahisar-east",
+      "fromLine": "line-7-red",
+      "toLine": "line-9-red",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "marol-naka",
+      "lines": [
+        "line-1-blue",
+        "line-3-aqua"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "dahisar-east",
+      "lines": [
+        "line-2a-yellow",
+        "line-7-red",
+        "line-9-red"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

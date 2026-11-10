@@ -17,15 +17,107 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import * as GEN from '../data-src/generated-meta.mjs';
 
 // Which cities to build. Adding one is: author data-src/<id>.source.mjs,
 // add its id here, and register it in src/data/index.ts.
-const CITY_IDS = ['delhi', 'chennai'];
+const HAND_AUTHORED = ['delhi', 'chennai'];
 
 /** Fare system ids the engine knows about (src/data/fares). */
 const KNOWN_FARE_SYSTEMS = new Set([
   'dmrc', 'airportExpress', 'nmrcAqua', 'rapidMetro', 'cmrl',
+  'mumbaiMetro', 'naviMumbaiMetro', 'nammaMetro', 'hyderabadMetro',
+  'kolkataMetro', 'kochiMetro', 'jaipurMetro', 'upMetro', 'nagpurMetro',
+  'ahmedabadMetro', 'puneMetro', 'mpMetro', 'patnaMetro', 'meerutMetro',
 ]);
+
+/**
+ * Load a city's source.
+ *
+ * Two kinds of city exist and the rest of this pipeline cannot tell them apart:
+ *   - HAND-AUTHORED (Delhi, Chennai): data-src/<id>.source.mjs, with
+ *     coordinates merged from data-src/coords.<id>.json.
+ *   - GENERATED: imported from Wikidata into data-src/generated/<id>.json,
+ *     already carrying ordered stations and inline coordinates.
+ *
+ * The adapter below normalises the generated shape into the hand-authored one,
+ * so edge building, interchange detection, interpolation and validation are
+ * all shared — there is exactly one implementation of the graph logic.
+ */
+async function loadCitySource(cityId) {
+  if (HAND_AUTHORED.includes(cityId)) {
+    return { ...(await import(`../data-src/${cityId}.source.mjs`)), inlineCoords: null };
+  }
+
+  const raw = JSON.parse(
+    fs.readFileSync(path.join(ROOT, `data-src/generated/${cityId}.json`), 'utf8'),
+  );
+  const meta = GEN.CITY_META[cityId] ?? {};
+  const inlineCoords = {};
+  const seenIds = new Map(); // slug -> wikidata id, to catch name collisions
+  const disambiguated = [];
+
+  const LINES = raw.lines.map((line, i) => {
+    const override = meta.lines?.[line.name];
+    const names = [];
+    for (const st of line.stations) {
+      const baseName = GEN.cleanStationName(st.name);
+      const baseId = slug(baseName);
+      // Two different Wikidata items that clean to the same name are DIFFERENT
+      // stations (Ahmedabad genuinely has two called Sabarmati). Merging them
+      // would invent an interchange, so disambiguate by line instead.
+      let name = baseName;
+      let id = baseId;
+      const prior = seenIds.get(baseId);
+      if (prior && prior !== st.id) {
+        name = `${baseName} (${GEN.cleanLineName(line.name, cityId)})`;
+        id = slug(name);
+        disambiguated.push(name);
+      }
+      seenIds.set(id, st.id);
+      if (st.lat != null && st.lng != null) inlineCoords[id] = { lat: st.lat, lng: st.lng };
+      names.push(name);
+    }
+    return {
+      id: slug(GEN.cleanLineName(line.name, cityId)) || `line-${i + 1}`,
+      name: GEN.cleanLineName(line.name, cityId),
+      code: line.name,
+      color: override?.color ?? GEN.colorForLine(line.name, i),
+      operator: (meta.operators ?? ['Unknown operator'])[0],
+      fareSystem: meta.fareSystem ?? 'genericIndia',
+      avgHopSeconds: 140,
+      stations: names,
+      loopsBackTo: null,
+    };
+  });
+
+  if (disambiguated.length) {
+    console.log(`   note         disambiguated same-named stations: ${disambiguated.join(', ')}`);
+  }
+
+  return {
+    DATA_VERSION: raw.dataVersion ?? '2026-11-10',
+    CITY: {
+      cityId,
+      cityName: meta.cityName ?? raw.cityName,
+      country: 'India',
+      timezone: 'Asia/Kolkata',
+      operators: meta.operators ?? [],
+      notes:
+        'Network imported from Wikidata: station order is derived from adjacency '
+        + 'statements and validated to form a single unbroken path per line. '
+        + 'Under-construction stations are excluded.',
+      source: 'wikidata',
+    },
+    LINES,
+    TRANSFERS: [],
+    INTERCHANGE_WALK_SECONDS: {},
+    AIRPORTS: [],
+    LANDMARKS: [],
+    STATION_ALIASES: {},
+    inlineCoords,
+  };
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -44,10 +136,10 @@ export function slug(name) {
 }
 
 async function buildCity(cityId) {
-  const src = await import(`../data-src/${cityId}.source.mjs`);
+  const src = await loadCitySource(cityId);
   const {
     DATA_VERSION, CITY, LINES, TRANSFERS,
-    INTERCHANGE_WALK_SECONDS, AIRPORTS, LANDMARKS, STATION_ALIASES,
+    INTERCHANGE_WALK_SECONDS, AIRPORTS, LANDMARKS, STATION_ALIASES, inlineCoords,
   } = src;
   const COORDS_FILE = path.join(ROOT, `data-src/coords.${cityId}.json`);
 
@@ -173,7 +265,21 @@ async function buildCity(cityId) {
     surveyed: 0, interpolated: 0, missing: [],
   };
 
-  if (fs.existsSync(COORDS_FILE)) {
+  if (inlineCoords) {
+    coordsMeta.present = true;
+    coordsMeta.source = 'Wikidata (P625), CC0. Imported at build time; not used at runtime.';
+    for (const st of stations.values()) {
+      const c = inlineCoords[st.id];
+      if (c) {
+        st.lat = Number(c.lat.toFixed(6));
+        st.lng = Number(c.lng.toFixed(6));
+        st.coordSource = 'surveyed';
+        coordsMeta.surveyed += 1;
+      } else {
+        st.coordSource = null;
+      }
+    }
+  } else if (fs.existsSync(COORDS_FILE)) {
     const raw = JSON.parse(fs.readFileSync(COORDS_FILE, 'utf8'));
     coordsMeta.present = true;
     coordsMeta.source = raw.source ?? 'unknown';
@@ -289,9 +395,27 @@ async function buildCity(cityId) {
     seen.add(cur);
     for (const n of adj.get(cur)) if (!seen.has(n)) stack.push(n);
   }
-  if (seen.size !== stations.size) {
-    const orphans = [...stations.keys()].filter((k) => !seen.has(k));
-    problems.push(`Graph is not fully connected. Unreachable: ${orphans.join(', ')}`);
+  // Disconnection is a hard error for hand-authored cities, where it means a
+  // typo. For imported cities it can be the truth: Mumbai's Line 2A/7 corridor
+  // meets Line 1 only by walking between differently-named stations, and we
+  // have no verified transfer data for that. Record it rather than invent one.
+  const connected = seen.size === stations.size;
+  let components = 1;
+  if (!connected) {
+    const unvisited = new Set([...stations.keys()].filter((k) => !seen.has(k)));
+    while (unvisited.size) {
+      components += 1;
+      const stack2 = [unvisited.values().next().value];
+      while (stack2.length) {
+        const cur = stack2.pop();
+        if (!unvisited.has(cur)) continue;
+        unvisited.delete(cur);
+        for (const n of adj.get(cur)) if (unvisited.has(n)) stack2.push(n);
+      }
+    }
+    const msg = `not fully connected — ${components} separate components`;
+    if (HAND_AUTHORED.includes(cityId)) problems.push(`Graph is ${msg}`);
+    else console.log(`   warning      network is ${msg}; no route exists between them`);
   }
   if (problems.length) {
     console.error('\n  Data validation failed:');
@@ -305,6 +429,7 @@ async function buildCity(cityId) {
     dataVersion: DATA_VERSION,
     generatedAt: new Date().toISOString().slice(0, 10),
     city: CITY,
+    connectivity: { connected, components },
     coordinates: {
       available: coordsMeta.present,
       source: coordsMeta.source,
@@ -354,7 +479,23 @@ async function buildCity(cityId) {
 }
 
 async function main() {
-  for (const id of CITY_IDS) await buildCity(id);
+  const generated = fs.existsSync(path.join(ROOT, 'data-src/generated'))
+    ? fs.readdirSync(path.join(ROOT, 'data-src/generated'))
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => f.replace(/\.json$/, ''))
+        .sort()
+    : [];
+  const all = [...HAND_AUTHORED, ...generated.filter((g) => !HAND_AUTHORED.includes(g))];
+  const failures = [];
+  for (const id of all) {
+    try {
+      await buildCity(id);
+    } catch (e) {
+      failures.push(`${id}: ${e.message}`);
+      console.error(`\n  SKIPPED ${id} — ${e.message}`);
+    }
+  }
+  if (failures.length) console.error(`\n  ${failures.length} city/cities skipped`);
   console.log('\n  Metrorythm data build complete');
 }
 

@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "kanpur",
+    "cityName": "Kanpur",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Uttar Pradesh Metro Rail Corporation (UPMRC)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 14,
+    "interpolated": 0,
+    "matched": 14,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "orange-line",
+      "name": "Orange Line",
+      "code": "Orange Line",
+      "color": "#F57B20",
+      "operator": "Uttar Pradesh Metro Rail Corporation (UPMRC)",
+      "fareSystem": "upMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "iit-kanpur",
+        "kalyanpur",
+        "spm-hospital",
+        "vishwavidyalaya-kanpur",
+        "gurudev-chauraha",
+        "geeta-nagar",
+        "rawatpur",
+        "llr-hospital",
+        "moti-jheel",
+        "chunniganj",
+        "naveen-market",
+        "bada-chauraha",
+        "nayaganj",
+        "kanpur-central"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "bada-chauraha",
+      "name": "Bada Chauraha",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.472742,
+      "lng": 80.352416,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chunniganj",
+      "name": "Chunniganj",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.477062,
+      "lng": 80.337095,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "geeta-nagar",
+      "name": "Geeta Nagar",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.48701,
+      "lng": 80.29216,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gurudev-chauraha",
+      "name": "Gurudev Chauraha",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.49149,
+      "lng": 80.28451,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "iit-kanpur",
+      "name": "IIT Kanpur",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.50918,
+      "lng": 80.24823,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kalyanpur",
+      "name": "Kalyanpur",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.50321,
+      "lng": 80.25264,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kanpur-central",
+      "name": "Kanpur Central",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.453887,
+      "lng": 80.351804,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "llr-hospital",
+      "name": "LLR Hospital",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.47927,
+      "lng": 80.31159,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "moti-jheel",
+      "name": "Moti Jheel",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.47906,
+      "lng": 80.31855,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "naveen-market",
+      "name": "Naveen Market",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.474096,
+      "lng": 80.345464,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nayaganj",
+      "name": "Nayaganj",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.464164,
+      "lng": 80.359551,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rawatpur",
+      "name": "Rawatpur",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.48288,
+      "lng": 80.30009,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "spm-hospital",
+      "name": "SPM Hospital",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.49891,
+      "lng": 80.2589,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vishwavidyalaya-kanpur",
+      "name": "Vishwavidyalaya (Kanpur)",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 26.49551,
+      "lng": 80.270737,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "iit-kanpur",
+      "to": "kalyanpur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "kalyanpur",
+      "to": "spm-hospital",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "spm-hospital",
+      "to": "vishwavidyalaya-kanpur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "vishwavidyalaya-kanpur",
+      "to": "gurudev-chauraha",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "gurudev-chauraha",
+      "to": "geeta-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "geeta-nagar",
+      "to": "rawatpur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "rawatpur",
+      "to": "llr-hospital",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "llr-hospital",
+      "to": "moti-jheel",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "moti-jheel",
+      "to": "chunniganj",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "chunniganj",
+      "to": "naveen-market",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "naveen-market",
+      "to": "bada-chauraha",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "bada-chauraha",
+      "to": "nayaganj",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "nayaganj",
+      "to": "kanpur-central",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

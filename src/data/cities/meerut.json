@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "meerut",
+    "cityName": "Meerut",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "National Capital Region Transport Corporation (NCRTC)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 12,
+    "interpolated": 0,
+    "matched": 12,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "namo-bharat-rrts",
+      "name": "Namo Bharat (RRTS)",
+      "code": "Delhi–Meerut Regional Rapid Transit System",
+      "color": "#F57B20",
+      "operator": "National Capital Region Transport Corporation (NCRTC)",
+      "fareSystem": "meerutMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "meerut-south-rrts-station",
+        "shatabdi-nagar-rrts-station",
+        "begumpul-rrts-station",
+        "modipuram-rrts-station"
+      ]
+    },
+    {
+      "id": "meerut-metro",
+      "name": "Meerut Metro",
+      "code": "Q138498887",
+      "color": "#E4322B",
+      "operator": "National Capital Region Transport Corporation (NCRTC)",
+      "fareSystem": "meerutMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "meerut-south-rrts-station",
+        "partapur",
+        "rithani",
+        "shatabdi-nagar-rrts-station",
+        "brahmapuri",
+        "meerut-central",
+        "bhaisali",
+        "begumpul-rrts-station",
+        "mes-colony",
+        "daurli",
+        "meerut-north",
+        "modipuram-rrts-station"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "begumpul-rrts-station",
+      "name": "Begumpul RRTS station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.99672,
+      "lng": 77.70571,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bhaisali",
+      "name": "Bhaisali",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.988057,
+      "lng": 77.700344,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "brahmapuri",
+      "name": "Brahmapuri",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.960316,
+      "lng": 77.684798,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "daurli",
+      "name": "Daurli",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 29.04077,
+      "lng": 77.70686,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "meerut-central",
+      "name": "Meerut Central",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.97288,
+      "lng": 77.690603,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "meerut-north",
+      "name": "Meerut North",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 29.05343,
+      "lng": 77.70799,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "meerut-south-rrts-station",
+      "name": "Meerut South RRTS station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.90388,
+      "lng": 77.63203,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mes-colony",
+      "name": "MES Colony",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 29.015985,
+      "lng": 77.70462,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "modipuram-rrts-station",
+      "name": "Modipuram RRTS station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 29.072326,
+      "lng": 77.708842,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "partapur",
+      "name": "Partapur",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.92202,
+      "lng": 77.650573,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rithani",
+      "name": "Rithani",
+      "lines": [
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.93205,
+      "lng": 77.66057,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shatabdi-nagar-rrts-station",
+      "name": "Shatabdi Nagar RRTS station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "aliases": [],
+      "lat": 28.94761,
+      "lng": 77.67359,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "namo-bharat-rrts",
+      "from": "meerut-south-rrts-station",
+      "to": "shatabdi-nagar-rrts-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "namo-bharat-rrts",
+      "from": "shatabdi-nagar-rrts-station",
+      "to": "begumpul-rrts-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "namo-bharat-rrts",
+      "from": "begumpul-rrts-station",
+      "to": "modipuram-rrts-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "meerut-south-rrts-station",
+      "to": "partapur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "partapur",
+      "to": "rithani",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "rithani",
+      "to": "shatabdi-nagar-rrts-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "shatabdi-nagar-rrts-station",
+      "to": "brahmapuri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "brahmapuri",
+      "to": "meerut-central",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "meerut-central",
+      "to": "bhaisali",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "bhaisali",
+      "to": "begumpul-rrts-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "begumpul-rrts-station",
+      "to": "mes-colony",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "mes-colony",
+      "to": "daurli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "daurli",
+      "to": "meerut-north",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "meerut-metro",
+      "from": "meerut-north",
+      "to": "modipuram-rrts-station",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "meerut-south-rrts-station",
+      "to": "meerut-south-rrts-station",
+      "fromLine": "namo-bharat-rrts",
+      "toLine": "meerut-metro",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "shatabdi-nagar-rrts-station",
+      "to": "shatabdi-nagar-rrts-station",
+      "fromLine": "namo-bharat-rrts",
+      "toLine": "meerut-metro",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "begumpul-rrts-station",
+      "to": "begumpul-rrts-station",
+      "fromLine": "namo-bharat-rrts",
+      "toLine": "meerut-metro",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "modipuram-rrts-station",
+      "to": "modipuram-rrts-station",
+      "fromLine": "namo-bharat-rrts",
+      "toLine": "meerut-metro",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "meerut-south-rrts-station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "shatabdi-nagar-rrts-station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "begumpul-rrts-station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "modipuram-rrts-station",
+      "lines": [
+        "namo-bharat-rrts",
+        "meerut-metro"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

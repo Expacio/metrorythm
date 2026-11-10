@@ -1,0 +1,539 @@
+{
+  "cityId": "bengaluru",
+  "cityName": "Bengaluru",
+  "lines": [
+    {
+      "wikidataId": "Q7261433",
+      "name": "Purple Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q116966154",
+          "name": "Challaghatta metro station",
+          "lat": 12.89742,
+          "lng": 77.46124
+        },
+        {
+          "id": "Q108532167",
+          "name": "Kengeri metro station",
+          "lat": 12.907954019,
+          "lng": 77.47651175
+        },
+        {
+          "id": "Q108364370",
+          "name": "Kengeri Bus Terminal metro station",
+          "lat": 12.914897547,
+          "lng": 77.487592843
+        },
+        {
+          "id": "Q108336517",
+          "name": "Pattanagere metro station",
+          "lat": 12.924414676,
+          "lng": 77.49825635
+        },
+        {
+          "id": "Q108364322",
+          "name": "Jnanabharathi metro station",
+          "lat": 12.935555922,
+          "lng": 77.51201871
+        },
+        {
+          "id": "Q108336548",
+          "name": "Rajarajeshwari Nagar metro station",
+          "lat": 12.936726772,
+          "lng": 77.519582243
+        },
+        {
+          "id": "Q108336508",
+          "name": "Pantharapalya - Nayandahalli metro station",
+          "lat": 12.94167,
+          "lng": 77.52512
+        },
+        {
+          "id": "Q23838580",
+          "name": "Mysore Road metro station",
+          "lat": 12.9467266,
+          "lng": 77.5300737
+        },
+        {
+          "id": "Q39046388",
+          "name": "Deepanjali Nagar metro station",
+          "lat": 12.9522153,
+          "lng": 77.5371011
+        },
+        {
+          "id": "Q39046425",
+          "name": "Attiguppe metro station",
+          "lat": 12.961957,
+          "lng": 77.533582
+        },
+        {
+          "id": "Q39046429",
+          "name": "Vijayanagar metro station",
+          "lat": 12.9709156,
+          "lng": 77.5374015
+        },
+        {
+          "id": "Q23838583",
+          "name": "Hosahalli metro station",
+          "lat": 12.974303,
+          "lng": 77.5454434
+        },
+        {
+          "id": "Q23838569",
+          "name": "Magadi Road metro station",
+          "lat": 12.9756582,
+          "lng": 77.5554118
+        },
+        {
+          "id": "Q39070950",
+          "name": "City Railway Station metro station",
+          "lat": 12.9758405,
+          "lng": 77.5657558
+        },
+        {
+          "id": "Q6737727",
+          "name": "Majestic metro station",
+          "lat": 12.9756893,
+          "lng": 77.5728703
+        },
+        {
+          "id": "Q24211039",
+          "name": "Sir M. Visveshwaraya metro station",
+          "lat": 12.9742808,
+          "lng": 77.5839458
+        },
+        {
+          "id": "Q5539295",
+          "name": "Dr. B. R. Ambedkar metro station, Vidhana Soudha",
+          "lat": 12.97874,
+          "lng": 77.59164
+        },
+        {
+          "id": "Q5192189",
+          "name": "Cubbon Park metro station",
+          "lat": 12.9809006,
+          "lng": 77.5974655
+        },
+        {
+          "id": "Q5539354",
+          "name": "MG Road metro station",
+          "lat": 12.9755,
+          "lng": 77.6068
+        },
+        {
+          "id": "Q5539214",
+          "name": "Trinity Metro Station",
+          "lat": 12.973,
+          "lng": 77.617
+        },
+        {
+          "id": "Q5641098",
+          "name": "Halasuru metro station",
+          "lat": 12.97566,
+          "lng": 77.62628
+        },
+        {
+          "id": "Q6025080",
+          "name": "Indiranagar metro station",
+          "lat": 12.97833,
+          "lng": 77.63865
+        },
+        {
+          "id": "Q5539450",
+          "name": "Swami Vivekananda Road Metro Station",
+          "lat": 12.9859103,
+          "lng": 77.6450043
+        },
+        {
+          "id": "Q4848761",
+          "name": "Baiyappanahalli Metro Station",
+          "lat": 12.9906651,
+          "lng": 77.6525903
+        },
+        {
+          "id": "Q112747483",
+          "name": "Benniganahalli",
+          "lat": 12.99653,
+          "lng": 77.66846
+        },
+        {
+          "id": "Q112683488",
+          "name": "Krishnarajapuram metro station",
+          "lat": 12.99999,
+          "lng": 77.67794
+        },
+        {
+          "id": "Q112683430",
+          "name": "Mahadevapura metro station",
+          "lat": 12.99678,
+          "lng": 77.69217
+        },
+        {
+          "id": "Q112683412",
+          "name": "Garudacharapalya metro station",
+          "lat": 12.99356,
+          "lng": 77.70376
+        },
+        {
+          "id": "Q112683421",
+          "name": "Hoodi Junction metro station",
+          "lat": 12.98873,
+          "lng": 77.71127
+        },
+        {
+          "id": "Q112683413",
+          "name": "Sitharama Palya metro station",
+          "lat": 12.98092,
+          "lng": 77.70887
+        },
+        {
+          "id": "Q112683408",
+          "name": "Kundalahalli metro station",
+          "lat": 12.977461,
+          "lng": 77.715761
+        },
+        {
+          "id": "Q112683398",
+          "name": "Nallurhalli metro station",
+          "lat": 12.976528,
+          "lng": 77.724763
+        },
+        {
+          "id": "Q112745606",
+          "name": "Sri Sathya Sai Hospital metro station",
+          "lat": 12.98102,
+          "lng": 77.72762
+        },
+        {
+          "id": "Q112683402",
+          "name": "Pattandur Agrahara metro station",
+          "lat": 12.987613,
+          "lng": 77.738211
+        },
+        {
+          "id": "Q112683401",
+          "name": "Kadugodi Tree Park metro station",
+          "lat": 12.98565,
+          "lng": 77.7469
+        },
+        {
+          "id": "Q112683391",
+          "name": "Hopefarm Channasandra metro station",
+          "lat": 12.98793,
+          "lng": 77.75409
+        },
+        {
+          "id": "Q112683422",
+          "name": "Whitefield metro station",
+          "lat": 12.99507,
+          "lng": 77.75777
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q17054000",
+      "name": "Green Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q122143705",
+          "name": "Madavara metro station",
+          "lat": 13.0574214,
+          "lng": 77.4728055
+        },
+        {
+          "id": "Q122143708",
+          "name": "Chikkabidarakallu metro station",
+          "lat": 13.051944444,
+          "lng": 77.486388888
+        },
+        {
+          "id": "Q122143726",
+          "name": "Manjunathanagara metro station",
+          "lat": 13.050277777,
+          "lng": 77.494444444
+        },
+        {
+          "id": "Q23838590",
+          "name": "Nagasandra metro station",
+          "lat": 13.0481315,
+          "lng": 77.5001257
+        },
+        {
+          "id": "Q30647029",
+          "name": "Dasarahalli metro station",
+          "lat": 13.0435416,
+          "lng": 77.5123791
+        },
+        {
+          "id": "Q30647031",
+          "name": "Jalahalli metro station",
+          "lat": 13.0395842,
+          "lng": 77.5198377
+        },
+        {
+          "id": "Q17082550",
+          "name": "Peenya Industry",
+          "lat": 13.0364766,
+          "lng": 77.5255669
+        },
+        {
+          "id": "Q17082567",
+          "name": "Peenya metro station",
+          "lat": 13.0329868,
+          "lng": 77.5334693
+        },
+        {
+          "id": "Q17100227",
+          "name": "Goraguntepalya",
+          "lat": 13.0284805,
+          "lng": 77.5408622
+        },
+        {
+          "id": "Q16904094",
+          "name": "Yeshwanthpur metro station",
+          "lat": 13.0232,
+          "lng": 77.5499
+        },
+        {
+          "id": "Q17088478",
+          "name": "Sandal Soap Factory",
+          "lat": 13.014793,
+          "lng": 77.5540211
+        },
+        {
+          "id": "Q17070948",
+          "name": "Mahalakshmi metro station",
+          "lat": 13.0083374,
+          "lng": 77.5488344
+        },
+        {
+          "id": "Q17085511",
+          "name": "Rajajinagar metro station",
+          "lat": 13.0003455,
+          "lng": 77.5497483
+        },
+        {
+          "id": "Q17068244",
+          "name": "Kuvempu Road metro station",
+          "lat": 12.9985024,
+          "lng": 77.5569474
+        },
+        {
+          "id": "Q17100145",
+          "name": "Srirampura metro station",
+          "lat": 12.9965259,
+          "lng": 77.5633565
+        },
+        {
+          "id": "Q17088462",
+          "name": "Sampige Road metro station",
+          "lat": 12.9905455,
+          "lng": 77.570805
+        },
+        {
+          "id": "Q6737727",
+          "name": "Majestic metro station",
+          "lat": 12.9756893,
+          "lng": 77.5728703
+        },
+        {
+          "id": "Q20861592",
+          "name": "Chickpete metro station",
+          "lat": 12.9675484,
+          "lng": 77.5747975
+        },
+        {
+          "id": "Q24912918",
+          "name": "Krishna Rajendra Market metro station",
+          "lat": 12.9564453,
+          "lng": 77.5735999
+        },
+        {
+          "id": "Q24912941",
+          "name": "National College metro station",
+          "lat": 12.9506136,
+          "lng": 77.573736
+        },
+        {
+          "id": "Q39045921",
+          "name": "Lalbagh metro station",
+          "lat": 12.9462868,
+          "lng": 77.5800613
+        },
+        {
+          "id": "Q39045926",
+          "name": "Southend Circle metro station",
+          "lat": 12.938321,
+          "lng": 77.5800747
+        },
+        {
+          "id": "Q33101535",
+          "name": "Jayanagar metro station",
+          "lat": 12.9294558,
+          "lng": 77.5802873
+        },
+        {
+          "id": "Q33101537",
+          "name": "Rashtreeya Vidyalaya Road metro station",
+          "lat": 12.9215875,
+          "lng": 77.5802612
+        },
+        {
+          "id": "Q33101538",
+          "name": "Banashankari metro station",
+          "lat": 12.9155387,
+          "lng": 77.5736287
+        },
+        {
+          "id": "Q33101539",
+          "name": "Jayaprakash Nagar metro station",
+          "lat": 12.9074229,
+          "lng": 77.5731788
+        },
+        {
+          "id": "Q28153807",
+          "name": "Yelachenahalli metro station",
+          "lat": 12.8959381,
+          "lng": 77.5701687
+        },
+        {
+          "id": "Q104828836",
+          "name": "Konanakunte Cross metro station",
+          "lat": 12.8890002,
+          "lng": 77.5626407
+        },
+        {
+          "id": "Q104828819",
+          "name": "Doddakallasandra metro station",
+          "lat": 12.8846862,
+          "lng": 77.552751
+        },
+        {
+          "id": "Q104828812",
+          "name": "Vajarahalli metro station",
+          "lat": 12.8775389,
+          "lng": 77.544745
+        },
+        {
+          "id": "Q104828801",
+          "name": "Thalaghattapura metro station",
+          "lat": 12.8714244,
+          "lng": 77.5383625
+        },
+        {
+          "id": "Q104828788",
+          "name": "Silk Institute metro station",
+          "lat": 12.86177,
+          "lng": 77.52999
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q39071595",
+      "name": "Yellow Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q33101537",
+          "name": "Rashtreeya Vidyalaya Road metro station",
+          "lat": 12.9215875,
+          "lng": 77.5802612
+        },
+        {
+          "id": "Q122199400",
+          "name": "Ragigudda metro station",
+          "lat": 12.91711,
+          "lng": 77.58837
+        },
+        {
+          "id": "Q122181941",
+          "name": "Jayadeva Hospital metro station",
+          "lat": 12.91673,
+          "lng": 77.60009
+        },
+        {
+          "id": "Q122181902",
+          "name": "BTM Layout metro station",
+          "lat": 12.91656,
+          "lng": 77.60825
+        },
+        {
+          "id": "Q122181925",
+          "name": "Central Silk Board metro station",
+          "lat": 12.91652,
+          "lng": 77.62056
+        },
+        {
+          "id": "Q122181896",
+          "name": "Bommanahalli metro station",
+          "lat": 12.91066,
+          "lng": 77.62657
+        },
+        {
+          "id": "Q122181880",
+          "name": "Hongasandra metro station",
+          "lat": 12.90165,
+          "lng": 77.63208
+        },
+        {
+          "id": "Q122181881",
+          "name": "Kudlu Gate metro station",
+          "lat": 12.88992,
+          "lng": 77.63929
+        },
+        {
+          "id": "Q122181875",
+          "name": "Singasandra metro station",
+          "lat": 12.88069,
+          "lng": 77.64498
+        },
+        {
+          "id": "Q122181884",
+          "name": "Hosa Road metro station",
+          "lat": 12.87078,
+          "lng": 77.65248
+        },
+        {
+          "id": "Q122181888",
+          "name": "Beratena Agrahara metro station",
+          "lat": 12.86385,
+          "lng": 77.65798
+        },
+        {
+          "id": "Q120776105",
+          "name": "Electronic City metro station",
+          "lat": 12.84649,
+          "lng": 77.67112
+        },
+        {
+          "id": "Q122181897",
+          "name": "Konappana Agrahara metro station",
+          "lat": 12.85648,
+          "lng": 77.66361
+        },
+        {
+          "id": "Q122181887",
+          "name": "Huskur Road metro station",
+          "lat": 12.83901,
+          "lng": 77.67754
+        },
+        {
+          "id": "Q120644005",
+          "name": "Biocon Hebbagodi metro station",
+          "lat": 12.82909,
+          "lng": 77.68133
+        },
+        {
+          "id": "Q120142665",
+          "name": "Bommasandra metro station",
+          "lat": 12.81933,
+          "lng": 77.68834
+        }
+      ]
+    }
+  ],
+  "expectedStations": 85,
+  "importedStations": 83
+}

@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "navi-mumbai",
+    "cityName": "Navi Mumbai",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Maha Mumbai Metro Operation Corporation (MMMOCL)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 11,
+    "interpolated": 0,
+    "matched": 11,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "line-1",
+      "name": "Line 1",
+      "code": "Line 1",
+      "color": "#31A14B",
+      "operator": "Maha Mumbai Metro Operation Corporation (MMMOCL)",
+      "fareSystem": "naviMumbaiMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "belapur-terminal-cbd-belapur",
+        "rbi-colony-kharghar",
+        "belpada-kharghar",
+        "utsav-chowk-kharghar",
+        "kendriya-vihar-kharghar",
+        "kharghar-village-kharghar",
+        "central-park-kharghar",
+        "pethpada-kharghar",
+        "amandoot-kharghar",
+        "pethali-taloja",
+        "pendhar-taloja"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "amandoot-kharghar",
+      "name": "Amandoot (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.07368,
+      "lng": 73.08186,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "belapur-terminal-cbd-belapur",
+      "name": "Belapur Terminal (CBD Belapur)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.0206,
+      "lng": 73.04026,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "belpada-kharghar",
+      "name": "Belpada (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.02528,
+      "lng": 73.05494,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "central-park-kharghar",
+      "name": "Central Park (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.05366,
+      "lng": 73.076,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kendriya-vihar-kharghar",
+      "name": "Kendriya Vihar (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.03768,
+      "lng": 73.06407,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kharghar-village-kharghar",
+      "name": "Kharghar Village (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.04311,
+      "lng": 73.07431,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pendhar-taloja",
+      "name": "Pendhar(Taloja)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.07224,
+      "lng": 73.0978,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pethali-taloja",
+      "name": "Pethali-Taloja",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.07459,
+      "lng": 73.09069,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pethpada-kharghar",
+      "name": "Pethpada (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.06382,
+      "lng": 73.07738,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rbi-colony-kharghar",
+      "name": "RBI Colony (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.02299,
+      "lng": 73.04795,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "utsav-chowk-kharghar",
+      "name": "Utsav Chowk (Kharghar)",
+      "lines": [
+        "line-1"
+      ],
+      "aliases": [],
+      "lat": 19.03258,
+      "lng": 73.05895,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "belapur-terminal-cbd-belapur",
+      "to": "rbi-colony-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "rbi-colony-kharghar",
+      "to": "belpada-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "belpada-kharghar",
+      "to": "utsav-chowk-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "utsav-chowk-kharghar",
+      "to": "kendriya-vihar-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "kendriya-vihar-kharghar",
+      "to": "kharghar-village-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "kharghar-village-kharghar",
+      "to": "central-park-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "central-park-kharghar",
+      "to": "pethpada-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "pethpada-kharghar",
+      "to": "amandoot-kharghar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "amandoot-kharghar",
+      "to": "pethali-taloja",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "line-1",
+      "from": "pethali-taloja",
+      "to": "pendhar-taloja",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

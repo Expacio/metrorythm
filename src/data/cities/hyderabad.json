@@ -1,0 +1,1223 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "hyderabad",
+    "cityName": "Hyderabad",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "L&T Metro Rail Hyderabad / HMRL"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 57,
+    "interpolated": 0,
+    "matched": 57,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "blue-line",
+      "name": "Blue Line",
+      "code": "Blue Line",
+      "color": "#0A6FBA",
+      "operator": "L&T Metro Rail Hyderabad / HMRL",
+      "fareSystem": "hyderabadMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "synchrony-raidurg",
+        "hitec-city",
+        "durgam-cheruvu",
+        "madhapur",
+        "peddamma-gudi",
+        "apollo-hospitals-jubilee-hills-check-post",
+        "road-no-5-jubilee-hills",
+        "yusufguda",
+        "taruni-madhura-nagar",
+        "ameerpet",
+        "begumpet",
+        "invesco-prakash-nagar",
+        "rasoolpura",
+        "paradise",
+        "parade-ground",
+        "secunderabad-east",
+        "mettuguda",
+        "tarnaka",
+        "habsiguda",
+        "ngri",
+        "stadium",
+        "uppal",
+        "nagole"
+      ]
+    },
+    {
+      "id": "red-line",
+      "name": "Red Line",
+      "code": "Red Line",
+      "color": "#E4322B",
+      "operator": "L&T Metro Rail Hyderabad / HMRL",
+      "fareSystem": "hyderabadMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "vasavi-lb-nagar",
+        "victoria-memorial",
+        "chaitanyapuri",
+        "dilsukhnagar",
+        "musarambagh",
+        "new-market",
+        "malakpet",
+        "mg-bus-station",
+        "osmania-medical-college",
+        "gandhi-bhavan",
+        "nampally",
+        "assembly",
+        "nmdc-lakdi-ka-pul",
+        "khairatabad",
+        "irrum-manzil",
+        "punjagutta",
+        "ameerpet",
+        "s-r-nagar",
+        "esi-hospital-hyderabad",
+        "erragadda",
+        "indian-oil-bharat-nagar",
+        "moosapet",
+        "dr-b-r-ambedkar-balanagar",
+        "kukatpally",
+        "kphb-colony",
+        "jntu-college",
+        "miyapur"
+      ]
+    },
+    {
+      "id": "green-line",
+      "name": "Green Line",
+      "code": "Green Line",
+      "color": "#31A14B",
+      "operator": "L&T Metro Rail Hyderabad / HMRL",
+      "fareSystem": "hyderabadMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "mg-bus-station",
+        "sultan-bazaar",
+        "narayanaguda",
+        "chikkadpally",
+        "rtc-x-roads",
+        "musheerabad",
+        "gandhi-hospital",
+        "secunderabad-west",
+        "parade-ground",
+        "jbs-parade-ground"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "ameerpet",
+      "name": "Ameerpet",
+      "lines": [
+        "blue-line",
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.435688,
+      "lng": 78.444594,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "apollo-hospitals-jubilee-hills-check-post",
+      "name": "Apollo Hospitals Jubilee Hills Check Post",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.42819,
+      "lng": 78.41371,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "assembly",
+      "name": "Assembly",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.398108,
+      "lng": 78.470797,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "begumpet",
+      "name": "Begumpet",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.437844,
+      "lng": 78.456939,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chaitanyapuri",
+      "name": "Chaitanyapuri",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.368288,
+      "lng": 78.535783,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chikkadpally",
+      "name": "Chikkadpally",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.40036,
+      "lng": 78.4949,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dilsukhnagar",
+      "name": "Dilsukhnagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.368539,
+      "lng": 78.52507,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dr-b-r-ambedkar-balanagar",
+      "name": "Dr. B. R. Ambedkar Balanagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.476939,
+      "lng": 78.417812,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "durgam-cheruvu",
+      "name": "Durgam Cheruvu",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.44293,
+      "lng": 78.38758,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "erragadda",
+      "name": "Erragadda",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.456671,
+      "lng": 78.43292,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "esi-hospital-hyderabad",
+      "name": "ESI Hospital (Hyderabad)",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.447467,
+      "lng": 78.437269,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gandhi-bhavan",
+      "name": "Gandhi Bhavan",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.386079,
+      "lng": 78.473102,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gandhi-hospital",
+      "name": "Gandhi Hospital",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.425425,
+      "lng": 78.501867,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "habsiguda",
+      "name": "Habsiguda",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.420196,
+      "lng": 78.540536,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hitec-city",
+      "name": "Hitec City",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.44901,
+      "lng": 78.38314,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "indian-oil-bharat-nagar",
+      "name": "Indian Oil Bharat Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.463997,
+      "lng": 78.427869,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "invesco-prakash-nagar",
+      "name": "Invesco Prakash Nagar",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.444892,
+      "lng": 78.465289,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "irrum-manzil",
+      "name": "Irrum Manzil",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.42023,
+      "lng": 78.45635,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jbs-parade-ground",
+      "name": "JBS Parade Ground",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.44875,
+      "lng": 78.49648,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jntu-college",
+      "name": "JNTU College",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.498653,
+      "lng": 78.388793,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "khairatabad",
+      "name": "Khairatabad",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.41162,
+      "lng": 78.46087,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kphb-colony",
+      "name": "KPHB Colony",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.49378,
+      "lng": 78.401795,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kukatpally",
+      "name": "Kukatpally",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.485115,
+      "lng": 78.409369,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "madhapur",
+      "name": "Madhapur",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.437244,
+      "lng": 78.400483,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "malakpet",
+      "name": "Malakpet",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.37718,
+      "lng": 78.49393,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mettuguda",
+      "name": "Mettuguda",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.435318,
+      "lng": 78.519192,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mg-bus-station",
+      "name": "MG Bus Station",
+      "lines": [
+        "red-line",
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.379993,
+      "lng": 78.486129,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "miyapur",
+      "name": "Miyapur",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.496526,
+      "lng": 78.373006,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "moosapet",
+      "name": "Moosapet",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.47188,
+      "lng": 78.42612,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "musarambagh",
+      "name": "Musarambagh",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.371255,
+      "lng": 78.511075,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "musheerabad",
+      "name": "Musheerabad",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.418754,
+      "lng": 78.499414,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nagole",
+      "name": "Nagole",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.390774,
+      "lng": 78.558687,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nampally",
+      "name": "Nampally",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.39222,
+      "lng": 78.47016,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "narayanaguda",
+      "name": "Narayanaguda",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.39436,
+      "lng": 78.48996,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "new-market",
+      "name": "New Market",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.373007,
+      "lng": 78.502131,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ngri",
+      "name": "NGRI",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.41483,
+      "lng": 78.54634,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nmdc-lakdi-ka-pul",
+      "name": "NMDC Lakdi-ka-pul",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.403808,
+      "lng": 78.464697,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "osmania-medical-college",
+      "name": "Osmania Medical College",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.38207,
+      "lng": 78.4817,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "parade-ground",
+      "name": "Parade Ground",
+      "lines": [
+        "blue-line",
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.443237,
+      "lng": 78.497493,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "paradise",
+      "name": "Paradise",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.443527,
+      "lng": 78.485096,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "peddamma-gudi",
+      "name": "Peddamma Gudi",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.430583,
+      "lng": 78.408556,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "punjagutta",
+      "name": "Punjagutta",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.428522,
+      "lng": 78.451219,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rasoolpura",
+      "name": "Rasoolpura",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.443468,
+      "lng": 78.475936,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "road-no-5-jubilee-hills",
+      "name": "Road No.5 Jubilee Hills",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.43005,
+      "lng": 78.4232,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rtc-x-roads",
+      "name": "RTC X Roads",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.40705,
+      "lng": 78.49681,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "s-r-nagar",
+      "name": "S.R. Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.44312,
+      "lng": 78.44073,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "secunderabad-east",
+      "name": "Secunderabad East",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.435961,
+      "lng": 78.505382,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "secunderabad-west",
+      "name": "Secunderabad West",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.4338,
+      "lng": 78.49954,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "stadium",
+      "name": "Stadium",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.407433,
+      "lng": 78.554193,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sultan-bazaar",
+      "name": "Sultan Bazaar",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 17.38443,
+      "lng": 78.48403,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "synchrony-raidurg",
+      "name": "Synchrony Raidurg",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.44219,
+      "lng": 78.3772,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "tarnaka",
+      "name": "Tarnaka",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.428293,
+      "lng": 78.528558,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "taruni-madhura-nagar",
+      "name": "Taruni Madhura Nagar",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.436937,
+      "lng": 78.43914,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "uppal",
+      "name": "Uppal",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.399969,
+      "lng": 78.559908,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vasavi-lb-nagar",
+      "name": "Vasavi LB Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.349699,
+      "lng": 78.547969,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "victoria-memorial",
+      "name": "Victoria Memorial",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 17.362103,
+      "lng": 78.543861,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "yusufguda",
+      "name": "Yusufguda",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 17.435096,
+      "lng": 78.426919,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "synchrony-raidurg",
+      "to": "hitec-city",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "hitec-city",
+      "to": "durgam-cheruvu",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "durgam-cheruvu",
+      "to": "madhapur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "madhapur",
+      "to": "peddamma-gudi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "peddamma-gudi",
+      "to": "apollo-hospitals-jubilee-hills-check-post",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "apollo-hospitals-jubilee-hills-check-post",
+      "to": "road-no-5-jubilee-hills",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "road-no-5-jubilee-hills",
+      "to": "yusufguda",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "yusufguda",
+      "to": "taruni-madhura-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "taruni-madhura-nagar",
+      "to": "ameerpet",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "ameerpet",
+      "to": "begumpet",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "begumpet",
+      "to": "invesco-prakash-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "invesco-prakash-nagar",
+      "to": "rasoolpura",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "rasoolpura",
+      "to": "paradise",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "paradise",
+      "to": "parade-ground",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "parade-ground",
+      "to": "secunderabad-east",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "secunderabad-east",
+      "to": "mettuguda",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "mettuguda",
+      "to": "tarnaka",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "tarnaka",
+      "to": "habsiguda",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "habsiguda",
+      "to": "ngri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "ngri",
+      "to": "stadium",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "stadium",
+      "to": "uppal",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "uppal",
+      "to": "nagole",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "vasavi-lb-nagar",
+      "to": "victoria-memorial",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "victoria-memorial",
+      "to": "chaitanyapuri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "chaitanyapuri",
+      "to": "dilsukhnagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "dilsukhnagar",
+      "to": "musarambagh",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "musarambagh",
+      "to": "new-market",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "new-market",
+      "to": "malakpet",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "malakpet",
+      "to": "mg-bus-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "mg-bus-station",
+      "to": "osmania-medical-college",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "osmania-medical-college",
+      "to": "gandhi-bhavan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "gandhi-bhavan",
+      "to": "nampally",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "nampally",
+      "to": "assembly",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "assembly",
+      "to": "nmdc-lakdi-ka-pul",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "nmdc-lakdi-ka-pul",
+      "to": "khairatabad",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "khairatabad",
+      "to": "irrum-manzil",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "irrum-manzil",
+      "to": "punjagutta",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "punjagutta",
+      "to": "ameerpet",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "ameerpet",
+      "to": "s-r-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "s-r-nagar",
+      "to": "esi-hospital-hyderabad",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "esi-hospital-hyderabad",
+      "to": "erragadda",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "erragadda",
+      "to": "indian-oil-bharat-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "indian-oil-bharat-nagar",
+      "to": "moosapet",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "moosapet",
+      "to": "dr-b-r-ambedkar-balanagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "dr-b-r-ambedkar-balanagar",
+      "to": "kukatpally",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "kukatpally",
+      "to": "kphb-colony",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "kphb-colony",
+      "to": "jntu-college",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "jntu-college",
+      "to": "miyapur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "mg-bus-station",
+      "to": "sultan-bazaar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "sultan-bazaar",
+      "to": "narayanaguda",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "narayanaguda",
+      "to": "chikkadpally",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "chikkadpally",
+      "to": "rtc-x-roads",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "rtc-x-roads",
+      "to": "musheerabad",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "musheerabad",
+      "to": "gandhi-hospital",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "gandhi-hospital",
+      "to": "secunderabad-west",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "secunderabad-west",
+      "to": "parade-ground",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "parade-ground",
+      "to": "jbs-parade-ground",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "ameerpet",
+      "to": "ameerpet",
+      "fromLine": "blue-line",
+      "toLine": "red-line",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "parade-ground",
+      "to": "parade-ground",
+      "fromLine": "blue-line",
+      "toLine": "green-line",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "mg-bus-station",
+      "to": "mg-bus-station",
+      "fromLine": "red-line",
+      "toLine": "green-line",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "ameerpet",
+      "lines": [
+        "blue-line",
+        "red-line"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "parade-ground",
+      "lines": [
+        "blue-line",
+        "green-line"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "mg-bus-station",
+      "lines": [
+        "red-line",
+        "green-line"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

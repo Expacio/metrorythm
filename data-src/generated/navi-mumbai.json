@@ -1,0 +1,81 @@
+{
+  "cityId": "navi-mumbai",
+  "cityName": "Navi Mumbai",
+  "lines": [
+    {
+      "wikidataId": "Q17068873",
+      "name": "Line 1",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q123471592",
+          "name": "Belapur Terminal (CBD Belapur)",
+          "lat": 19.0206,
+          "lng": 73.04026
+        },
+        {
+          "id": "Q123471593",
+          "name": "RBI Colony (Kharghar)",
+          "lat": 19.02299,
+          "lng": 73.04795
+        },
+        {
+          "id": "Q123471594",
+          "name": "Belpada (Kharghar)",
+          "lat": 19.02528,
+          "lng": 73.05494
+        },
+        {
+          "id": "Q123471595",
+          "name": "Utsav Chowk (Kharghar)",
+          "lat": 19.03258,
+          "lng": 73.05895
+        },
+        {
+          "id": "Q123471596",
+          "name": "Kendriya Vihar (Kharghar)",
+          "lat": 19.03768,
+          "lng": 73.06407
+        },
+        {
+          "id": "Q123471597",
+          "name": "Kharghar Village (Kharghar)",
+          "lat": 19.04311,
+          "lng": 73.07431
+        },
+        {
+          "id": "Q123471598",
+          "name": "Central Park (Kharghar)",
+          "lat": 19.05366,
+          "lng": 73.076
+        },
+        {
+          "id": "Q123471600",
+          "name": "Pethpada (Kharghar)",
+          "lat": 19.06382,
+          "lng": 73.07738
+        },
+        {
+          "id": "Q123471601",
+          "name": "Amandoot (Kharghar)",
+          "lat": 19.07368,
+          "lng": 73.08186
+        },
+        {
+          "id": "Q123471604",
+          "name": "Pethali-Taloja",
+          "lat": 19.07459,
+          "lng": 73.09069
+        },
+        {
+          "id": "Q123471605",
+          "name": "Pendhar(Taloja)",
+          "lat": 19.07224,
+          "lng": 73.0978
+        }
+      ]
+    }
+  ],
+  "expectedStations": 11,
+  "importedStations": 11
+}

@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "kochi",
+    "cityName": "Kochi",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Kochi Metro Rail Limited (KMRL)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 25,
+    "interpolated": 0,
+    "matched": 25,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "blue-line",
+      "name": "Blue Line",
+      "code": "Line 1",
+      "color": "#0A6FBA",
+      "operator": "Kochi Metro Rail Limited (KMRL)",
+      "fareSystem": "kochiMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "aluva",
+        "pulinchodu",
+        "companypady",
+        "ambattukavu",
+        "muttom",
+        "kalamassery",
+        "cochin-university",
+        "pathadipalam",
+        "edapally",
+        "changampuzha-park",
+        "palarivattom",
+        "j-l-n-stadium",
+        "kaloor",
+        "town-hall",
+        "m-g-road",
+        "maharaja-s-college",
+        "ernakulam-south",
+        "kadavanthra",
+        "elamkulam",
+        "vyttila",
+        "thaikoodam",
+        "petta",
+        "vadakkekkotta",
+        "sn-junction",
+        "tripunithura-metro-terminal"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "aluva",
+      "name": "Aluva",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.109675,
+      "lng": 76.349638,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ambattukavu",
+      "name": "Ambattukavu",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.079372,
+      "lng": 76.339004,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "changampuzha-park",
+      "name": "Changampuzha Park",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.01488,
+      "lng": 76.302319,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "cochin-university",
+      "name": "Cochin University",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.046879,
+      "lng": 76.318377,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "companypady",
+      "name": "Companypady",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.087293,
+      "lng": 76.34284,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "edapally",
+      "name": "Edapally",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.025106,
+      "lng": 76.308456,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "elamkulam",
+      "name": "Elamkulam",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.96709,
+      "lng": 76.30849,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ernakulam-south",
+      "name": "Ernakulam South",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.967756,
+      "lng": 76.291278,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "j-l-n-stadium",
+      "name": "J. L. N. Stadium",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.000554,
+      "lng": 76.299535,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kadavanthra",
+      "name": "Kadavanthra",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.966589,
+      "lng": 76.298258,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kalamassery",
+      "name": "Kalamassery",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.0584,
+      "lng": 76.321926,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kaloor",
+      "name": "Kaloor",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.994484,
+      "lng": 76.291669,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "m-g-road",
+      "name": "M. G. Road",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.983395,
+      "lng": 76.282351,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "maharaja-s-college",
+      "name": "Maharaja's College",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.973487,
+      "lng": 76.285015,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "muttom",
+      "name": "Muttom",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.072575,
+      "lng": 76.333727,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "palarivattom",
+      "name": "Palarivattom",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.006432,
+      "lng": 76.304769,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pathadipalam",
+      "name": "Pathadipalam",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.035948,
+      "lng": 76.314371,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "petta",
+      "name": "Petta",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.951161,
+      "lng": 76.331004,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pulinchodu",
+      "name": "Pulinchodu",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 10.09512,
+      "lng": 76.346661,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sn-junction",
+      "name": "SN Junction",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.95476,
+      "lng": 76.34619,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "thaikoodam",
+      "name": "Thaikoodam",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.96,
+      "lng": 76.32368,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "town-hall",
+      "name": "Town Hall",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.991247,
+      "lng": 76.288035,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "tripunithura-metro-terminal",
+      "name": "Tripunithura Metro Terminal",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.950413,
+      "lng": 76.35173,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vadakkekkotta",
+      "name": "Vadakkekkotta",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.95282,
+      "lng": 76.33949,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vyttila",
+      "name": "Vyttila",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 9.9674,
+      "lng": 76.3204,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "aluva",
+      "to": "pulinchodu",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "pulinchodu",
+      "to": "companypady",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "companypady",
+      "to": "ambattukavu",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "ambattukavu",
+      "to": "muttom",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "muttom",
+      "to": "kalamassery",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kalamassery",
+      "to": "cochin-university",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "cochin-university",
+      "to": "pathadipalam",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "pathadipalam",
+      "to": "edapally",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "edapally",
+      "to": "changampuzha-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "changampuzha-park",
+      "to": "palarivattom",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "palarivattom",
+      "to": "j-l-n-stadium",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "j-l-n-stadium",
+      "to": "kaloor",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kaloor",
+      "to": "town-hall",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "town-hall",
+      "to": "m-g-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "m-g-road",
+      "to": "maharaja-s-college",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "maharaja-s-college",
+      "to": "ernakulam-south",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "ernakulam-south",
+      "to": "kadavanthra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kadavanthra",
+      "to": "elamkulam",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "elamkulam",
+      "to": "vyttila",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "vyttila",
+      "to": "thaikoodam",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "thaikoodam",
+      "to": "petta",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "petta",
+      "to": "vadakkekkotta",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "vadakkekkotta",
+      "to": "sn-junction",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "sn-junction",
+      "to": "tripunithura-metro-terminal",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

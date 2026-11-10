@@ -349,12 +349,216 @@ export const CMRL: FareConfig = {
   ],
 };
 
+
+/* ============================================================================
+ * The remaining Indian networks.
+ *
+ * Four are sourced from published fare charts. The rest could not be verified
+ * to the standard the DMRC and CMRL tables were held to, so they use a clearly
+ * flagged generic Indian slab and are marked `estimated`. The UI shows that
+ * per-operator, and replacing any of them is a one-object edit.
+ * ========================================================================== */
+
+const GENERIC_INDIA_SLABS: DistanceSlab[] = [
+  { maxKm: 2, fare: 10 },
+  { maxKm: 5, fare: 20 },
+  { maxKm: 12, fare: 30 },
+  { maxKm: 21, fare: 40 },
+  { maxKm: 32, fare: 50 },
+  { maxKm: null, fare: 60 },
+];
+
+/** Build a config for a network whose exact table could not be verified. */
+function estimatedNetwork(
+  fareSystemId: string,
+  operator: string,
+  label: string,
+  extra: Partial<FareConfig> = {},
+): FareConfig {
+  return {
+    fareSystemId,
+    operator,
+    label,
+    currency: 'INR',
+    fareType: 'token',
+    basis: 'distance',
+    effectiveDate: '2026-11-10',
+    effectiveDateIsPublished: false,
+    confidence: 'estimated',
+    sourceNote:
+      `No published ${operator} fare chart could be verified, so this uses the `
+      + 'distance slabs common to Indian metros (₹10/20/30/40/50/60). Treat the '
+      + 'figure as indicative only. The date above is when this was last reviewed, '
+      + 'not a published effective date.',
+    slabs: GENERIC_INDIA_SLABS,
+    discounts: { smartCard: 0.1, offPeakExtra: 0 },
+    specialRules: [
+      {
+        id: 'unverified-table',
+        description:
+          `${operator}'s exact fare table could not be verified — this fare is a `
+          + 'generic estimate and may differ from what you are charged.',
+      },
+      {
+        id: 'single-fare-across-network',
+        description:
+          'A single distance-based fare covers the whole network; changing lines '
+          + 'inside the paid area never triggers an additional fare.',
+      },
+    ],
+    ...extra,
+  };
+}
+
+/** Bengaluru — Namma Metro (BMRCL). */
+export const NAMMA_METRO: FareConfig = {
+  fareSystemId: 'nammaMetro',
+  operator: 'BMRCL',
+  label: 'Namma Metro, Bengaluru',
+  currency: 'INR',
+  fareType: 'token',
+  basis: 'distance',
+  effectiveDate: '2026-02-09',
+  effectiveDateIsPublished: true,
+  confidence: 'estimated',
+  sourceNote:
+    'Namma Metro fares were revised on 9 February 2026, now spanning roughly '
+    + '₹11 to ₹95. Published slabs: 0–2 km ₹10, 2–5 ₹20, 5–10 ₹30, 10–15 ₹40, '
+    + '15–20 ₹50, 20–25 ₹55, 25–30 ₹60. The slab list and the quoted ₹95 maximum '
+    + 'do not fully reconcile in public sources, so long journeys are estimated.',
+  slabs: [
+    { maxKm: 2, fare: 10 },
+    { maxKm: 5, fare: 20 },
+    { maxKm: 10, fare: 30 },
+    { maxKm: 15, fare: 40 },
+    { maxKm: 20, fare: 50 },
+    { maxKm: 25, fare: 55 },
+    { maxKm: 30, fare: 60 },
+    { maxKm: null, fare: 90 },
+  ],
+  discounts: { smartCard: 0.05, offPeakExtra: 0 },
+  specialRules: [{
+    id: 'single-fare-across-network',
+    description: 'One distance-based fare covers the whole Namma Metro network.',
+  }],
+};
+
+/** Hyderabad Metro — finer-grained slabs than most Indian networks. */
+export const HYDERABAD_METRO: FareConfig = {
+  fareSystemId: 'hyderabadMetro',
+  operator: 'L&T Metro Rail Hyderabad',
+  label: 'Hyderabad Metro',
+  currency: 'INR',
+  fareType: 'token',
+  basis: 'distance',
+  effectiveDate: '2026-11-10',
+  effectiveDateIsPublished: false,
+  confidence: 'official',
+  sourceNote:
+    'Hyderabad Metro publishes ten distance bands from ₹10 to ₹60: 0–2 ₹10, 2–4 ₹15, '
+    + '4–6 ₹25, 6–8 ₹30, 8–10 ₹35, 10–14 ₹40, 14–18 ₹45, 18–22 ₹50, 22–26 ₹55, 26+ ₹60. '
+    + 'No effective date is published, so the date above is when this was verified.',
+  slabs: [
+    { maxKm: 2, fare: 10 }, { maxKm: 4, fare: 15 }, { maxKm: 6, fare: 25 },
+    { maxKm: 8, fare: 30 }, { maxKm: 10, fare: 35 }, { maxKm: 14, fare: 40 },
+    { maxKm: 18, fare: 45 }, { maxKm: 22, fare: 50 }, { maxKm: 26, fare: 55 },
+    { maxKm: null, fare: 60 },
+  ],
+  discounts: { smartCard: 0.1, offPeakExtra: 0 },
+  specialRules: [{
+    id: 'single-fare-across-network',
+    description: 'One distance-based fare covers all three Hyderabad Metro lines.',
+  }],
+};
+
+/** Kolkata — the cheapest metro in India. */
+export const KOLKATA_METRO: FareConfig = {
+  fareSystemId: 'kolkataMetro',
+  operator: 'Metro Railway, Kolkata',
+  label: 'Kolkata Metro',
+  currency: 'INR',
+  fareType: 'token',
+  basis: 'distance',
+  effectiveDate: '2026-11-10',
+  effectiveDateIsPublished: false,
+  confidence: 'estimated',
+  sourceNote:
+    'Kolkata Metro is India\'s cheapest: fares run ₹5–₹25 on the Blue Line and '
+    + '₹5–₹30 on the Green, Purple, Orange and Yellow lines. Operated by Indian '
+    + 'Railways rather than a metro corporation. The band boundaries are not '
+    + 'published consistently, so the slabs below are interpolated between the '
+    + 'known ₹5 minimum and ₹30 maximum.',
+  slabs: [
+    { maxKm: 2, fare: 5 }, { maxKm: 5, fare: 10 }, { maxKm: 10, fare: 15 },
+    { maxKm: 20, fare: 20 }, { maxKm: 25, fare: 25 }, { maxKm: null, fare: 30 },
+  ],
+  discounts: { smartCard: 0.1, offPeakExtra: 0 },
+  specialRules: [{
+    id: 'kolkata-cheapest',
+    description: 'Kolkata Metro fares are capped at ₹30, the lowest of any Indian metro.',
+  }],
+};
+
+/** Kochi — priced by number of stations, like the NMRC Aqua Line. */
+export const KOCHI_METRO: FareConfig = {
+  fareSystemId: 'kochiMetro',
+  operator: 'KMRL',
+  label: 'Kochi Metro',
+  currency: 'INR',
+  fareType: 'token',
+  basis: 'stationCount',
+  effectiveDate: '2026-11-10',
+  effectiveDateIsPublished: false,
+  confidence: 'official',
+  sourceNote:
+    'KMRL prices by NUMBER OF STATIONS, not distance: 0–2 stations ₹10, 3–5 ₹20, '
+    + '6–8 ₹30, 9–12 ₹40, 13–17 ₹50, 18+ ₹60. The Kochi1 card gives a discount. '
+    + 'No effective date is published; the date above is when this was verified.',
+  stationSlabs: [
+    { maxStations: 2, fare: 10 }, { maxStations: 5, fare: 20 },
+    { maxStations: 8, fare: 30 }, { maxStations: 12, fare: 40 },
+    { maxStations: 17, fare: 50 }, { maxStations: null, fare: 60 },
+  ],
+  discounts: { smartCard: 0.1, offPeakExtra: 0 },
+  specialRules: [{
+    id: 'kochi-station-count',
+    description: 'Kochi Metro charges by number of stations travelled, not by distance.',
+  }],
+};
+
+export const MUMBAI_METRO = estimatedNetwork('mumbaiMetro', 'Mumbai Metro', 'Mumbai Metro');
+export const NAVI_MUMBAI_METRO = estimatedNetwork('naviMumbaiMetro', 'MMMOCL', 'Navi Mumbai Metro');
+export const JAIPUR_METRO = estimatedNetwork('jaipurMetro', 'JMRC', 'Jaipur Metro');
+export const UP_METRO = estimatedNetwork('upMetro', 'UPMRC', 'UP Metro (Lucknow, Kanpur, Agra)');
+export const NAGPUR_METRO = estimatedNetwork('nagpurMetro', 'MahaMetro', 'Nagpur Metro');
+export const AHMEDABAD_METRO = estimatedNetwork('ahmedabadMetro', 'GMRC', 'Ahmedabad Metro');
+export const PUNE_METRO = estimatedNetwork('puneMetro', 'MahaMetro', 'Pune Metro');
+export const MP_METRO = estimatedNetwork('mpMetro', 'MPMRCL', 'MP Metro (Indore, Bhopal)');
+export const PATNA_METRO = estimatedNetwork('patnaMetro', 'PMRC', 'Patna Metro');
+export const MEERUT_METRO = estimatedNetwork('meerutMetro', 'NCRTC', 'Meerut Metro / Namo Bharat');
+export const GENERIC_INDIA = estimatedNetwork('genericIndia', 'Unknown operator', 'Metro network');
+
 export const FARE_CONFIGS: Record<string, FareConfig> = {
   dmrc: DMRC,
   airportExpress: AIRPORT_EXPRESS,
   nmrcAqua: NMRC_AQUA,
   rapidMetro: RAPID_METRO,
   cmrl: CMRL,
+  nammaMetro: NAMMA_METRO,
+  hyderabadMetro: HYDERABAD_METRO,
+  kolkataMetro: KOLKATA_METRO,
+  kochiMetro: KOCHI_METRO,
+  mumbaiMetro: MUMBAI_METRO,
+  naviMumbaiMetro: NAVI_MUMBAI_METRO,
+  jaipurMetro: JAIPUR_METRO,
+  upMetro: UP_METRO,
+  nagpurMetro: NAGPUR_METRO,
+  ahmedabadMetro: AHMEDABAD_METRO,
+  puneMetro: PUNE_METRO,
+  mpMetro: MP_METRO,
+  patnaMetro: PATNA_METRO,
+  meerutMetro: MEERUT_METRO,
+  genericIndia: GENERIC_INDIA,
 };
 
 /** The newest effectiveDate across all operators — shown in the UI. */

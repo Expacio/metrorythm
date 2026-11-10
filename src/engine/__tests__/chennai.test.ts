@@ -165,8 +165,8 @@ describe('search', () => {
 });
 
 describe('city registry', () => {
-  it('exposes both cities', () => {
-    expect(CITIES.map((c) => c.city.cityId)).toEqual(['delhi', 'chennai']);
+  it('lists the hand-authored cities first', () => {
+    expect(CITIES.map((c) => c.city.cityId).slice(0, 2)).toEqual(['delhi', 'chennai']);
   });
 
   it('looks a city up by id', () => {

@@ -1,0 +1,1173 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "ahmedabad",
+    "cityName": "Ahmedabad",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Gujarat Metro Rail Corporation (GMRC)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 54,
+    "interpolated": 0,
+    "matched": 54,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "blue-line",
+      "name": "Blue Line",
+      "code": "Blue Line",
+      "color": "#0A6FBA",
+      "operator": "Gujarat Metro Rail Corporation (GMRC)",
+      "fareSystem": "ahmedabadMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "vastral-gam",
+        "nirant-cross-roads",
+        "vastral",
+        "rabari-colony",
+        "amraiwadi",
+        "apparel-park",
+        "kankaria-east",
+        "kalupur",
+        "gheekanta",
+        "shahpur",
+        "old-high-court",
+        "sp-stadium",
+        "commerce-six-road",
+        "gujarat-university",
+        "gurukul-road",
+        "doordarshan-kendra",
+        "thaltej",
+        "thaltej-gam"
+      ]
+    },
+    {
+      "id": "red-line",
+      "name": "Red Line",
+      "code": "Red Line",
+      "color": "#E4322B",
+      "operator": "Gujarat Metro Rail Corporation (GMRC)",
+      "fareSystem": "ahmedabadMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "apmc",
+        "jivraj-park",
+        "rajiv-nagar",
+        "shreyas",
+        "paldi",
+        "gandhigram",
+        "old-high-court",
+        "usmanpura",
+        "vijay-nagar",
+        "vadaj",
+        "ranip",
+        "sabarmati",
+        "aec",
+        "sabarmati-red-line",
+        "motera-stadium"
+      ]
+    },
+    {
+      "id": "yellow-line",
+      "name": "Yellow Line",
+      "code": "Yellow Line (Ahmedabad Metro)",
+      "color": "#F7C600",
+      "operator": "Gujarat Metro Rail Corporation (GMRC)",
+      "fareSystem": "ahmedabadMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "motera-stadium",
+        "koteshwar-road",
+        "vishwakarma-college",
+        "tapovan-circle",
+        "narmada-canal",
+        "koba-circle",
+        "juna-koba",
+        "koba-gam",
+        "gnlu",
+        "raysan",
+        "randesan",
+        "dholakuva-circle",
+        "infocity",
+        "sector-1",
+        "sector-10a",
+        "sachivalaya",
+        "akshardham",
+        "juna-sachivalaya",
+        "sector-16",
+        "sector-24",
+        "mahatma-mandir"
+      ]
+    },
+    {
+      "id": "violet-line",
+      "name": "Violet Line",
+      "code": "Violet Line",
+      "color": "#7B3F98",
+      "operator": "Gujarat Metro Rail Corporation (GMRC)",
+      "fareSystem": "ahmedabadMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "gnlu",
+        "pdpu",
+        "gift-city"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "aec",
+      "name": "AEC",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.07509,
+      "lng": 72.59331,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "akshardham",
+      "name": "Akshardham",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.223656,
+      "lng": 72.664164,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "amraiwadi",
+      "name": "Amraiwadi",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.007813,
+      "lng": 72.628369,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "apmc",
+      "name": "APMC",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 22.99781,
+      "lng": 72.53712,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "apparel-park",
+      "name": "Apparel Park",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.01063,
+      "lng": 72.618186,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "commerce-six-road",
+      "name": "Commerce Six Road",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.0407,
+      "lng": 72.55307,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dholakuva-circle",
+      "name": "Dholakuva Circle",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.185921,
+      "lng": 72.643337,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "doordarshan-kendra",
+      "name": "Doordarshan Kendra",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.04823,
+      "lng": 72.52451,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gandhigram",
+      "name": "Gandhigram",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.02661,
+      "lng": 72.56885,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gheekanta",
+      "name": "Gheekanta",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.02879,
+      "lng": 72.58677,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gift-city",
+      "name": "GIFT City",
+      "lines": [
+        "violet-line"
+      ],
+      "aliases": [],
+      "lat": 23.153402,
+      "lng": 72.685547,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gnlu",
+      "name": "GNLU",
+      "lines": [
+        "yellow-line",
+        "violet-line"
+      ],
+      "aliases": [],
+      "lat": 23.154515,
+      "lng": 72.647438,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gujarat-university",
+      "name": "Gujarat University",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.04493,
+      "lng": 72.54351,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gurukul-road",
+      "name": "Gurukul Road",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.04593,
+      "lng": 72.53484,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "infocity",
+      "name": "Infocity",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.192094,
+      "lng": 72.639709,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jivraj-park",
+      "name": "Jivraj Park",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.00554,
+      "lng": 72.53349,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "juna-koba",
+      "name": "Juna Koba",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.141985,
+      "lng": 72.6386,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "juna-sachivalaya",
+      "name": "Juna Sachivalaya",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.228922,
+      "lng": 72.659465,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kalupur",
+      "name": "Kalupur",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.0247,
+      "lng": 72.60314,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kankaria-east",
+      "name": "Kankaria East",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.015694,
+      "lng": 72.606534,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "koba-circle",
+      "name": "Koba Circle",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.132261,
+      "lng": 72.63104,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "koba-gam",
+      "name": "Koba Gam",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.147618,
+      "lng": 72.643884,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "koteshwar-road",
+      "name": "Koteshwar Road",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.103117,
+      "lng": 72.602134,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mahatma-mandir",
+      "name": "Mahatma Mandir",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.233902,
+      "lng": 72.633855,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "motera-stadium",
+      "name": "Motera Stadium",
+      "lines": [
+        "red-line",
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.09677,
+      "lng": 72.59671,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "narmada-canal",
+      "name": "Narmada Canal",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.125158,
+      "lng": 72.622097,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nirant-cross-roads",
+      "name": "Nirant Cross Roads",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.999899,
+      "lng": 72.658509,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "old-high-court",
+      "name": "Old High Court",
+      "lines": [
+        "blue-line",
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.03759,
+      "lng": 72.56699,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "paldi",
+      "name": "Paldi",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.01855,
+      "lng": 72.56234,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pdpu",
+      "name": "PDPU",
+      "lines": [
+        "violet-line"
+      ],
+      "aliases": [],
+      "lat": 23.154862,
+      "lng": 72.661268,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rabari-colony",
+      "name": "Rabari Colony",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.005413,
+      "lng": 72.635592,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rajiv-nagar",
+      "name": "Rajiv Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.00981,
+      "lng": 72.53674,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "randesan",
+      "name": "Randesan",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.179092,
+      "lng": 72.647272,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ranip",
+      "name": "Ranip",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.06773,
+      "lng": 72.57415,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "raysan",
+      "name": "Raysan",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.166411,
+      "lng": 72.648404,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sabarmati",
+      "name": "Sabarmati",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.06974,
+      "lng": 72.58762,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sabarmati-red-line",
+      "name": "Sabarmati (Red Line)",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.08571,
+      "lng": 72.59226,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sachivalaya",
+      "name": "Sachivalaya",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.214988,
+      "lng": 72.658731,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sector-1",
+      "name": "Sector-1",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.205314,
+      "lng": 72.643399,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sector-10a",
+      "name": "Sector-10A",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.21113,
+      "lng": 72.650959,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sector-16",
+      "name": "Sector-16",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.233904,
+      "lng": 72.650163,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sector-24",
+      "name": "Sector-24",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.238557,
+      "lng": 72.641473,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shahpur",
+      "name": "Shahpur",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.03922,
+      "lng": 72.58108,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shreyas",
+      "name": "Shreyas",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.01368,
+      "lng": 72.54922,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sp-stadium",
+      "name": "SP Stadium",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.03989,
+      "lng": 72.56164,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "tapovan-circle",
+      "name": "Tapovan Circle",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.120129,
+      "lng": 72.615797,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "thaltej",
+      "name": "Thaltej",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.04982,
+      "lng": 72.51604,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "thaltej-gam",
+      "name": "Thaltej Gam",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.050206,
+      "lng": 72.507012,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "usmanpura",
+      "name": "Usmanpura",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.04594,
+      "lng": 72.56498,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vadaj",
+      "name": "Vadaj",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.0677,
+      "lng": 72.5659,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vastral",
+      "name": "Vastral",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 23.003492,
+      "lng": 72.647694,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vastral-gam",
+      "name": "Vastral Gam",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.997131,
+      "lng": 72.667451,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vijay-nagar",
+      "name": "Vijay Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 23.05646,
+      "lng": 72.56237,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vishwakarma-college",
+      "name": "Vishwakarma College",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 23.114199,
+      "lng": 72.608386,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "vastral-gam",
+      "to": "nirant-cross-roads",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "nirant-cross-roads",
+      "to": "vastral",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "vastral",
+      "to": "rabari-colony",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "rabari-colony",
+      "to": "amraiwadi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "amraiwadi",
+      "to": "apparel-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "apparel-park",
+      "to": "kankaria-east",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kankaria-east",
+      "to": "kalupur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kalupur",
+      "to": "gheekanta",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "gheekanta",
+      "to": "shahpur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "shahpur",
+      "to": "old-high-court",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "old-high-court",
+      "to": "sp-stadium",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "sp-stadium",
+      "to": "commerce-six-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "commerce-six-road",
+      "to": "gujarat-university",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "gujarat-university",
+      "to": "gurukul-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "gurukul-road",
+      "to": "doordarshan-kendra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "doordarshan-kendra",
+      "to": "thaltej",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "thaltej",
+      "to": "thaltej-gam",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "apmc",
+      "to": "jivraj-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "jivraj-park",
+      "to": "rajiv-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "rajiv-nagar",
+      "to": "shreyas",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "shreyas",
+      "to": "paldi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "paldi",
+      "to": "gandhigram",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "gandhigram",
+      "to": "old-high-court",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "old-high-court",
+      "to": "usmanpura",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "usmanpura",
+      "to": "vijay-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "vijay-nagar",
+      "to": "vadaj",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "vadaj",
+      "to": "ranip",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "ranip",
+      "to": "sabarmati",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "sabarmati",
+      "to": "aec",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "aec",
+      "to": "sabarmati-red-line",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "sabarmati-red-line",
+      "to": "motera-stadium",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "motera-stadium",
+      "to": "koteshwar-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "koteshwar-road",
+      "to": "vishwakarma-college",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "vishwakarma-college",
+      "to": "tapovan-circle",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "tapovan-circle",
+      "to": "narmada-canal",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "narmada-canal",
+      "to": "koba-circle",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "koba-circle",
+      "to": "juna-koba",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "juna-koba",
+      "to": "koba-gam",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "koba-gam",
+      "to": "gnlu",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "gnlu",
+      "to": "raysan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "raysan",
+      "to": "randesan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "randesan",
+      "to": "dholakuva-circle",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "dholakuva-circle",
+      "to": "infocity",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "infocity",
+      "to": "sector-1",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "sector-1",
+      "to": "sector-10a",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "sector-10a",
+      "to": "sachivalaya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "sachivalaya",
+      "to": "akshardham",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "akshardham",
+      "to": "juna-sachivalaya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "juna-sachivalaya",
+      "to": "sector-16",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "sector-16",
+      "to": "sector-24",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "sector-24",
+      "to": "mahatma-mandir",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "violet-line",
+      "from": "gnlu",
+      "to": "pdpu",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "violet-line",
+      "from": "pdpu",
+      "to": "gift-city",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "old-high-court",
+      "to": "old-high-court",
+      "fromLine": "blue-line",
+      "toLine": "red-line",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "motera-stadium",
+      "to": "motera-stadium",
+      "fromLine": "red-line",
+      "toLine": "yellow-line",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "gnlu",
+      "to": "gnlu",
+      "fromLine": "yellow-line",
+      "toLine": "violet-line",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "old-high-court",
+      "lines": [
+        "blue-line",
+        "red-line"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "motera-stadium",
+      "lines": [
+        "red-line",
+        "yellow-line"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "gnlu",
+      "lines": [
+        "yellow-line",
+        "violet-line"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

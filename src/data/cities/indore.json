@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "indore",
+    "cityName": "Indore",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Madhya Pradesh Metro Rail Corporation (MPMRCL)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 16,
+    "interpolated": 0,
+    "matched": 16,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "yellow-line",
+      "name": "Yellow Line",
+      "code": "Yellow Line",
+      "color": "#F7C600",
+      "operator": "Madhya Pradesh Metro Rail Corporation (MPMRCL)",
+      "fareSystem": "mpMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "devi-ahilya-bai-holkar-terminal",
+        "maharani-lakshmi-bai-station",
+        "rani-avanti-bai-lodhi-station",
+        "rani-durgavati-station",
+        "veerangana-jhalkari-bai-station",
+        "super-corridor-2",
+        "super-corridor-1",
+        "bhawarshala-square",
+        "mr-10-road",
+        "isbt-mr-10-flyover",
+        "chandragupta-square",
+        "hira-nagar",
+        "bapat-square",
+        "meghdoot-garden",
+        "vijay-nagar-square",
+        "radisson-square"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "bapat-square",
+      "name": "Bapat Square",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.754483,
+      "lng": 75.880229,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bhawarshala-square",
+      "name": "Bhawarshala Square",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.78992,
+      "lng": 75.846155,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chandragupta-square",
+      "name": "Chandragupta Square",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.764823,
+      "lng": 75.869876,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "devi-ahilya-bai-holkar-terminal",
+      "name": "Devi Ahilya Bai Holkar Terminal",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.73897,
+      "lng": 75.797499,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hira-nagar",
+      "name": "Hira Nagar",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.759668,
+      "lng": 75.87568,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "isbt-mr-10-flyover",
+      "name": "ISBT/MR 10 Flyover",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.769524,
+      "lng": 75.864168,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "maharani-lakshmi-bai-station",
+      "name": "Maharani Lakshmi Bai Station",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.745334,
+      "lng": 75.800922,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "meghdoot-garden",
+      "name": "Meghdoot Garden",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.752683,
+      "lng": 75.888448,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mr-10-road",
+      "name": "MR 10 Road",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.782886,
+      "lng": 75.854309,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "radisson-square",
+      "name": "Radisson Square",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.747399,
+      "lng": 75.903232,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rani-avanti-bai-lodhi-station",
+      "name": "Rani Avanti Bai Lodhi Station",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.75408,
+      "lng": 75.804248,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rani-durgavati-station",
+      "name": "Rani Durgavati Station",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.763132,
+      "lng": 75.811146,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "super-corridor-1",
+      "name": "Super Corridor 1",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.786631,
+      "lng": 75.8371,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "super-corridor-2",
+      "name": "Super Corridor 2",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.778175,
+      "lng": 75.825748,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "veerangana-jhalkari-bai-station",
+      "name": "Veerangana Jhalkari Bai Station",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.771798,
+      "lng": 75.818914,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vijay-nagar-square",
+      "name": "Vijay Nagar Square",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.751327,
+      "lng": 75.894295,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "devi-ahilya-bai-holkar-terminal",
+      "to": "maharani-lakshmi-bai-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "maharani-lakshmi-bai-station",
+      "to": "rani-avanti-bai-lodhi-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "rani-avanti-bai-lodhi-station",
+      "to": "rani-durgavati-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "rani-durgavati-station",
+      "to": "veerangana-jhalkari-bai-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "veerangana-jhalkari-bai-station",
+      "to": "super-corridor-2",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "super-corridor-2",
+      "to": "super-corridor-1",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "super-corridor-1",
+      "to": "bhawarshala-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "bhawarshala-square",
+      "to": "mr-10-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "mr-10-road",
+      "to": "isbt-mr-10-flyover",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "isbt-mr-10-flyover",
+      "to": "chandragupta-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "chandragupta-square",
+      "to": "hira-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "hira-nagar",
+      "to": "bapat-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "bapat-square",
+      "to": "meghdoot-garden",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "meghdoot-garden",
+      "to": "vijay-nagar-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "vijay-nagar-square",
+      "to": "radisson-square",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

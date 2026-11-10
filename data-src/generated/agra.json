@@ -1,0 +1,51 @@
+{
+  "cityId": "agra",
+  "cityName": "Agra",
+  "lines": [
+    {
+      "wikidataId": "Q120727502",
+      "name": "Yellow Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q124759438",
+          "name": "Mankameshwar Mandir metro station",
+          "lat": 27.178096977,
+          "lng": 78.01741379
+        },
+        {
+          "id": "Q124759439",
+          "name": "Dr. Ambedkar Chowk",
+          "lat": 27.175022411,
+          "lng": 78.022080817
+        },
+        {
+          "id": "Q124759440",
+          "name": "Taj Mahal metro station",
+          "lat": 27.16832587,
+          "lng": 78.035683248
+        },
+        {
+          "id": "Q124759441",
+          "name": "Fatehabad Road metro station",
+          "lat": 27.160173693,
+          "lng": 78.042526041
+        },
+        {
+          "id": "Q124759442",
+          "name": "Basai",
+          "lat": 27.15771838,
+          "lng": 78.050628781
+        },
+        {
+          "id": "Q124759443",
+          "name": "Taj East Gate",
+          "lat": 27.158295085,
+          "lng": 78.057906485
+        }
+      ]
+    }
+  ],
+  "expectedStations": 6,
+  "importedStations": 6
+}

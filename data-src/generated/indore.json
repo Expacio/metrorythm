@@ -1,0 +1,111 @@
+{
+  "cityId": "indore",
+  "cityName": "Indore",
+  "lines": [
+    {
+      "wikidataId": "Q122898420",
+      "name": "Yellow Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q134725694",
+          "name": "Devi Ahilya Bai Holkar Terminal",
+          "lat": 22.73897,
+          "lng": 75.797499
+        },
+        {
+          "id": "Q134725695",
+          "name": "Maharani Lakshmi Bai Station",
+          "lat": 22.745334,
+          "lng": 75.800922
+        },
+        {
+          "id": "Q134725696",
+          "name": "Rani Avanti Bai Lodhi Station",
+          "lat": 22.75408,
+          "lng": 75.804248
+        },
+        {
+          "id": "Q134725697",
+          "name": "Rani Durgavati Station",
+          "lat": 22.763132,
+          "lng": 75.811146
+        },
+        {
+          "id": "Q134725698",
+          "name": "Veerangana Jhalkari Bai Station",
+          "lat": 22.771798,
+          "lng": 75.818914
+        },
+        {
+          "id": "Q134725699",
+          "name": "Super Corridor 2",
+          "lat": 22.778175,
+          "lng": 75.825748
+        },
+        {
+          "id": "Q134725700",
+          "name": "Super Corridor 1",
+          "lat": 22.786631,
+          "lng": 75.8371
+        },
+        {
+          "id": "Q134725701",
+          "name": "Bhawarshala Square",
+          "lat": 22.78992,
+          "lng": 75.846155
+        },
+        {
+          "id": "Q134725702",
+          "name": "MR 10 Road",
+          "lat": 22.782886,
+          "lng": 75.854309
+        },
+        {
+          "id": "Q134725703",
+          "name": "ISBT/MR 10 Flyover",
+          "lat": 22.769524,
+          "lng": 75.864168
+        },
+        {
+          "id": "Q134725704",
+          "name": "Chandragupta Square",
+          "lat": 22.764823,
+          "lng": 75.869876
+        },
+        {
+          "id": "Q134725705",
+          "name": "Hira Nagar",
+          "lat": 22.759668,
+          "lng": 75.87568
+        },
+        {
+          "id": "Q134725706",
+          "name": "Bapat Square",
+          "lat": 22.754483,
+          "lng": 75.880229
+        },
+        {
+          "id": "Q134725707",
+          "name": "Meghdoot Garden",
+          "lat": 22.752683,
+          "lng": 75.888448
+        },
+        {
+          "id": "Q134725708",
+          "name": "Vijay Nagar Square",
+          "lat": 22.751327,
+          "lng": 75.894295
+        },
+        {
+          "id": "Q134725709",
+          "name": "Radisson Square",
+          "lat": 22.747399,
+          "lng": 75.903232
+        }
+      ]
+    }
+  ],
+  "expectedStations": 16,
+  "importedStations": 16
+}

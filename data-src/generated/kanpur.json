@@ -1,0 +1,99 @@
+{
+  "cityId": "kanpur",
+  "cityName": "Kanpur",
+  "lines": [
+    {
+      "wikidataId": "Q110419397",
+      "name": "Orange Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q110300579",
+          "name": "IIT Kanpur metro station",
+          "lat": 26.50918,
+          "lng": 80.24823
+        },
+        {
+          "id": "Q110300581",
+          "name": "Kalyanpur metro station",
+          "lat": 26.50321,
+          "lng": 80.25264
+        },
+        {
+          "id": "Q110300582",
+          "name": "SPM Hospital metro station",
+          "lat": 26.49891,
+          "lng": 80.2589
+        },
+        {
+          "id": "Q110300583",
+          "name": "Vishwavidyalaya metro station (Kanpur)",
+          "lat": 26.4955096,
+          "lng": 80.2707374
+        },
+        {
+          "id": "Q110300584",
+          "name": "Gurudev Chauraha metro station",
+          "lat": 26.49149,
+          "lng": 80.28451
+        },
+        {
+          "id": "Q110300585",
+          "name": "Geeta Nagar metro station",
+          "lat": 26.48701,
+          "lng": 80.29216
+        },
+        {
+          "id": "Q110300586",
+          "name": "Rawatpur metro station",
+          "lat": 26.48288,
+          "lng": 80.30009
+        },
+        {
+          "id": "Q110300587",
+          "name": "LLR Hospital metro station",
+          "lat": 26.47927,
+          "lng": 80.31159
+        },
+        {
+          "id": "Q110300588",
+          "name": "Moti Jheel metro station",
+          "lat": 26.47906,
+          "lng": 80.31855
+        },
+        {
+          "id": "Q134652753",
+          "name": "Chunniganj metro station",
+          "lat": 26.477062,
+          "lng": 80.337095
+        },
+        {
+          "id": "Q134652761",
+          "name": "Naveen Market metro station",
+          "lat": 26.474096,
+          "lng": 80.345464
+        },
+        {
+          "id": "Q134652771",
+          "name": "Bada Chauraha metro station",
+          "lat": 26.472742,
+          "lng": 80.352416
+        },
+        {
+          "id": "Q134692731",
+          "name": "Nayaganj metro station",
+          "lat": 26.464164,
+          "lng": 80.359551
+        },
+        {
+          "id": "Q134692732",
+          "name": "Kanpur Central metro station",
+          "lat": 26.453887,
+          "lng": 80.351804
+        }
+      ]
+    }
+  ],
+  "expectedStations": 14,
+  "importedStations": 14
+}

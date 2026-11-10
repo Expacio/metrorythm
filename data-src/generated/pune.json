@@ -1,0 +1,196 @@
+{
+  "cityId": "pune",
+  "cityName": "Pune",
+  "lines": [
+    {
+      "wikidataId": "Q59155699",
+      "name": "Aqua Line (Pune Metro)",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q111197718",
+          "name": "Vanaz metro station",
+          "lat": 18.507161474,
+          "lng": 73.805238201
+        },
+        {
+          "id": "Q111197732",
+          "name": "Anand Nagar metro station",
+          "lat": 18.509562052,
+          "lng": 73.814041495
+        },
+        {
+          "id": "Q111197733",
+          "name": "Ideal Colony metro station",
+          "lat": 18.509040664,
+          "lng": 73.822042486
+        },
+        {
+          "id": "Q111197734",
+          "name": "Nal Stop metro station",
+          "lat": 18.507313486,
+          "lng": 73.828676243
+        },
+        {
+          "id": "Q111197735",
+          "name": "Garware College metro station",
+          "lat": 18.511990591,
+          "lng": 73.838023001
+        },
+        {
+          "id": "Q121163782",
+          "name": "Deccan Gymkhana metro station",
+          "lat": 18.516331896,
+          "lng": 73.844489149
+        },
+        {
+          "id": "Q121163222",
+          "name": "Chhatrapati Sambhaji Udyan metro station",
+          "lat": 18.520117093,
+          "lng": 73.84759485
+        },
+        {
+          "id": "Q121162817",
+          "name": "PMC Bhavan metro station",
+          "lat": 18.522745505,
+          "lng": 73.853488289
+        },
+        {
+          "id": "Q121139876",
+          "name": "District Court Pune metro station",
+          "lat": 18.526909261,
+          "lng": 73.858006202
+        },
+        {
+          "id": "Q121162379",
+          "name": "Mangalwar Peth metro station",
+          "lat": 18.530021772,
+          "lng": 73.865230753
+        },
+        {
+          "id": "Q121161986",
+          "name": "Pune Railway Station metro station",
+          "lat": 18.529688982,
+          "lng": 73.872562732
+        },
+        {
+          "id": "Q121161769",
+          "name": "Ruby Hall Clinic metro station",
+          "lat": 18.532703619,
+          "lng": 73.877844395
+        },
+        {
+          "id": "Q124762850",
+          "name": "Bund Garden metro station",
+          "lat": 18.540554327,
+          "lng": 73.883429797
+        },
+        {
+          "id": "Q124793268",
+          "name": "Yerwada metro station",
+          "lat": 18.545418708,
+          "lng": 73.88672095
+        },
+        {
+          "id": "Q124793273",
+          "name": "Kalyani Nagar metro station",
+          "lat": 18.544484285,
+          "lng": 73.905762953
+        },
+        {
+          "id": "Q124793263",
+          "name": "Ramwadi metro station",
+          "lat": 18.557231365,
+          "lng": 73.908699678
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q59155676",
+      "name": "Purple Line (Pune metro)",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q111197736",
+          "name": "PCMC Bhavan metro station",
+          "lat": 18.626932806,
+          "lng": 73.805496938
+        },
+        {
+          "id": "Q111197737",
+          "name": "Sant Tukaram Nagar metro station",
+          "lat": 18.614558579,
+          "lng": 73.815639324
+        },
+        {
+          "id": "Q111197738",
+          "name": "Nashik Phata metro station",
+          "lat": 18.607336879,
+          "lng": 73.822314299
+        },
+        {
+          "id": "Q111197739",
+          "name": "Kasarwadi metro station",
+          "lat": 18.599738467,
+          "lng": 73.827286289
+        },
+        {
+          "id": "Q111197740",
+          "name": "Phugewadi metro station",
+          "lat": 18.591146409,
+          "lng": 73.831226767
+        },
+        {
+          "id": "Q121140110",
+          "name": "Dapodi metro station",
+          "lat": 18.583772319,
+          "lng": 73.833835137
+        },
+        {
+          "id": "Q121140108",
+          "name": "Bopodi metro station",
+          "lat": 18.569728164,
+          "lng": 73.83814408
+        },
+        {
+          "id": "Q140773906",
+          "name": "Khadki metro station",
+          "lat": 18.562108,
+          "lng": 73.841531
+        },
+        {
+          "id": "Q121139922",
+          "name": "Shivaji Nagar metro station",
+          "lat": 18.532715826,
+          "lng": 73.849543888
+        },
+        {
+          "id": "Q121139876",
+          "name": "District Court Pune metro station",
+          "lat": 18.526909261,
+          "lng": 73.858006202
+        },
+        {
+          "id": "Q130381226",
+          "name": "Kasba Peth metro station",
+          "lat": 18.521221325,
+          "lng": 73.85954598
+        },
+        {
+          "id": "Q130381236",
+          "name": "Mandai metro station",
+          "lat": 18.512996757,
+          "lng": 73.856930934
+        },
+        {
+          "id": "Q130381241",
+          "name": "Swargate metro station",
+          "lat": 18.499625989,
+          "lng": 73.85774201
+        }
+      ]
+    }
+  ],
+  "expectedStations": 46,
+  "importedStations": 28
+}

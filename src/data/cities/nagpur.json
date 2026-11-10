@@ -1,0 +1,784 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "nagpur",
+    "cityName": "Nagpur",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Maharashtra Metro Rail Corporation (MahaMetro)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 37,
+    "interpolated": 0,
+    "matched": 37,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "orange-line",
+      "name": "Orange Line",
+      "code": "Orange Line",
+      "color": "#F57B20",
+      "operator": "Maharashtra Metro Rail Corporation (MahaMetro)",
+      "fareSystem": "nagpurMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "khapri",
+        "new-airport",
+        "airport-south",
+        "airport",
+        "ujjwal-nagar",
+        "jaiprakash-nagar",
+        "chhatrapati-square",
+        "ajni-square",
+        "rahate-colony",
+        "congress-nagar",
+        "sitabuldi",
+        "zero-mile",
+        "kasturchand-park",
+        "gaddi-godam-square",
+        "kadvi-square",
+        "indora-square",
+        "nari-road",
+        "automative-square"
+      ]
+    },
+    {
+      "id": "aqua-line",
+      "name": "Aqua Line",
+      "code": "Aqua Line",
+      "color": "#00B6D3",
+      "operator": "Maharashtra Metro Rail Corporation (MahaMetro)",
+      "fareSystem": "nagpurMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "prajapati-nagar",
+        "vaishnodevi-square",
+        "ambedkar-square",
+        "telephone-exchange",
+        "chitar-oli-square",
+        "agrasen-square",
+        "dosar-vaishya-square",
+        "nagpur",
+        "cotton-market",
+        "sitabuldi",
+        "jhansi-rani-square",
+        "institute-of-engineers",
+        "shankar-nagar-square",
+        "lad-college-square",
+        "dharampeth-college",
+        "subhash-nagar",
+        "rachana-ring-road-junction",
+        "vasudev-nagar",
+        "bansi-nagar",
+        "lokmanya-nagar"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "agrasen-square",
+      "name": "Agrasen Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.151011,
+      "lng": 79.102837,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "airport",
+      "name": "Airport",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.086253,
+      "lng": 79.063761,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "airport-south",
+      "name": "Airport South",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.079023,
+      "lng": 79.060487,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ajni-square",
+      "name": "Ajni Square",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.118353,
+      "lng": 79.072109,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ambedkar-square",
+      "name": "Ambedkar Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.148287,
+      "lng": 79.129422,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "automative-square",
+      "name": "Automative Square",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.185793,
+      "lng": 79.11967,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bansi-nagar",
+      "name": "Bansi Nagar",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.116364,
+      "lng": 79.012917,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chhatrapati-square",
+      "name": "Chhatrapati Square",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.109281,
+      "lng": 79.069636,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chitar-oli-square",
+      "name": "Chitar Oli Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.149583,
+      "lng": 79.110319,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "congress-nagar",
+      "name": "Congress Nagar",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.127882,
+      "lng": 79.082513,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "cotton-market",
+      "name": "Cotton Market",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.14593,
+      "lng": 79.089792,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dharampeth-college",
+      "name": "Dharampeth College",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.128664,
+      "lng": 79.045867,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dosar-vaishya-square",
+      "name": "Dosar Vaishya Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.15295,
+      "lng": 79.094864,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gaddi-godam-square",
+      "name": "Gaddi Godam Square",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.161646,
+      "lng": 79.083698,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "indora-square",
+      "name": "Indora Square",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.17359,
+      "lng": 79.100589,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "institute-of-engineers",
+      "name": "Institute of Engineers",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.138205,
+      "lng": 79.069968,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jaiprakash-nagar",
+      "name": "Jaiprakash Nagar",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.103611,
+      "lng": 79.068096,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jhansi-rani-square",
+      "name": "Jhansi Rani Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.140607,
+      "lng": 79.077605,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kadvi-square",
+      "name": "Kadvi Square",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.168665,
+      "lng": 79.092368,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kasturchand-park",
+      "name": "Kasturchand Park",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.154239,
+      "lng": 79.081405,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "khapri",
+      "name": "Khapri",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.049335,
+      "lng": 79.048068,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "lad-college-square",
+      "name": "LAD College Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.13288,
+      "lng": 79.054796,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "lokmanya-nagar",
+      "name": "Lokmanya Nagar",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.110727,
+      "lng": 79.001649,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nagpur",
+      "name": "Nagpur",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.151261,
+      "lng": 79.09037,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nari-road",
+      "name": "Nari Road",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.179524,
+      "lng": 79.10995,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "new-airport",
+      "name": "New Airport",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.066235,
+      "lng": 79.055869,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "prajapati-nagar",
+      "name": "Prajapati Nagar",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.150243,
+      "lng": 79.148862,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rachana-ring-road-junction",
+      "name": "Rachana Ring Road Junction",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.121443,
+      "lng": 79.02919,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rahate-colony",
+      "name": "Rahate Colony",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.127589,
+      "lng": 79.075698,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shankar-nagar-square",
+      "name": "Shankar Nagar Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.136124,
+      "lng": 79.061534,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sitabuldi",
+      "name": "Sitabuldi",
+      "lines": [
+        "orange-line",
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.141725,
+      "lng": 79.083708,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "subhash-nagar",
+      "name": "Subhash Nagar",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.123259,
+      "lng": 79.041995,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "telephone-exchange",
+      "name": "Telephone Exchange",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.148785,
+      "lng": 79.118138,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ujjwal-nagar",
+      "name": "Ujjwal Nagar",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.096541,
+      "lng": 79.066319,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vaishnodevi-square",
+      "name": "Vaishnodevi Square",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.14797,
+      "lng": 79.13627,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vasudev-nagar",
+      "name": "Vasudev Nagar",
+      "lines": [
+        "aqua-line"
+      ],
+      "aliases": [],
+      "lat": 21.118758,
+      "lng": 79.019454,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "zero-mile",
+      "name": "Zero Mile",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 21.146703,
+      "lng": 79.080916,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "khapri",
+      "to": "new-airport",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "new-airport",
+      "to": "airport-south",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "airport-south",
+      "to": "airport",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "airport",
+      "to": "ujjwal-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "ujjwal-nagar",
+      "to": "jaiprakash-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "jaiprakash-nagar",
+      "to": "chhatrapati-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "chhatrapati-square",
+      "to": "ajni-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "ajni-square",
+      "to": "rahate-colony",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "rahate-colony",
+      "to": "congress-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "congress-nagar",
+      "to": "sitabuldi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "sitabuldi",
+      "to": "zero-mile",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "zero-mile",
+      "to": "kasturchand-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "kasturchand-park",
+      "to": "gaddi-godam-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "gaddi-godam-square",
+      "to": "kadvi-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "kadvi-square",
+      "to": "indora-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "indora-square",
+      "to": "nari-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "nari-road",
+      "to": "automative-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "prajapati-nagar",
+      "to": "vaishnodevi-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "vaishnodevi-square",
+      "to": "ambedkar-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "ambedkar-square",
+      "to": "telephone-exchange",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "telephone-exchange",
+      "to": "chitar-oli-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "chitar-oli-square",
+      "to": "agrasen-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "agrasen-square",
+      "to": "dosar-vaishya-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "dosar-vaishya-square",
+      "to": "nagpur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "nagpur",
+      "to": "cotton-market",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "cotton-market",
+      "to": "sitabuldi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "sitabuldi",
+      "to": "jhansi-rani-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "jhansi-rani-square",
+      "to": "institute-of-engineers",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "institute-of-engineers",
+      "to": "shankar-nagar-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "shankar-nagar-square",
+      "to": "lad-college-square",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "lad-college-square",
+      "to": "dharampeth-college",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "dharampeth-college",
+      "to": "subhash-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "subhash-nagar",
+      "to": "rachana-ring-road-junction",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "rachana-ring-road-junction",
+      "to": "vasudev-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "vasudev-nagar",
+      "to": "bansi-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "aqua-line",
+      "from": "bansi-nagar",
+      "to": "lokmanya-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "sitabuldi",
+      "to": "sitabuldi",
+      "fromLine": "orange-line",
+      "toLine": "aqua-line",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "sitabuldi",
+      "lines": [
+        "orange-line",
+        "aqua-line"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

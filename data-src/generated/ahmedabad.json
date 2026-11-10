@@ -1,0 +1,378 @@
+{
+  "cityId": "ahmedabad",
+  "cityName": "Ahmedabad",
+  "lines": [
+    {
+      "wikidataId": "Q61990549",
+      "name": "Blue Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q108352732",
+          "name": "Vastral Gam",
+          "lat": 22.9971313,
+          "lng": 72.6674512
+        },
+        {
+          "id": "Q108352730",
+          "name": "Nirant Cross Roads",
+          "lat": 22.9998991,
+          "lng": 72.6585088
+        },
+        {
+          "id": "Q108352729",
+          "name": "Vastral",
+          "lat": 23.0034916,
+          "lng": 72.6476943
+        },
+        {
+          "id": "Q108352723",
+          "name": "Rabari Colony",
+          "lat": 23.005413,
+          "lng": 72.6355917
+        },
+        {
+          "id": "Q108352727",
+          "name": "Amraiwadi",
+          "lat": 23.0078125,
+          "lng": 72.6283692
+        },
+        {
+          "id": "Q108352724",
+          "name": "Apparel Park",
+          "lat": 23.0106297,
+          "lng": 72.6181865
+        },
+        {
+          "id": "Q114400460",
+          "name": "Kankaria East metro station",
+          "lat": 23.015693731,
+          "lng": 72.606534308
+        },
+        {
+          "id": "Q114400466",
+          "name": "Kalupur Railway Station metro station",
+          "lat": 23.0247,
+          "lng": 72.60314
+        },
+        {
+          "id": "Q114400475",
+          "name": "Gheekanta metro station",
+          "lat": 23.02879,
+          "lng": 72.58677
+        },
+        {
+          "id": "Q114400478",
+          "name": "Shahpur metro station",
+          "lat": 23.03922,
+          "lng": 72.58108
+        },
+        {
+          "id": "Q114400480",
+          "name": "Old High Court metro station",
+          "lat": 23.03759,
+          "lng": 72.56699
+        },
+        {
+          "id": "Q114426854",
+          "name": "SP Stadium metro station",
+          "lat": 23.03989,
+          "lng": 72.56164
+        },
+        {
+          "id": "Q114400481",
+          "name": "Commerce Six Road metro station",
+          "lat": 23.0407,
+          "lng": 72.55307
+        },
+        {
+          "id": "Q114400482",
+          "name": "Gujarat University metro station",
+          "lat": 23.04493,
+          "lng": 72.54351
+        },
+        {
+          "id": "Q114400483",
+          "name": "Gurukul Road metro station",
+          "lat": 23.04593,
+          "lng": 72.53484
+        },
+        {
+          "id": "Q114400487",
+          "name": "Doordarshan Kendra metro station",
+          "lat": 23.04823,
+          "lng": 72.52451
+        },
+        {
+          "id": "Q114400494",
+          "name": "Thaltej metro station",
+          "lat": 23.04982,
+          "lng": 72.51604
+        },
+        {
+          "id": "Q131418464",
+          "name": "Thaltej Gam metro station",
+          "lat": 23.0502062,
+          "lng": 72.5070123
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q65081142",
+      "name": "Red Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q114427226",
+          "name": "APMC",
+          "lat": 22.99781,
+          "lng": 72.53712
+        },
+        {
+          "id": "Q114427228",
+          "name": "Jivraj Park",
+          "lat": 23.00554,
+          "lng": 72.53349
+        },
+        {
+          "id": "Q114427231",
+          "name": "Rajiv Nagar",
+          "lat": 23.00981,
+          "lng": 72.53674
+        },
+        {
+          "id": "Q114427235",
+          "name": "Shreyas",
+          "lat": 23.01368,
+          "lng": 72.54922
+        },
+        {
+          "id": "Q114427230",
+          "name": "Paldi",
+          "lat": 23.01855,
+          "lng": 72.56234
+        },
+        {
+          "id": "Q114427227",
+          "name": "Gandhigram",
+          "lat": 23.02661,
+          "lng": 72.56885
+        },
+        {
+          "id": "Q114400480",
+          "name": "Old High Court metro station",
+          "lat": 23.03759,
+          "lng": 72.56699
+        },
+        {
+          "id": "Q114427236",
+          "name": "Usmanpura",
+          "lat": 23.04594,
+          "lng": 72.56498
+        },
+        {
+          "id": "Q114427238",
+          "name": "Vijay Nagar",
+          "lat": 23.05646,
+          "lng": 72.56237
+        },
+        {
+          "id": "Q114427237",
+          "name": "Vadaj",
+          "lat": 23.0677,
+          "lng": 72.5659
+        },
+        {
+          "id": "Q114427232",
+          "name": "Ranip",
+          "lat": 23.06773,
+          "lng": 72.57415
+        },
+        {
+          "id": "Q114427234",
+          "name": "Sabarmati Railway Station",
+          "lat": 23.06974,
+          "lng": 72.58762
+        },
+        {
+          "id": "Q114427225",
+          "name": "AEC",
+          "lat": 23.07509,
+          "lng": 72.59331
+        },
+        {
+          "id": "Q114427233",
+          "name": "Sabarmati",
+          "lat": 23.08571,
+          "lng": 72.59226
+        },
+        {
+          "id": "Q114427229",
+          "name": "Motera Stadium",
+          "lat": 23.09677,
+          "lng": 72.59671
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q131402105",
+      "name": "Yellow Line (Ahmedabad Metro)",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q114427229",
+          "name": "Motera Stadium",
+          "lat": 23.09677,
+          "lng": 72.59671
+        },
+        {
+          "id": "Q130354870",
+          "name": "Koteshwar Road",
+          "lat": 23.1031166,
+          "lng": 72.6021342
+        },
+        {
+          "id": "Q130354869",
+          "name": "Vishwakarma College",
+          "lat": 23.1141987,
+          "lng": 72.6083864
+        },
+        {
+          "id": "Q130354868",
+          "name": "Tapovan Circle",
+          "lat": 23.1201288,
+          "lng": 72.6157974
+        },
+        {
+          "id": "Q130354867",
+          "name": "Narmada Canal",
+          "lat": 23.125158,
+          "lng": 72.622097
+        },
+        {
+          "id": "Q130354866",
+          "name": "Koba Circle",
+          "lat": 23.1322607,
+          "lng": 72.6310404
+        },
+        {
+          "id": "Q130354865",
+          "name": "Juna Koba",
+          "lat": 23.141985,
+          "lng": 72.6386
+        },
+        {
+          "id": "Q130354864",
+          "name": "Koba Gam",
+          "lat": 23.147618,
+          "lng": 72.643884
+        },
+        {
+          "id": "Q130354863",
+          "name": "GNLU",
+          "lat": 23.154515,
+          "lng": 72.647438
+        },
+        {
+          "id": "Q130354862",
+          "name": "Raysan",
+          "lat": 23.166411,
+          "lng": 72.648404
+        },
+        {
+          "id": "Q130354861",
+          "name": "Randesan",
+          "lat": 23.179092,
+          "lng": 72.647272
+        },
+        {
+          "id": "Q130354860",
+          "name": "Dholakuva Circle",
+          "lat": 23.185921,
+          "lng": 72.643337
+        },
+        {
+          "id": "Q130354859",
+          "name": "Infocity",
+          "lat": 23.192094,
+          "lng": 72.6397093
+        },
+        {
+          "id": "Q130354858",
+          "name": "Sector-1",
+          "lat": 23.205314,
+          "lng": 72.643399
+        },
+        {
+          "id": "Q130354857",
+          "name": "Sector-10A Metro Station",
+          "lat": 23.21112983,
+          "lng": 72.65095898
+        },
+        {
+          "id": "Q130354856",
+          "name": "Sachivalaya Metro Station",
+          "lat": 23.214988361,
+          "lng": 72.658731169
+        },
+        {
+          "id": "Q130354855",
+          "name": "Akshardham",
+          "lat": 23.223656,
+          "lng": 72.664164
+        },
+        {
+          "id": "Q130354854",
+          "name": "Juna Sachivalaya",
+          "lat": 23.228922,
+          "lng": 72.659465
+        },
+        {
+          "id": "Q130354853",
+          "name": "Sector-16",
+          "lat": 23.233904,
+          "lng": 72.650163
+        },
+        {
+          "id": "Q130354852",
+          "name": "Sector-24",
+          "lat": 23.238557,
+          "lng": 72.641473
+        },
+        {
+          "id": "Q130354851",
+          "name": "Mahatma Mandir",
+          "lat": 23.233902,
+          "lng": 72.633855
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q131402172",
+      "name": "Violet Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q130354863",
+          "name": "GNLU",
+          "lat": 23.154515,
+          "lng": 72.647438
+        },
+        {
+          "id": "Q130354871",
+          "name": "PDPU",
+          "lat": 23.154862,
+          "lng": 72.661268
+        },
+        {
+          "id": "Q130354872",
+          "name": "GIFT City",
+          "lat": 23.153402,
+          "lng": 72.685547
+        }
+      ]
+    }
+  ],
+  "expectedStations": 53,
+  "importedStations": 54
+}

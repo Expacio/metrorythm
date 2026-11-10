@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "lucknow",
+    "cityName": "Lucknow",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Uttar Pradesh Metro Rail Corporation (UPMRC)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 21,
+    "interpolated": 0,
+    "matched": 21,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "red-line",
+      "name": "Red Line",
+      "code": "Red Line",
+      "color": "#E4322B",
+      "operator": "Uttar Pradesh Metro Rail Corporation (UPMRC)",
+      "fareSystem": "upMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "chaudhary-charan-singh-international-airport",
+        "amausi",
+        "transport-nagar",
+        "krishna-nagar",
+        "singaar-nagar",
+        "alambagh",
+        "alambagh-isbt",
+        "mawaiya",
+        "durgapuri",
+        "charbagh",
+        "hussain-ganj",
+        "sachivalaya",
+        "hazratganj",
+        "kd-singh-babu-stadium",
+        "lucknow-university",
+        "it-chauraha",
+        "badshahnagar",
+        "lekhraj-market",
+        "ramsagar-mishra-nagar",
+        "indira-nagar",
+        "munshi-pulia"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "alambagh",
+      "name": "Alambagh",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.813889,
+      "lng": 80.902222,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "alambagh-isbt",
+      "name": "Alambagh ISBT",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.818611,
+      "lng": 80.907222,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "amausi",
+      "name": "Amausi",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.771351,
+      "lng": 80.878665,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "badshahnagar",
+      "name": "Badshahnagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.870668,
+      "lng": 80.961045,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "charbagh",
+      "name": "Charbagh",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.832367,
+      "lng": 80.922988,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chaudhary-charan-singh-international-airport",
+      "name": "Chaudhary Charan Singh International Airport",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.766302,
+      "lng": 80.880213,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "durgapuri",
+      "name": "Durgapuri",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.831945,
+      "lng": 80.915139,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hazratganj",
+      "name": "Hazratganj",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.849715,
+      "lng": 80.941953,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hussain-ganj",
+      "name": "Hussain Ganj",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.8391,
+      "lng": 80.9345,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "indira-nagar",
+      "name": "Indira Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.872733,
+      "lng": 80.990857,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "it-chauraha",
+      "name": "IT Chauraha",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.870997,
+      "lng": 80.945497,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kd-singh-babu-stadium",
+      "name": "KD Singh Babu Stadium",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.854048,
+      "lng": 80.93676,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "krishna-nagar",
+      "name": "Krishna Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.794444,
+      "lng": 80.891667,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "lekhraj-market",
+      "name": "Lekhraj Market",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.87084,
+      "lng": 80.973605,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "lucknow-university",
+      "name": "Lucknow University",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.865501,
+      "lng": 80.939534,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mawaiya",
+      "name": "Mawaiya",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.825278,
+      "lng": 80.909722,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "munshi-pulia",
+      "name": "Munshi Pulia",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.887931,
+      "lng": 80.99583,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ramsagar-mishra-nagar",
+      "name": "Ramsagar Mishra Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.872237,
+      "lng": 80.982353,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sachivalaya",
+      "name": "Sachivalaya",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.842509,
+      "lng": 80.941497,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "singaar-nagar",
+      "name": "Singaar Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.803056,
+      "lng": 80.896111,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "transport-nagar",
+      "name": "Transport Nagar",
+      "lines": [
+        "red-line"
+      ],
+      "aliases": [],
+      "lat": 26.778056,
+      "lng": 80.882778,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "chaudhary-charan-singh-international-airport",
+      "to": "amausi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "amausi",
+      "to": "transport-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "transport-nagar",
+      "to": "krishna-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "krishna-nagar",
+      "to": "singaar-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "singaar-nagar",
+      "to": "alambagh",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "alambagh",
+      "to": "alambagh-isbt",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "alambagh-isbt",
+      "to": "mawaiya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "mawaiya",
+      "to": "durgapuri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "durgapuri",
+      "to": "charbagh",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "charbagh",
+      "to": "hussain-ganj",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "hussain-ganj",
+      "to": "sachivalaya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "sachivalaya",
+      "to": "hazratganj",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "hazratganj",
+      "to": "kd-singh-babu-stadium",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "kd-singh-babu-stadium",
+      "to": "lucknow-university",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "lucknow-university",
+      "to": "it-chauraha",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "it-chauraha",
+      "to": "badshahnagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "badshahnagar",
+      "to": "lekhraj-market",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "lekhraj-market",
+      "to": "ramsagar-mishra-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "ramsagar-mishra-nagar",
+      "to": "indira-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "red-line",
+      "from": "indira-nagar",
+      "to": "munshi-pulia",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

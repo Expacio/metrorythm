@@ -1,0 +1,141 @@
+{
+  "cityId": "lucknow",
+  "cityName": "Lucknow",
+  "lines": [
+    {
+      "wikidataId": "Q18128813",
+      "name": "Red Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q20861591",
+          "name": "Chaudhary Charan Singh International Airport metro station",
+          "lat": 26.766302,
+          "lng": 80.880213
+        },
+        {
+          "id": "Q17049249",
+          "name": "Amausi metro station",
+          "lat": 26.771351,
+          "lng": 80.8786648
+        },
+        {
+          "id": "Q17123999",
+          "name": "Transport Nagar metro station",
+          "lat": 26.778055555,
+          "lng": 80.882777777
+        },
+        {
+          "id": "Q17067907",
+          "name": "Krishna Nagar metro station",
+          "lat": 26.794444444,
+          "lng": 80.891666666
+        },
+        {
+          "id": "Q17090390",
+          "name": "Singaar Nagar metro station",
+          "lat": 26.803055555,
+          "lng": 80.896111111
+        },
+        {
+          "id": "Q17049199",
+          "name": "Alambagh metro station",
+          "lat": 26.813888888,
+          "lng": 80.902222222
+        },
+        {
+          "id": "Q18109514",
+          "name": "Alambagh ISBT metro station",
+          "lat": 26.818611111,
+          "lng": 80.907222222
+        },
+        {
+          "id": "Q17072467",
+          "name": "Mawaiya metro station",
+          "lat": 26.825277777,
+          "lng": 80.909722222
+        },
+        {
+          "id": "Q17052168",
+          "name": "Durgapuri metro station",
+          "lat": 26.8319454,
+          "lng": 80.9151395
+        },
+        {
+          "id": "Q18111047",
+          "name": "Charbagh metro station",
+          "lat": 26.832367,
+          "lng": 80.9229876
+        },
+        {
+          "id": "Q17055586",
+          "name": "Hussain Ganj metro station",
+          "lat": 26.8391004,
+          "lng": 80.9344997
+        },
+        {
+          "id": "Q17088024",
+          "name": "Sachivalaya metro station",
+          "lat": 26.8425095,
+          "lng": 80.9414975
+        },
+        {
+          "id": "Q17054729",
+          "name": "Hazratganj metro station",
+          "lat": 26.8497149,
+          "lng": 80.9419535
+        },
+        {
+          "id": "Q17064439",
+          "name": "KD Singh Babu Stadium metro station",
+          "lat": 26.8540478,
+          "lng": 80.9367601
+        },
+        {
+          "id": "Q17070265",
+          "name": "Lucknow University metro station",
+          "lat": 26.8655011,
+          "lng": 80.9395342
+        },
+        {
+          "id": "Q17058330",
+          "name": "IT Chauraha metro station",
+          "lat": 26.870997,
+          "lng": 80.9454967
+        },
+        {
+          "id": "Q17049480",
+          "name": "Badshahnagar metro station",
+          "lat": 26.8706677,
+          "lng": 80.9610451
+        },
+        {
+          "id": "Q17068737",
+          "name": "Lekhraj Market metro station",
+          "lat": 26.8708397,
+          "lng": 80.9736049
+        },
+        {
+          "id": "Q17086022",
+          "name": "Ramsagar Mishra Nagar metro station",
+          "lat": 26.872237,
+          "lng": 80.9823529
+        },
+        {
+          "id": "Q17056424",
+          "name": "Indira Nagar metro station",
+          "lat": 26.8727328,
+          "lng": 80.9908569
+        },
+        {
+          "id": "Q17075643",
+          "name": "Munshi Pulia metro station",
+          "lat": 26.8879306,
+          "lng": 80.9958297
+        }
+      ]
+    }
+  ],
+  "expectedStations": 21,
+  "importedStations": 21
+}

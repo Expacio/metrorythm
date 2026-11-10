@@ -123,6 +123,8 @@ export interface CityMeta {
   timezone: string;
   operators: string[];
   notes: string;
+  /** 'wikidata' for imported networks; absent for hand-authored ones. */
+  source?: string;
 }
 
 export interface CoordinateMeta {
@@ -139,12 +141,19 @@ export interface CoordinateMeta {
   missing: StationId[];
 }
 
+export interface Connectivity {
+  /** False when the network splits into parts no route can cross. */
+  connected: boolean;
+  components: number;
+}
+
 export interface CityDataset {
   schemaVersion: number;
   /** The date this transit data was last verified. Surfaced in the UI. */
   dataVersion: string;
   generatedAt: string;
   city: CityMeta;
+  connectivity?: Connectivity;
   coordinates: CoordinateMeta;
   fareSystems: Record<FareSystemId, FareSystem>;
   lines: Line[];

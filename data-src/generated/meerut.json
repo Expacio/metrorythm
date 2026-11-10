@@ -1,0 +1,118 @@
+{
+  "cityId": "meerut",
+  "cityName": "Meerut",
+  "lines": [
+    {
+      "wikidataId": "Q30644700",
+      "name": "Delhi–Meerut Regional Rapid Transit System",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q124749455",
+          "name": "Meerut South RRTS station",
+          "lat": 28.90388,
+          "lng": 77.63203
+        },
+        {
+          "id": "Q131374961",
+          "name": "Shatabdi Nagar RRTS station",
+          "lat": 28.94761,
+          "lng": 77.67359
+        },
+        {
+          "id": "Q138498937",
+          "name": "Begumpul RRTS station",
+          "lat": 28.99672,
+          "lng": 77.70571
+        },
+        {
+          "id": "Q138498901",
+          "name": "Modipuram RRTS station",
+          "lat": 29.072326,
+          "lng": 77.708842
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q138498887",
+      "name": "Q138498887",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q124749455",
+          "name": "Meerut South RRTS station",
+          "lat": 28.90388,
+          "lng": 77.63203
+        },
+        {
+          "id": "Q138498996",
+          "name": "Partapur metro station",
+          "lat": 28.92202,
+          "lng": 77.650573
+        },
+        {
+          "id": "Q138498995",
+          "name": "Rithani metro station",
+          "lat": 28.93205,
+          "lng": 77.66057
+        },
+        {
+          "id": "Q131374961",
+          "name": "Shatabdi Nagar RRTS station",
+          "lat": 28.94761,
+          "lng": 77.67359
+        },
+        {
+          "id": "Q138498991",
+          "name": "Brahmapuri metro station",
+          "lat": 28.960316,
+          "lng": 77.684798
+        },
+        {
+          "id": "Q136825319",
+          "name": "Meerut Central metro station",
+          "lat": 28.9728797,
+          "lng": 77.6906032
+        },
+        {
+          "id": "Q138498988",
+          "name": "Bhaisali metro station",
+          "lat": 28.9880566,
+          "lng": 77.7003443
+        },
+        {
+          "id": "Q138498937",
+          "name": "Begumpul RRTS station",
+          "lat": 28.99672,
+          "lng": 77.70571
+        },
+        {
+          "id": "Q138499043",
+          "name": "MES Colony metro station",
+          "lat": 29.015985,
+          "lng": 77.70462
+        },
+        {
+          "id": "Q138499048",
+          "name": "Daurli metro station",
+          "lat": 29.04077,
+          "lng": 77.70686
+        },
+        {
+          "id": "Q138499055",
+          "name": "Meerut North metro station",
+          "lat": 29.05343,
+          "lng": 77.70799
+        },
+        {
+          "id": "Q138498901",
+          "name": "Modipuram RRTS station",
+          "lat": 29.072326,
+          "lng": 77.708842
+        }
+      ]
+    }
+  ],
+  "expectedStations": 13,
+  "importedStations": 12
+}

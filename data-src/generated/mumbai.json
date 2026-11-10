@@ -1,0 +1,487 @@
+{
+  "cityId": "mumbai",
+  "cityName": "Mumbai",
+  "lines": [
+    {
+      "wikidataId": "Q6553099",
+      "name": "Line 1",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q16981954",
+          "name": "Ghatkopar metro station",
+          "lat": 19.08666,
+          "lng": 72.90799
+        },
+        {
+          "id": "Q18126164",
+          "name": "Jagruti Nagar metro station",
+          "lat": 19.092582,
+          "lng": 72.901866
+        },
+        {
+          "id": "Q17513235",
+          "name": "Asalpha metro station",
+          "lat": 19.092544,
+          "lng": 72.901887
+        },
+        {
+          "id": "Q18353576",
+          "name": "Saki Naka metro station",
+          "lat": 19.103528,
+          "lng": 72.887962
+        },
+        {
+          "id": "Q18127858",
+          "name": "Marol Naka metro station",
+          "lat": 19.108195,
+          "lng": 72.879536
+        },
+        {
+          "id": "Q18109449",
+          "name": "Airport Road metro station",
+          "lat": 19.110113,
+          "lng": 72.874117
+        },
+        {
+          "id": "Q17515440",
+          "name": "Chakala metro station",
+          "lat": 19.112045,
+          "lng": 72.867696
+        },
+        {
+          "id": "Q18378926",
+          "name": "Western Express Highway metro station",
+          "lat": 19.115787,
+          "lng": 72.856394
+        },
+        {
+          "id": "Q17512034",
+          "name": "Andheri metro station",
+          "lat": 19.120791,
+          "lng": 72.848132
+        },
+        {
+          "id": "Q17514369",
+          "name": "Azad Nagar metro station",
+          "lat": 19.12693,
+          "lng": 72.837655
+        },
+        {
+          "id": "Q17512769",
+          "name": "D.N. Nagar metro station",
+          "lat": 19.12829,
+          "lng": 72.83019
+        },
+        {
+          "id": "Q17264777",
+          "name": "Versova metro station",
+          "lat": 19.1303,
+          "lng": 72.8213
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q17068887",
+      "name": "Line 3",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q130461525",
+          "name": "Aarey JVLR",
+          "lat": 19.131223,
+          "lng": 72.883864
+        },
+        {
+          "id": "Q130461533",
+          "name": "SEEPZ",
+          "lat": 19.1260022,
+          "lng": 72.8737307
+        },
+        {
+          "id": "Q130461530",
+          "name": "MIDC-Andheri",
+          "lat": 19.117359,
+          "lng": 72.873613
+        },
+        {
+          "id": "Q18127858",
+          "name": "Marol Naka metro station",
+          "lat": 19.108195,
+          "lng": 72.879536
+        },
+        {
+          "id": "Q130461529",
+          "name": "CSMI-Airport - T2",
+          "lat": 19.102348,
+          "lng": 72.874439
+        },
+        {
+          "id": "Q130461531",
+          "name": "Sahar Road",
+          "lat": 19.102207,
+          "lng": 72.865201
+        },
+        {
+          "id": "Q130461528",
+          "name": "CSMI-Airport - T1",
+          "lat": 19.093903,
+          "lng": 72.853571
+        },
+        {
+          "id": "Q130461532",
+          "name": "Santacruz",
+          "lat": 19.079344,
+          "lng": 72.84707
+        },
+        {
+          "id": "Q130461526",
+          "name": "Bandra Colony",
+          "lat": 19.069967,
+          "lng": 72.849344
+        },
+        {
+          "id": "Q130461527",
+          "name": "Bandra-Kurla Complex",
+          "lat": 19.060655,
+          "lng": 72.854666
+        },
+        {
+          "id": "Q130461615",
+          "name": "Dharavi",
+          "lat": 19.0462584,
+          "lng": 72.8497423
+        },
+        {
+          "id": "Q130461616",
+          "name": "Shitladevi Temple",
+          "lat": 19.038464,
+          "lng": 72.84196
+        },
+        {
+          "id": "Q130461614",
+          "name": "Dadar",
+          "lat": 19.023619,
+          "lng": 72.839227
+        },
+        {
+          "id": "Q130461617",
+          "name": "Siddhivinayak Temple Metro Station",
+          "lat": 19.015883,
+          "lng": 72.830923
+        },
+        {
+          "id": "Q130461618",
+          "name": "Worli",
+          "lat": 19.008605,
+          "lng": 72.8192711
+        },
+        {
+          "id": "Q130461613",
+          "name": "Acharya Atrey Chowk",
+          "lat": 18.997824,
+          "lng": 72.817704
+        },
+        {
+          "id": "Q130461632",
+          "name": "Science Centre metro station",
+          "lat": 18.990921,
+          "lng": 72.821363
+        },
+        {
+          "id": "Q130461629",
+          "name": "Mahalaxmi",
+          "lat": 18.979489,
+          "lng": 72.825408
+        },
+        {
+          "id": "Q130461631",
+          "name": "Jagannath Shankar Sheth Metro metro station",
+          "lat": 18.969992,
+          "lng": 72.821189
+        },
+        {
+          "id": "Q130461624",
+          "name": "Grant Road",
+          "lat": 18.963157,
+          "lng": 72.818037
+        },
+        {
+          "id": "Q130461623",
+          "name": "Girgaon",
+          "lat": 18.952103,
+          "lng": 72.822195
+        },
+        {
+          "id": "Q130461628",
+          "name": "Kalbadevi",
+          "lat": 18.946334,
+          "lng": 72.8272
+        },
+        {
+          "id": "Q130461620",
+          "name": "Chhatrapati Shivaji Maharaj Terminus",
+          "lat": 18.940827,
+          "lng": 72.831837
+        },
+        {
+          "id": "Q130461626",
+          "name": "Hutatma Chowk",
+          "lat": 18.934182,
+          "lng": 72.83251
+        },
+        {
+          "id": "Q130461621",
+          "name": "Churchgate",
+          "lat": 18.931484,
+          "lng": 72.826948
+        },
+        {
+          "id": "Q130461633",
+          "name": "Vidhan Bhavan",
+          "lat": 18.924781,
+          "lng": 72.825486
+        },
+        {
+          "id": "Q130461622",
+          "name": "Cuffe Parade",
+          "lat": 18.913568,
+          "lng": 72.820717
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q28419528",
+      "name": "Line 2",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q116267041",
+          "name": "Andheri West",
+          "lat": 19.12914,
+          "lng": 72.83142
+        },
+        {
+          "id": "Q116267004",
+          "name": "Lower Oshiwara",
+          "lat": 19.14071,
+          "lng": 72.83162
+        },
+        {
+          "id": "Q116267003",
+          "name": "Oshiwara",
+          "lat": 19.14601,
+          "lng": 72.83396
+        },
+        {
+          "id": "Q116267002",
+          "name": "Goregaon West",
+          "lat": 19.15308,
+          "lng": 72.83578
+        },
+        {
+          "id": "Q116267001",
+          "name": "Pahadi Goregaon",
+          "lat": 19.16246,
+          "lng": 72.83489
+        },
+        {
+          "id": "Q116267000",
+          "name": "Lower Malad",
+          "lat": 19.17313,
+          "lng": 72.83642
+        },
+        {
+          "id": "Q116266999",
+          "name": "Malad West",
+          "lat": 19.1853,
+          "lng": 72.8358
+        },
+        {
+          "id": "Q116188743",
+          "name": "Valnai metro station",
+          "lat": 19.196934,
+          "lng": 72.834285
+        },
+        {
+          "id": "Q116266997",
+          "name": "Dahanukarwadi",
+          "lat": 19.20652,
+          "lng": 72.83474
+        },
+        {
+          "id": "Q116266996",
+          "name": "Kandivali West",
+          "lat": 19.21425,
+          "lng": 72.83746
+        },
+        {
+          "id": "Q116266995",
+          "name": "Pahadi Eksar",
+          "lat": 19.22282,
+          "lng": 72.84094
+        },
+        {
+          "id": "Q116266994",
+          "name": "Borivali West",
+          "lat": 19.23136,
+          "lng": 72.84086
+        },
+        {
+          "id": "Q116266993",
+          "name": "Eksar metro station",
+          "lat": 19.24039,
+          "lng": 72.84345
+        },
+        {
+          "id": "Q116266992",
+          "name": "Mandapeshwar",
+          "lat": 19.24957,
+          "lng": 72.84573
+        },
+        {
+          "id": "Q116266991",
+          "name": "Kandarpada",
+          "lat": 19.25658,
+          "lng": 72.85054
+        },
+        {
+          "id": "Q116266921",
+          "name": "Anand Nagar",
+          "lat": 19.25718,
+          "lng": 72.86633
+        },
+        {
+          "id": "Q116196854",
+          "name": "Dahisar metro station (East)",
+          "lat": 19.25171,
+          "lng": 72.86733
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q28419537",
+      "name": "Line 7",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q116271885",
+          "name": "Gundavali",
+          "lat": 19.11453,
+          "lng": 72.85518
+        },
+        {
+          "id": "Q116271884",
+          "name": "Mogra",
+          "lat": 19.12845,
+          "lng": 72.85531
+        },
+        {
+          "id": "Q116271883",
+          "name": "Jogeshwari (East)",
+          "lat": 19.14297,
+          "lng": 72.85507
+        },
+        {
+          "id": "Q116271882",
+          "name": "Goregaon East",
+          "lat": 19.1524,
+          "lng": 72.8564
+        },
+        {
+          "id": "Q116271881",
+          "name": "Aarey",
+          "lat": 19.16942,
+          "lng": 72.85876
+        },
+        {
+          "id": "Q116271880",
+          "name": "Dindoshi",
+          "lat": 19.1798,
+          "lng": 72.85824
+        },
+        {
+          "id": "Q116271879",
+          "name": "Kurar",
+          "lat": 19.1873,
+          "lng": 72.85844
+        },
+        {
+          "id": "Q116271878",
+          "name": "Akurli",
+          "lat": 19.19814,
+          "lng": 72.86057
+        },
+        {
+          "id": "Q116271877",
+          "name": "Poisar",
+          "lat": 19.20352,
+          "lng": 72.86308
+        },
+        {
+          "id": "Q116271876",
+          "name": "Magathane",
+          "lat": 19.21681,
+          "lng": 72.86689
+        },
+        {
+          "id": "Q116271875",
+          "name": "Devipada",
+          "lat": 19.22404,
+          "lng": 72.86432
+        },
+        {
+          "id": "Q116271873",
+          "name": "Rashtriya Udyan",
+          "lat": 19.23481,
+          "lng": 72.86311
+        },
+        {
+          "id": "Q116271872",
+          "name": "Ovaripada",
+          "lat": 19.24314,
+          "lng": 72.86417
+        },
+        {
+          "id": "Q116196854",
+          "name": "Dahisar metro station (East)",
+          "lat": 19.25171,
+          "lng": 72.86733
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q30602645",
+      "name": "Line 9",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q116196854",
+          "name": "Dahisar metro station (East)",
+          "lat": 19.25171,
+          "lng": 72.86733
+        },
+        {
+          "id": "Q139034594",
+          "name": "Pandurang Wadi metro station",
+          "lat": 19.259781,
+          "lng": 72.872513
+        },
+        {
+          "id": "Q139034656",
+          "name": "Miragaon metro station",
+          "lat": 19.27096,
+          "lng": 72.880608
+        },
+        {
+          "id": "Q139034676",
+          "name": "Kashigaon metro station",
+          "lat": 19.277696,
+          "lng": 72.880222
+        }
+      ]
+    }
+  ],
+  "expectedStations": 77,
+  "importedStations": 71
+}

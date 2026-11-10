@@ -4,15 +4,77 @@ A fully offline Indian metro route planner. Search by station name, airport code
 terminal or landmark; get fastest / cheapest / fewest-interchange routes computed
 with Dijkstra's algorithm over a local station graph.
 
-**Two cities ship today**, switchable in the header:
+**Every operational metro network in India**, switchable in the header —
+**19 cities, 50 lines, 820 stations**.
 
-| City | Network | Stations | Lines |
+| City | Lines | Stations | Source |
 |---|---|---|---|
-| **Delhi NCR** | Delhi Metro (Red, Yellow, Blue + Vaishali branch, Green + Kirti Nagar branch, Violet, Pink, Magenta, Grey), Airport Express, Gurugram Rapid Metro, NMRC Aqua Line | 262 | 11 |
-| **Chennai** | CMRL Blue, Green, and the Yellow Line's Poonamallee Bypass–Vadapalani section (opened 11 Oct 2026) | 51 | 3 |
+| **Delhi NCR** | 13 | 262 | hand-authored |
+| **Bengaluru** | 3 | 83 | Wikidata import |
+| **Mumbai** | 5 | 71 | Wikidata import |
+| **Hyderabad** | 3 | 57 | Wikidata import |
+| **Ahmedabad** | 4 | 54 | Wikidata import |
+| **Chennai** | 3 | 51 | hand-authored |
+| **Kolkata** | 4 | 48 | Wikidata import |
+| **Nagpur** | 2 | 37 | Wikidata import |
+| **Pune** | 2 | 28 | Wikidata import |
+| **Kochi** | 1 | 25 | Wikidata import |
+| **Lucknow** | 1 | 21 | Wikidata import |
+| **Indore** | 1 | 16 | Wikidata import |
+| **Kanpur** | 1 | 14 | Wikidata import |
+| **Meerut** | 2 | 12 | Wikidata import |
+| **Jaipur** | 1 | 11 | Wikidata import |
+| **Navi Mumbai** | 1 | 11 | Wikidata import |
+| **Bhopal** | 1 | 8 | Wikidata import |
+| **Agra** | 1 | 6 | Wikidata import |
+| **Patna** | 1 | 5 | Wikidata import |
 
-Each city has its own dataset, fare rules and engine instance; nothing is shared
-but the code.
+Delhi and Chennai are hand-authored and individually verified. The other 17 are
+imported from Wikidata with validated station ordering (see below). Each city
+has its own dataset, fare rules and engine instance; nothing is shared but code.
+
+### How the imported networks were built, and why you can trust the order
+
+Station **order** is the one thing a route planner cannot get wrong, so it is
+derived and then verified rather than taken on trust.
+
+Two approaches were tried and rejected first. Overpass was unreachable.
+Scraping Wikipedia's HTML tables was actively wrong — 26 stations for Kochi's
+25 (a header row), a *fare* table parsed as stations for Kanpur, and nothing at
+all for Bengaluru, Mumbai or Hyderabad.
+
+Wikidata is structured rather than scraped, and carries the relation that
+actually matters:
+
+| Property | Use |
+|---|---|
+| `P81` connecting line | which line a station belongs to |
+| `P197` adjacent station | **the ordering relation** — 1,885 statements |
+| `P625` coordinates | near-complete for Indian metro stations |
+| `P5817` state of use | drops the 141 under-construction/proposed stations |
+
+For each line, the adjacency statements are assembled into a graph which must
+form a **single unbroken path**: every station of degree ≤ 2, exactly two
+endpoints, one connected component covering every station. Anything else is
+**reported and dropped** — a missing line is far better than an invented order.
+
+Three independent checks back this up:
+1. **Station counts** are compared against an independently sourced per-city
+   total. Nine cities match exactly.
+2. **Geographic coherence** is asserted in the test suite: no two adjacent
+   stations on any line may be more than 12 km apart. A wrong order would
+   violate this immediately. All 19 cities pass.
+3. **Spot checks** against reality — Kochi runs Aluva→Tripunithura, Mumbai
+   Line 3 Aarey→Cuffe Parade, Kolkata Blue Kavi Subhash→Dakshineswar.
+
+**Two lines were dropped** by this process and are absent from the app:
+Pune's Pink Line and Kolkata's Purple Line, both of which have gaps in
+Wikidata's adjacency data (6 and 4 endpoints respectively).
+
+**Mumbai's network is genuinely disconnected** into 2 parts. Line 2A/7 meet
+Line 1 only by walking between differently-named stations, and no verified
+transfer data exists for that. The app says so and returns no route across the
+gap rather than inventing a connection.
 
 ---
 
@@ -204,7 +266,7 @@ src/
     fare.ts               Distance-slab fares, per operator
     search.ts             Fuzzy search / autocomplete index
     fare.ts               Per-operator, rule-based fare calculation
-    __tests__/            139 unit tests
+    __tests__/            409 unit tests
   data/
     fares/index.ts        Versioned per-operator fare configs (no routing logic)
   components/             Presentational React
@@ -272,7 +334,7 @@ contributors (CC BY-SA 4.0).
 npm test
 ```
 
-139 tests over graph construction, Dijkstra, the planner, search and the fare engine, including the six validation journeys from the brief (A–F) and:
+409 tests covering all 19 networks — graph construction, Dijkstra, the planner, search and the fare engine, including the six fare validation journeys and:
 
 - every ride edge is bidirectional and the graph is fully connected
 - journey legs are contiguous (each leg starts where the last ended)

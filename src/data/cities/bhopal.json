@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "bhopal",
+    "cityName": "Bhopal",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Madhya Pradesh Metro Rail Corporation (MPMRCL)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 8,
+    "interpolated": 0,
+    "matched": 8,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "orange-line",
+      "name": "Orange Line",
+      "code": "Orange Line",
+      "color": "#F57B20",
+      "operator": "Madhya Pradesh Metro Rail Corporation (MPMRCL)",
+      "fareSystem": "mpMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "subhash-nagar",
+        "kendriya-vidyalaya",
+        "board-office-chauraha",
+        "mp-nagar",
+        "rani-kamalapati",
+        "drm-office",
+        "alkapuri",
+        "aiims"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "aiims",
+      "name": "AIIMS",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.209914,
+      "lng": 77.456006,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "alkapuri",
+      "name": "Alkapuri",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.216485,
+      "lng": 77.451034,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "board-office-chauraha",
+      "name": "Board Office Chauraha",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.232567,
+      "lng": 77.431576,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "drm-office",
+      "name": "DRM Office",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.216168,
+      "lng": 77.443378,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kendriya-vidyalaya",
+      "name": "Kendriya Vidyalaya",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.240286,
+      "lng": 77.431608,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mp-nagar",
+      "name": "MP Nagar",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.227734,
+      "lng": 77.435162,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rani-kamalapati",
+      "name": "Rani Kamalapati",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.221271,
+      "lng": 77.43837,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "subhash-nagar",
+      "name": "Subhash Nagar",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 23.247828,
+      "lng": 77.429924,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "subhash-nagar",
+      "to": "kendriya-vidyalaya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "kendriya-vidyalaya",
+      "to": "board-office-chauraha",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "board-office-chauraha",
+      "to": "mp-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "mp-nagar",
+      "to": "rani-kamalapati",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "rani-kamalapati",
+      "to": "drm-office",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "drm-office",
+      "to": "alkapuri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "alkapuri",
+      "to": "aiims",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "jaipur",
+    "cityName": "Jaipur",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Jaipur Metro Rail Corporation (JMRC)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 11,
+    "interpolated": 0,
+    "matched": 11,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "pink-line",
+      "name": "Pink Line",
+      "code": "Pink Line",
+      "color": "#E6568E",
+      "operator": "Jaipur Metro Rail Corporation (JMRC)",
+      "fareSystem": "jaipurMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "badi-chaupar",
+        "chhoti-chaupar",
+        "chandpole",
+        "sindhi-camp",
+        "railway-station-metro-station",
+        "civil-lines",
+        "ram-nagar",
+        "shyam-nagar",
+        "vivek-vihar",
+        "new-aatish-market",
+        "mansarovar"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "badi-chaupar",
+      "name": "Badi Chaupar",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.92296,
+      "lng": 75.826814,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chandpole",
+      "name": "Chandpole",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.926389,
+      "lng": 75.8075,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chhoti-chaupar",
+      "name": "Chhoti Chaupar",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.92471,
+      "lng": 75.81845,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "civil-lines",
+      "name": "Civil Lines",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.909722,
+      "lng": 75.781389,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mansarovar",
+      "name": "Mansarovar",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.879444,
+      "lng": 75.75,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "new-aatish-market",
+      "name": "New Aatish Market",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.880278,
+      "lng": 75.764722,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "railway-station-metro-station",
+      "name": "Railway Station metro station",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.918611,
+      "lng": 75.79,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ram-nagar",
+      "name": "Ram Nagar",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.901944,
+      "lng": 75.774722,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shyam-nagar",
+      "name": "Shyam Nagar",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.896667,
+      "lng": 75.770556,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sindhi-camp",
+      "name": "Sindhi Camp",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.9225,
+      "lng": 75.799722,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vivek-vihar",
+      "name": "Vivek Vihar",
+      "lines": [
+        "pink-line"
+      ],
+      "aliases": [],
+      "lat": 26.888889,
+      "lng": 75.768611,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "badi-chaupar",
+      "to": "chhoti-chaupar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "chhoti-chaupar",
+      "to": "chandpole",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "chandpole",
+      "to": "sindhi-camp",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "sindhi-camp",
+      "to": "railway-station-metro-station",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "railway-station-metro-station",
+      "to": "civil-lines",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "civil-lines",
+      "to": "ram-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "ram-nagar",
+      "to": "shyam-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "shyam-nagar",
+      "to": "vivek-vihar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "vivek-vihar",
+      "to": "new-aatish-market",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "pink-line",
+      "from": "new-aatish-market",
+      "to": "mansarovar",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

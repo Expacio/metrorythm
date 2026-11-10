@@ -1,0 +1,342 @@
+{
+  "cityId": "kolkata",
+  "cityName": "Kolkata",
+  "lines": [
+    {
+      "wikidataId": "Q6427301",
+      "name": "Blue Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q6379216",
+          "name": "Kavi Subhash metro station",
+          "lat": 22.471944,
+          "lng": 88.398056
+        },
+        {
+          "id": "Q7461685",
+          "name": "Shahid Khudiram metro station",
+          "lat": 22.465972,
+          "lng": 88.391667
+        },
+        {
+          "id": "Q6379214",
+          "name": "Kavi Nazrul metro station",
+          "lat": 22.4642442,
+          "lng": 88.3806582
+        },
+        {
+          "id": "Q5565052",
+          "name": "Gitanjali Metro Station",
+          "lat": 22.469425,
+          "lng": 88.3699223
+        },
+        {
+          "id": "Q6785356",
+          "name": "Masterda Surya Sen metro station",
+          "lat": 22.473521,
+          "lng": 88.360871
+        },
+        {
+          "id": "Q6998636",
+          "name": "Netaji metro station",
+          "lat": 22.4809185,
+          "lng": 88.3460668
+        },
+        {
+          "id": "Q6733119",
+          "name": "Mahanayak Uttam Kumar metro station",
+          "lat": 22.494722,
+          "lng": 88.345
+        },
+        {
+          "id": "Q7278757",
+          "name": "Rabindra Sarobar metro station",
+          "lat": 22.507222,
+          "lng": 88.345556
+        },
+        {
+          "id": "Q15041932",
+          "name": "Kalighat metro station",
+          "lat": 22.516652,
+          "lng": 88.346003
+        },
+        {
+          "id": "Q6164578",
+          "name": "Jatin Das Park metro station",
+          "lat": 22.524262,
+          "lng": 88.346489
+        },
+        {
+          "id": "Q6998599",
+          "name": "Netaji Bhavan metro station",
+          "lat": 22.533333,
+          "lng": 88.346111
+        },
+        {
+          "id": "Q7278756",
+          "name": "Rabindra Sadan metro station",
+          "lat": 22.541389,
+          "lng": 88.347222
+        },
+        {
+          "id": "Q6735340",
+          "name": "Maidan metro station",
+          "lat": 22.549444,
+          "lng": 88.348889
+        },
+        {
+          "id": "Q7138060",
+          "name": "Park Street metro station",
+          "lat": 22.555,
+          "lng": 88.350278
+        },
+        {
+          "id": "Q5399030",
+          "name": "Esplanade metro station",
+          "lat": 22.564444,
+          "lng": 88.351667
+        },
+        {
+          "id": "Q5071229",
+          "name": "Chandni Chowk metro station",
+          "lat": 22.566796,
+          "lng": 88.354137
+        },
+        {
+          "id": "Q5061425",
+          "name": "Central metro station",
+          "lat": 22.572469444,
+          "lng": 88.358788888
+        },
+        {
+          "id": "Q6733523",
+          "name": "Mahatma Gandhi Road metro station",
+          "lat": 22.580858,
+          "lng": 88.361401
+        },
+        {
+          "id": "Q5564298",
+          "name": "Girish Park Metro Station",
+          "lat": 22.587143,
+          "lng": 88.363083
+        },
+        {
+          "id": "Q7499796",
+          "name": "Shobhabazar Sutanuti metro station",
+          "lat": 22.596029,
+          "lng": 88.365285
+        },
+        {
+          "id": "Q7505976",
+          "name": "Shyambazaar metro station",
+          "lat": 22.601313,
+          "lng": 88.372586
+        },
+        {
+          "id": "Q4882396",
+          "name": "Belgachia Metro Station",
+          "lat": 22.605833,
+          "lng": 88.386389
+        },
+        {
+          "id": "Q5313576",
+          "name": "Dum Dum metro station",
+          "lat": 22.621111,
+          "lng": 88.392778
+        },
+        {
+          "id": "Q14942939",
+          "name": "Noapara metro station",
+          "lat": 22.63972222,
+          "lng": 88.39388889
+        },
+        {
+          "id": "Q63092244",
+          "name": "Baranagar metro station",
+          "lat": 22.6530894,
+          "lng": 88.3806034
+        },
+        {
+          "id": "Q63092256",
+          "name": "Dakshineswar metro station",
+          "lat": 22.65411,
+          "lng": 88.363794
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q28050323",
+      "name": "Orange Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q6379216",
+          "name": "Kavi Subhash metro station",
+          "lat": 22.471944,
+          "lng": 88.398056
+        },
+        {
+          "id": "Q30632540",
+          "name": "Satyajit Ray metro station",
+          "lat": 22.484555555,
+          "lng": 88.392694444
+        },
+        {
+          "id": "Q65090385",
+          "name": "Jyotirindra Nandi metro station",
+          "lat": 22.496055555,
+          "lng": 88.398611111
+        },
+        {
+          "id": "Q30632590",
+          "name": "Kavi Sukanta metro station",
+          "lat": 22.505732,
+          "lng": 88.40102
+        },
+        {
+          "id": "Q30632588",
+          "name": "Hemanta Mukhopadhyay metro station",
+          "lat": 22.51486,
+          "lng": 88.40143
+        },
+        {
+          "id": "Q30632589",
+          "name": "VIP Bazaar metro station",
+          "lat": 22.525323,
+          "lng": 88.396219
+        },
+        {
+          "id": "Q109524252",
+          "name": "Ritwik Ghatak metro station",
+          "lat": 22.5331,
+          "lng": 88.3965
+        },
+        {
+          "id": "Q30632591",
+          "name": "Barun Sengupta metro station",
+          "lat": 22.55013056,
+          "lng": 88.40095833
+        },
+        {
+          "id": "Q109968614",
+          "name": "Beliaghata metro station",
+          "lat": 22.56183,
+          "lng": 88.40838
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q6427302",
+      "name": "Green Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q55632405",
+          "name": "Salt Lake Sector-V metro station",
+          "lat": 22.581318,
+          "lng": 88.429822
+        },
+        {
+          "id": "Q62019524",
+          "name": "Karunamoyee metro station",
+          "lat": 22.586388888,
+          "lng": 88.421388888
+        },
+        {
+          "id": "Q30632539",
+          "name": "Central Park metro station",
+          "lat": 22.5904102,
+          "lng": 88.4157304
+        },
+        {
+          "id": "Q63256235",
+          "name": "City Center metro station",
+          "lat": 22.587194444,
+          "lng": 88.408
+        },
+        {
+          "id": "Q63256245",
+          "name": "Bengal Chemical metro station",
+          "lat": 22.580055,
+          "lng": 88.401324
+        },
+        {
+          "id": "Q65090392",
+          "name": "Salt Lake Stadium metro station",
+          "lat": 22.573166666,
+          "lng": 88.403111111
+        },
+        {
+          "id": "Q30632551",
+          "name": "Phoolbagan metro station",
+          "lat": 22.5721764,
+          "lng": 88.3892775
+        },
+        {
+          "id": "Q30278708",
+          "name": "Sealdah metro station",
+          "lat": 22.5661779,
+          "lng": 88.3711629
+        },
+        {
+          "id": "Q5399030",
+          "name": "Esplanade metro station",
+          "lat": 22.564444,
+          "lng": 88.351667
+        },
+        {
+          "id": "Q30632550",
+          "name": "Mahakaran metro station",
+          "lat": 22.570922222,
+          "lng": 88.349936111
+        },
+        {
+          "id": "Q30632554",
+          "name": "Howrah metro station",
+          "lat": 22.583705,
+          "lng": 88.339697
+        },
+        {
+          "id": "Q30632544",
+          "name": "Howrah Maidan metro station",
+          "lat": 22.583377777,
+          "lng": 88.333797222
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q25587810",
+      "name": "Yellow Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q14942939",
+          "name": "Noapara metro station",
+          "lat": 22.63972222,
+          "lng": 88.39388889
+        },
+        {
+          "id": "Q31725714",
+          "name": "Dum Dum Cantonment metro station",
+          "lat": 22.638055555,
+          "lng": 88.412333333
+        },
+        {
+          "id": "Q76741320",
+          "name": "Jessore Road metro station",
+          "lat": 22.639277777,
+          "lng": 88.429666666
+        },
+        {
+          "id": "Q65090394",
+          "name": "Jai Hind metro station",
+          "lat": 22.648694444,
+          "lng": 88.437472222
+        }
+      ]
+    }
+  ],
+  "expectedStations": 58,
+  "importedStations": 48
+}

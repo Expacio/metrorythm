@@ -1,0 +1,45 @@
+{
+  "cityId": "patna",
+  "cityName": "Patna",
+  "lines": [
+    {
+      "wikidataId": "Q135419189",
+      "name": "Blue Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q124333671",
+          "name": "Patliputra Bus Terminal metro station",
+          "lat": 25.576308,
+          "lng": 85.189801
+        },
+        {
+          "id": "Q135412302",
+          "name": "Zero Mile metro station",
+          "lat": 25.5856718,
+          "lng": 85.1867518
+        },
+        {
+          "id": "Q135412342",
+          "name": "Bhootnath metro station",
+          "lat": 25.585472,
+          "lng": 85.173579
+        },
+        {
+          "id": "Q135412343",
+          "name": "Khemnichak metro station",
+          "lat": 25.584563888,
+          "lng": 85.158891666
+        },
+        {
+          "id": "Q135412326",
+          "name": "Malahi Pakri metro station",
+          "lat": 25.593827777,
+          "lng": 85.157833333
+        }
+      ]
+    }
+  ],
+  "expectedStations": 5,
+  "importedStations": 5
+}

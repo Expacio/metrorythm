@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "patna",
+    "cityName": "Patna",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Patna Metro Rail Corporation (PMRC)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 5,
+    "interpolated": 0,
+    "matched": 5,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "blue-line",
+      "name": "Blue Line",
+      "code": "Blue Line",
+      "color": "#0A6FBA",
+      "operator": "Patna Metro Rail Corporation (PMRC)",
+      "fareSystem": "patnaMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "patliputra-bus-terminal",
+        "zero-mile",
+        "bhootnath",
+        "khemnichak",
+        "malahi-pakri"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "bhootnath",
+      "name": "Bhootnath",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 25.585472,
+      "lng": 85.173579,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "khemnichak",
+      "name": "Khemnichak",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 25.584564,
+      "lng": 85.158892,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "malahi-pakri",
+      "name": "Malahi Pakri",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 25.593828,
+      "lng": 85.157833,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "patliputra-bus-terminal",
+      "name": "Patliputra Bus Terminal",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 25.576308,
+      "lng": 85.189801,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "zero-mile",
+      "name": "Zero Mile",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 25.585672,
+      "lng": 85.186752,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "patliputra-bus-terminal",
+      "to": "zero-mile",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "zero-mile",
+      "to": "bhootnath",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "bhootnath",
+      "to": "khemnichak",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "khemnichak",
+      "to": "malahi-pakri",
+      "seconds": 140
+    }
+  ],
+  "interchanges": [],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

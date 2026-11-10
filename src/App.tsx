@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ArrowUpDown, Search, Moon, Sun, History, X,
-  AlertCircle, Info, Map as MapIcon, ListOrdered, ReceiptText, CreditCard, Ticket, BadgeCheck, TriangleAlert,
+  AlertCircle, Info, Map as MapIcon, ListOrdered, ReceiptText, CreditCard, Ticket, BadgeCheck, TriangleAlert, ChevronDown,
 } from 'lucide-react';
 
 import { CITIES, getCity } from './data';
@@ -80,7 +80,21 @@ export default function App() {
     () => engineFor(cityId),
     [cityId],
   );
-  const quickPairs = QUICK_PAIRS[cityId] ?? [];
+  /** Curated pairs where we have them; otherwise the two longest lines' termini. */
+  const quickPairs = useMemo(() => {
+    const curated = QUICK_PAIRS[cityId];
+    if (curated) return curated;
+    return [...dataset.lines]
+      .sort((a, b) => b.stations.length - a.stations.length)
+      .slice(0, 3)
+      .map((l) => {
+        const from = stationsById.get(l.stations[0]);
+        const to = stationsById.get(l.stations[l.stations.length - 1]);
+        if (!from || !to) return null;
+        return { label: `${from.name} → ${to.name}`, from: from.id, to: to.id };
+      })
+      .filter((x): x is { label: string; from: string; to: string } => x !== null);
+  }, [cityId, dataset, stationsById]);
   const [farePreference, setFarePreference] = useLocalStorage<FarePreference>(
     'metrogo.farePreference',
     'token',
@@ -218,24 +232,25 @@ export default function App() {
             </div>
           </div>
 
-          {/* City switcher */}
-          <div className="ml-1 flex gap-0.5 rounded-lg bg-ink-100 p-0.5 dark:bg-ink-800">
-            {CITIES.map((c) => (
-              <button
-                key={c.city.cityId}
-                type="button"
-                onClick={() => switchCity(c.city.cityId)}
-                aria-pressed={c.city.cityId === cityId}
-                className={`rounded-md px-2.5 py-1.5 text-[12px] font-semibold transition ${
-                  c.city.cityId === cityId
-                    ? 'bg-accent text-black'
-                    : 'text-ink-600 hover:text-ink-900 dark:text-ink-300 dark:hover:text-white'
-                }`}
-              >
-                {c.city.cityName}
-              </button>
-            ))}
-          </div>
+          {/* City picker — 19 networks is too many for a button row */}
+          <label className="relative ml-1">
+            <span className="sr-only">City</span>
+            <select
+              value={cityId}
+              onChange={(e) => switchCity(e.target.value)}
+              className="appearance-none rounded-lg border border-ink-200 bg-white py-2 pl-3 pr-8 text-[13px] font-semibold text-ink-900 outline-none transition hover:border-ink-400 focus:border-accent focus:ring-4 focus:ring-accent/25 dark:border-ink-700 dark:bg-ink-800 dark:text-ink-50"
+            >
+              {CITIES.map((c) => (
+                <option key={c.city.cityId} value={c.city.cityId}>
+                  {c.city.cityName} · {c.stations.length}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              className="pointer-events-none absolute right-2.5 top-1/2 size-3.5 -translate-y-1/2 text-ink-400"
+              aria-hidden
+            />
+          </label>
 
           <div className="ml-auto flex items-center gap-2">
             <span className="hidden items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-black sm:inline-flex">
@@ -352,6 +367,18 @@ export default function App() {
             )}
 
             {/* Route options */}
+            {dataset.connectivity && !dataset.connectivity.connected && (
+              <div className="flex gap-2.5 rounded-2xl border border-ink-300 bg-accent-soft p-3.5 text-[12.5px] text-ink-900 dark:border-ink-700 dark:bg-accent/15 dark:text-accent">
+                <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden />
+                <span>
+                  This network splits into {dataset.connectivity.components} parts that our data
+                  does not connect — some lines meet only by walking between differently-named
+                  stations, which we have no verified data for. Routes between those parts will
+                  report no path rather than invent one.
+                </span>
+              </div>
+            )}
+
             {result?.error && (
               <div className="flex gap-2.5 rounded-2xl border border-ink-300 bg-accent-soft p-4 text-[13.5px] text-ink-900 dark:border-ink-700 dark:bg-accent/15 dark:text-accent">
                 <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden />

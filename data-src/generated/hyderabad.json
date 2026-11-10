@@ -1,0 +1,389 @@
+{
+  "cityId": "hyderabad",
+  "cityName": "Hyderabad",
+  "lines": [
+    {
+      "wikidataId": "Q54366530",
+      "name": "Blue Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q58814837",
+          "name": "Synchrony Raidurg metro station",
+          "lat": 17.44219,
+          "lng": 78.3772
+        },
+        {
+          "id": "Q56701859",
+          "name": "Hitec City metro station",
+          "lat": 17.44901,
+          "lng": 78.38314
+        },
+        {
+          "id": "Q83554384",
+          "name": "Durgam Cheruvu metro station",
+          "lat": 17.44293,
+          "lng": 78.38758
+        },
+        {
+          "id": "Q83637027",
+          "name": "Madhapur metro station",
+          "lat": 17.437244444,
+          "lng": 78.400483333
+        },
+        {
+          "id": "Q84028775",
+          "name": "Peddamma Gudi metro station",
+          "lat": 17.430583333,
+          "lng": 78.408555555
+        },
+        {
+          "id": "Q64038090",
+          "name": "Apollo Hospitals Jubilee Hills Check Post metro station",
+          "lat": 17.42819,
+          "lng": 78.41371
+        },
+        {
+          "id": "Q108874431",
+          "name": "Road No.5 Jubilee Hills metro station",
+          "lat": 17.43005,
+          "lng": 78.4232
+        },
+        {
+          "id": "Q85518572",
+          "name": "Yusufguda metro station",
+          "lat": 17.435096,
+          "lng": 78.4269193
+        },
+        {
+          "id": "Q63250572",
+          "name": "Taruni Madhura Nagar Metro Station",
+          "lat": 17.4369368,
+          "lng": 78.4391404
+        },
+        {
+          "id": "Q56701862",
+          "name": "Ameerpet metro station",
+          "lat": 17.4356877,
+          "lng": 78.4445936
+        },
+        {
+          "id": "Q84301996",
+          "name": "Begumpet metro station",
+          "lat": 17.4378437,
+          "lng": 78.4569386
+        },
+        {
+          "id": "Q84499965",
+          "name": "Invesco Prakash Nagar metro station",
+          "lat": 17.4448917,
+          "lng": 78.4652894
+        },
+        {
+          "id": "Q84358120",
+          "name": "Rasoolpura metro station",
+          "lat": 17.4434683,
+          "lng": 78.475936
+        },
+        {
+          "id": "Q84567224",
+          "name": "Paradise metro station",
+          "lat": 17.4435274,
+          "lng": 78.4850961
+        },
+        {
+          "id": "Q58814859",
+          "name": "Parade Ground Metro Station",
+          "lat": 17.4432371,
+          "lng": 78.4974928
+        },
+        {
+          "id": "Q58814860",
+          "name": "Secunderabad East Metro Station",
+          "lat": 17.4359612,
+          "lng": 78.505382
+        },
+        {
+          "id": "Q83788029",
+          "name": "Mettuguda metro station",
+          "lat": 17.4353176,
+          "lng": 78.5191915
+        },
+        {
+          "id": "Q56701857",
+          "name": "Tarnaka metro station",
+          "lat": 17.4282927,
+          "lng": 78.5285575
+        },
+        {
+          "id": "Q58814861",
+          "name": "Habsiguda Metro Station",
+          "lat": 17.4201961,
+          "lng": 78.5405362
+        },
+        {
+          "id": "Q83491622",
+          "name": "NGRI metro station",
+          "lat": 17.41483,
+          "lng": 78.54634
+        },
+        {
+          "id": "Q63250628",
+          "name": "Stadium Metro Station",
+          "lat": 17.4074328,
+          "lng": 78.554193
+        },
+        {
+          "id": "Q83407689",
+          "name": "Uppal metro station",
+          "lat": 17.3999688,
+          "lng": 78.5599082
+        },
+        {
+          "id": "Q83377016",
+          "name": "Nagole metro station",
+          "lat": 17.3907735,
+          "lng": 78.5586866
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q54366523",
+      "name": "Red Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q58814838",
+          "name": "Vasavi LB Nagar metro station",
+          "lat": 17.3496988,
+          "lng": 78.5479686
+        },
+        {
+          "id": "Q58814872",
+          "name": "Victoria Memorial Metro Station",
+          "lat": 17.3621032,
+          "lng": 78.5438612
+        },
+        {
+          "id": "Q81820840",
+          "name": "Chaitanyapuri metro station",
+          "lat": 17.3682882,
+          "lng": 78.5357829
+        },
+        {
+          "id": "Q81724990",
+          "name": "Dilsukhnagar metro station",
+          "lat": 17.3685387,
+          "lng": 78.5250702
+        },
+        {
+          "id": "Q81640785",
+          "name": "Musarambagh metro station",
+          "lat": 17.3712554,
+          "lng": 78.5110749
+        },
+        {
+          "id": "Q81483949",
+          "name": "New Market metro station",
+          "lat": 17.3730073,
+          "lng": 78.5021307
+        },
+        {
+          "id": "Q81406369",
+          "name": "Malakpet metro station",
+          "lat": 17.37718,
+          "lng": 78.49393
+        },
+        {
+          "id": "Q56701860",
+          "name": "MG Bus Station metro station",
+          "lat": 17.3799934,
+          "lng": 78.486129
+        },
+        {
+          "id": "Q83859784",
+          "name": "Osmania Medical College metro station",
+          "lat": 17.38207,
+          "lng": 78.4817
+        },
+        {
+          "id": "Q62860405",
+          "name": "Gandhi Bhavan Metro Station",
+          "lat": 17.3860794,
+          "lng": 78.4731023
+        },
+        {
+          "id": "Q63346685",
+          "name": "Nampally metro station",
+          "lat": 17.39222,
+          "lng": 78.47016
+        },
+        {
+          "id": "Q83718950",
+          "name": "Assembly metro station",
+          "lat": 17.398108333,
+          "lng": 78.470797222
+        },
+        {
+          "id": "Q85846368",
+          "name": "NMDC Lakdi-ka-pul metro station",
+          "lat": 17.4038078,
+          "lng": 78.4646968
+        },
+        {
+          "id": "Q83886076",
+          "name": "Khairatabad metro station",
+          "lat": 17.41162,
+          "lng": 78.46087
+        },
+        {
+          "id": "Q85770033",
+          "name": "Irrum Manzil metro station",
+          "lat": 17.42023,
+          "lng": 78.45635
+        },
+        {
+          "id": "Q58814848",
+          "name": "Punjagutta Metro Station",
+          "lat": 17.4285221,
+          "lng": 78.4512194
+        },
+        {
+          "id": "Q56701862",
+          "name": "Ameerpet metro station",
+          "lat": 17.4356877,
+          "lng": 78.4445936
+        },
+        {
+          "id": "Q83175963",
+          "name": "S.R. Nagar metro station",
+          "lat": 17.44312,
+          "lng": 78.44073
+        },
+        {
+          "id": "Q83008743",
+          "name": "ESI Hospital metro station (Hyderabad)",
+          "lat": 17.4474675,
+          "lng": 78.4372687
+        },
+        {
+          "id": "Q82698806",
+          "name": "Erragadda metro station",
+          "lat": 17.4566705,
+          "lng": 78.4329199
+        },
+        {
+          "id": "Q82532536",
+          "name": "Indian Oil Bharat Nagar metro station",
+          "lat": 17.463997,
+          "lng": 78.4278693
+        },
+        {
+          "id": "Q82256850",
+          "name": "Moosapet metro station",
+          "lat": 17.47188,
+          "lng": 78.42612
+        },
+        {
+          "id": "Q82064377",
+          "name": "Dr. B. R. Ambedkar Balanagar metro station",
+          "lat": 17.4769386,
+          "lng": 78.4178123
+        },
+        {
+          "id": "Q83283577",
+          "name": "Kukatpally metro station",
+          "lat": 17.4851155,
+          "lng": 78.409369
+        },
+        {
+          "id": "Q85773083",
+          "name": "KPHB Colony metro station",
+          "lat": 17.49378,
+          "lng": 78.401795
+        },
+        {
+          "id": "Q84250421",
+          "name": "JNTU College metro station",
+          "lat": 17.498653,
+          "lng": 78.388793
+        },
+        {
+          "id": "Q58814840",
+          "name": "Miyapur metro station",
+          "lat": 17.496526,
+          "lng": 78.3730055
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q84767109",
+      "name": "Green Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q56701860",
+          "name": "MG Bus Station metro station",
+          "lat": 17.3799934,
+          "lng": 78.486129
+        },
+        {
+          "id": "Q108874559",
+          "name": "Sultan Bazaar metro station",
+          "lat": 17.38443,
+          "lng": 78.48403
+        },
+        {
+          "id": "Q108874763",
+          "name": "Narayanaguda metro station",
+          "lat": 17.39436,
+          "lng": 78.48996
+        },
+        {
+          "id": "Q108874757",
+          "name": "Chikkadpally metro station",
+          "lat": 17.40036,
+          "lng": 78.4949
+        },
+        {
+          "id": "Q108874753",
+          "name": "RTC X Roads metro station",
+          "lat": 17.40705,
+          "lng": 78.49681
+        },
+        {
+          "id": "Q84890478",
+          "name": "Musheerabad metro station",
+          "lat": 17.4187541,
+          "lng": 78.4994144
+        },
+        {
+          "id": "Q84766563",
+          "name": "Gandhi Hospital metro station",
+          "lat": 17.425425,
+          "lng": 78.501867
+        },
+        {
+          "id": "Q108874730",
+          "name": "Secunderabad West metro station",
+          "lat": 17.4338,
+          "lng": 78.49954
+        },
+        {
+          "id": "Q58814859",
+          "name": "Parade Ground Metro Station",
+          "lat": 17.4432371,
+          "lng": 78.4974928
+        },
+        {
+          "id": "Q108874543",
+          "name": "JBS Parade Ground metro station",
+          "lat": 17.44875,
+          "lng": 78.49648
+        }
+      ]
+    }
+  ],
+  "expectedStations": 59,
+  "importedStations": 57
+}

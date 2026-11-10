@@ -1,0 +1,1059 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "kolkata",
+    "cityName": "Kolkata",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Metro Railway, Kolkata (Indian Railways)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 48,
+    "interpolated": 0,
+    "matched": 48,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "blue-line",
+      "name": "Blue Line",
+      "code": "Blue Line",
+      "color": "#0A6FBA",
+      "operator": "Metro Railway, Kolkata (Indian Railways)",
+      "fareSystem": "kolkataMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "kavi-subhash",
+        "shahid-khudiram",
+        "kavi-nazrul",
+        "gitanjali",
+        "masterda-surya-sen",
+        "netaji",
+        "mahanayak-uttam-kumar",
+        "rabindra-sarobar",
+        "kalighat",
+        "jatin-das-park",
+        "netaji-bhavan",
+        "rabindra-sadan",
+        "maidan",
+        "park-street",
+        "esplanade",
+        "chandni-chowk",
+        "central",
+        "mahatma-gandhi-road",
+        "girish-park",
+        "shobhabazar-sutanuti",
+        "shyambazaar",
+        "belgachia",
+        "dum-dum",
+        "noapara",
+        "baranagar",
+        "dakshineswar"
+      ]
+    },
+    {
+      "id": "orange-line",
+      "name": "Orange Line",
+      "code": "Orange Line",
+      "color": "#F57B20",
+      "operator": "Metro Railway, Kolkata (Indian Railways)",
+      "fareSystem": "kolkataMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "kavi-subhash",
+        "satyajit-ray",
+        "jyotirindra-nandi",
+        "kavi-sukanta",
+        "hemanta-mukhopadhyay",
+        "vip-bazaar",
+        "ritwik-ghatak",
+        "barun-sengupta",
+        "beliaghata"
+      ]
+    },
+    {
+      "id": "green-line",
+      "name": "Green Line",
+      "code": "Green Line",
+      "color": "#31A14B",
+      "operator": "Metro Railway, Kolkata (Indian Railways)",
+      "fareSystem": "kolkataMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "salt-lake-sector-v",
+        "karunamoyee",
+        "central-park",
+        "city-center",
+        "bengal-chemical",
+        "salt-lake-stadium",
+        "phoolbagan",
+        "sealdah",
+        "esplanade",
+        "mahakaran",
+        "howrah",
+        "howrah-maidan"
+      ]
+    },
+    {
+      "id": "yellow-line",
+      "name": "Yellow Line",
+      "code": "Yellow Line",
+      "color": "#F7C600",
+      "operator": "Metro Railway, Kolkata (Indian Railways)",
+      "fareSystem": "kolkataMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "noapara",
+        "dum-dum-cantonment",
+        "jessore-road",
+        "jai-hind"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "baranagar",
+      "name": "Baranagar",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.653089,
+      "lng": 88.380603,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "barun-sengupta",
+      "name": "Barun Sengupta",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.550131,
+      "lng": 88.400958,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "belgachia",
+      "name": "Belgachia",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.605833,
+      "lng": 88.386389,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "beliaghata",
+      "name": "Beliaghata",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.56183,
+      "lng": 88.40838,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bengal-chemical",
+      "name": "Bengal Chemical",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.580055,
+      "lng": 88.401324,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "central",
+      "name": "Central",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.572469,
+      "lng": 88.358789,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "central-park",
+      "name": "Central Park",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.59041,
+      "lng": 88.41573,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chandni-chowk",
+      "name": "Chandni Chowk",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.566796,
+      "lng": 88.354137,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "city-center",
+      "name": "City Center",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.587194,
+      "lng": 88.408,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dakshineswar",
+      "name": "Dakshineswar",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.65411,
+      "lng": 88.363794,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dum-dum",
+      "name": "Dum Dum",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.621111,
+      "lng": 88.392778,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dum-dum-cantonment",
+      "name": "Dum Dum Cantonment",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.638056,
+      "lng": 88.412333,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "esplanade",
+      "name": "Esplanade",
+      "lines": [
+        "blue-line",
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.564444,
+      "lng": 88.351667,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "girish-park",
+      "name": "Girish Park",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.587143,
+      "lng": 88.363083,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "gitanjali",
+      "name": "Gitanjali",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.469425,
+      "lng": 88.369922,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hemanta-mukhopadhyay",
+      "name": "Hemanta Mukhopadhyay",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.51486,
+      "lng": 88.40143,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "howrah",
+      "name": "Howrah",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.583705,
+      "lng": 88.339697,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "howrah-maidan",
+      "name": "Howrah Maidan",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.583378,
+      "lng": 88.333797,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jai-hind",
+      "name": "Jai Hind",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.648694,
+      "lng": 88.437472,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jatin-das-park",
+      "name": "Jatin Das Park",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.524262,
+      "lng": 88.346489,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jessore-road",
+      "name": "Jessore Road",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.639278,
+      "lng": 88.429667,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jyotirindra-nandi",
+      "name": "Jyotirindra Nandi",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.496056,
+      "lng": 88.398611,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kalighat",
+      "name": "Kalighat",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.516652,
+      "lng": 88.346003,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "karunamoyee",
+      "name": "Karunamoyee",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.586389,
+      "lng": 88.421389,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kavi-nazrul",
+      "name": "Kavi Nazrul",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.464244,
+      "lng": 88.380658,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kavi-subhash",
+      "name": "Kavi Subhash",
+      "lines": [
+        "blue-line",
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.471944,
+      "lng": 88.398056,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kavi-sukanta",
+      "name": "Kavi Sukanta",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.505732,
+      "lng": 88.40102,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mahakaran",
+      "name": "Mahakaran",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.570922,
+      "lng": 88.349936,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mahanayak-uttam-kumar",
+      "name": "Mahanayak Uttam Kumar",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.494722,
+      "lng": 88.345,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mahatma-gandhi-road",
+      "name": "Mahatma Gandhi Road",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.580858,
+      "lng": 88.361401,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "maidan",
+      "name": "Maidan",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.549444,
+      "lng": 88.348889,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "masterda-surya-sen",
+      "name": "Masterda Surya Sen",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.473521,
+      "lng": 88.360871,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "netaji",
+      "name": "Netaji",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.480919,
+      "lng": 88.346067,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "netaji-bhavan",
+      "name": "Netaji Bhavan",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.533333,
+      "lng": 88.346111,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "noapara",
+      "name": "Noapara",
+      "lines": [
+        "blue-line",
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 22.639722,
+      "lng": 88.393889,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "park-street",
+      "name": "Park Street",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.555,
+      "lng": 88.350278,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "phoolbagan",
+      "name": "Phoolbagan",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.572176,
+      "lng": 88.389278,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rabindra-sadan",
+      "name": "Rabindra Sadan",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.541389,
+      "lng": 88.347222,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rabindra-sarobar",
+      "name": "Rabindra Sarobar",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.507222,
+      "lng": 88.345556,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ritwik-ghatak",
+      "name": "Ritwik Ghatak",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.5331,
+      "lng": 88.3965,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "salt-lake-sector-v",
+      "name": "Salt Lake Sector-V",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.581318,
+      "lng": 88.429822,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "salt-lake-stadium",
+      "name": "Salt Lake Stadium",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.573167,
+      "lng": 88.403111,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "satyajit-ray",
+      "name": "Satyajit Ray",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.484556,
+      "lng": 88.392694,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sealdah",
+      "name": "Sealdah",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 22.566178,
+      "lng": 88.371163,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shahid-khudiram",
+      "name": "Shahid Khudiram",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.465972,
+      "lng": 88.391667,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shobhabazar-sutanuti",
+      "name": "Shobhabazar Sutanuti",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.596029,
+      "lng": 88.365285,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "shyambazaar",
+      "name": "Shyambazaar",
+      "lines": [
+        "blue-line"
+      ],
+      "aliases": [],
+      "lat": 22.601313,
+      "lng": 88.372586,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vip-bazaar",
+      "name": "VIP Bazaar",
+      "lines": [
+        "orange-line"
+      ],
+      "aliases": [],
+      "lat": 22.525323,
+      "lng": 88.396219,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kavi-subhash",
+      "to": "shahid-khudiram",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "shahid-khudiram",
+      "to": "kavi-nazrul",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kavi-nazrul",
+      "to": "gitanjali",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "gitanjali",
+      "to": "masterda-surya-sen",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "masterda-surya-sen",
+      "to": "netaji",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "netaji",
+      "to": "mahanayak-uttam-kumar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "mahanayak-uttam-kumar",
+      "to": "rabindra-sarobar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "rabindra-sarobar",
+      "to": "kalighat",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "kalighat",
+      "to": "jatin-das-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "jatin-das-park",
+      "to": "netaji-bhavan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "netaji-bhavan",
+      "to": "rabindra-sadan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "rabindra-sadan",
+      "to": "maidan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "maidan",
+      "to": "park-street",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "park-street",
+      "to": "esplanade",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "esplanade",
+      "to": "chandni-chowk",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "chandni-chowk",
+      "to": "central",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "central",
+      "to": "mahatma-gandhi-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "mahatma-gandhi-road",
+      "to": "girish-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "girish-park",
+      "to": "shobhabazar-sutanuti",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "shobhabazar-sutanuti",
+      "to": "shyambazaar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "shyambazaar",
+      "to": "belgachia",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "belgachia",
+      "to": "dum-dum",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "dum-dum",
+      "to": "noapara",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "noapara",
+      "to": "baranagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "blue-line",
+      "from": "baranagar",
+      "to": "dakshineswar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "kavi-subhash",
+      "to": "satyajit-ray",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "satyajit-ray",
+      "to": "jyotirindra-nandi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "jyotirindra-nandi",
+      "to": "kavi-sukanta",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "kavi-sukanta",
+      "to": "hemanta-mukhopadhyay",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "hemanta-mukhopadhyay",
+      "to": "vip-bazaar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "vip-bazaar",
+      "to": "ritwik-ghatak",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "ritwik-ghatak",
+      "to": "barun-sengupta",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "orange-line",
+      "from": "barun-sengupta",
+      "to": "beliaghata",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "salt-lake-sector-v",
+      "to": "karunamoyee",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "karunamoyee",
+      "to": "central-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "central-park",
+      "to": "city-center",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "city-center",
+      "to": "bengal-chemical",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "bengal-chemical",
+      "to": "salt-lake-stadium",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "salt-lake-stadium",
+      "to": "phoolbagan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "phoolbagan",
+      "to": "sealdah",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "sealdah",
+      "to": "esplanade",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "esplanade",
+      "to": "mahakaran",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "mahakaran",
+      "to": "howrah",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "howrah",
+      "to": "howrah-maidan",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "noapara",
+      "to": "dum-dum-cantonment",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "dum-dum-cantonment",
+      "to": "jessore-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "jessore-road",
+      "to": "jai-hind",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "kavi-subhash",
+      "to": "kavi-subhash",
+      "fromLine": "blue-line",
+      "toLine": "orange-line",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "esplanade",
+      "to": "esplanade",
+      "fromLine": "blue-line",
+      "toLine": "green-line",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "noapara",
+      "to": "noapara",
+      "fromLine": "blue-line",
+      "toLine": "yellow-line",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "kavi-subhash",
+      "lines": [
+        "blue-line",
+        "orange-line"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "esplanade",
+      "lines": [
+        "blue-line",
+        "green-line"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "noapara",
+      "lines": [
+        "blue-line",
+        "yellow-line"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

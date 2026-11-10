@@ -1,0 +1,1691 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-11-10",
+  "generatedAt": "2026-11-10",
+  "city": {
+    "cityId": "bengaluru",
+    "cityName": "Bengaluru",
+    "country": "India",
+    "timezone": "Asia/Kolkata",
+    "operators": [
+      "Bangalore Metro Rail Corporation (BMRCL)"
+    ],
+    "notes": "Network imported from Wikidata: station order is derived from adjacency statements and validated to form a single unbroken path per line. Under-construction stations are excluded.",
+    "source": "wikidata"
+  },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
+  "coordinates": {
+    "available": true,
+    "source": "Wikidata (P625), CC0. Imported at build time; not used at runtime.",
+    "fetchedAt": null,
+    "surveyed": 83,
+    "interpolated": 0,
+    "matched": 83,
+    "missingCount": 0,
+    "missing": []
+  },
+  "lines": [
+    {
+      "id": "purple-line",
+      "name": "Purple Line",
+      "code": "Purple Line",
+      "color": "#7B3F98",
+      "operator": "Bangalore Metro Rail Corporation (BMRCL)",
+      "fareSystem": "nammaMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "challaghatta",
+        "kengeri",
+        "kengeri-bus-terminal",
+        "pattanagere",
+        "jnanabharathi",
+        "rajarajeshwari-nagar",
+        "pantharapalya-nayandahalli",
+        "mysore-road",
+        "deepanjali-nagar",
+        "attiguppe",
+        "vijayanagar",
+        "hosahalli",
+        "magadi-road",
+        "city",
+        "majestic",
+        "sir-m-visveshwaraya",
+        "dr-b-r-ambedkar-vidhana-soudha",
+        "cubbon-park",
+        "mg-road",
+        "trinity",
+        "halasuru",
+        "indiranagar",
+        "swami-vivekananda-road",
+        "baiyappanahalli",
+        "benniganahalli",
+        "krishnarajapuram",
+        "mahadevapura",
+        "garudacharapalya",
+        "hoodi-junction",
+        "sitharama-palya",
+        "kundalahalli",
+        "nallurhalli",
+        "sri-sathya-sai-hospital",
+        "pattandur-agrahara",
+        "kadugodi-tree-park",
+        "hopefarm-channasandra",
+        "whitefield"
+      ]
+    },
+    {
+      "id": "green-line",
+      "name": "Green Line",
+      "code": "Green Line",
+      "color": "#31A14B",
+      "operator": "Bangalore Metro Rail Corporation (BMRCL)",
+      "fareSystem": "nammaMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "madavara",
+        "chikkabidarakallu",
+        "manjunathanagara",
+        "nagasandra",
+        "dasarahalli",
+        "jalahalli",
+        "peenya-industry",
+        "peenya",
+        "goraguntepalya",
+        "yeshwanthpur",
+        "sandal-soap-factory",
+        "mahalakshmi",
+        "rajajinagar",
+        "kuvempu-road",
+        "srirampura",
+        "sampige-road",
+        "majestic",
+        "chickpete",
+        "krishna-rajendra-market",
+        "national-college",
+        "lalbagh",
+        "southend-circle",
+        "jayanagar",
+        "rashtreeya-vidyalaya-road",
+        "banashankari",
+        "jayaprakash-nagar",
+        "yelachenahalli",
+        "konanakunte-cross",
+        "doddakallasandra",
+        "vajarahalli",
+        "thalaghattapura",
+        "silk-institute"
+      ]
+    },
+    {
+      "id": "yellow-line",
+      "name": "Yellow Line",
+      "code": "Yellow Line",
+      "color": "#F7C600",
+      "operator": "Bangalore Metro Rail Corporation (BMRCL)",
+      "fareSystem": "nammaMetro",
+      "avgHopSeconds": 140,
+      "isExpress": false,
+      "parentLine": null,
+      "loopsBackTo": null,
+      "stations": [
+        "rashtreeya-vidyalaya-road",
+        "ragigudda",
+        "jayadeva-hospital",
+        "btm-layout",
+        "central-silk-board",
+        "bommanahalli",
+        "hongasandra",
+        "kudlu-gate",
+        "singasandra",
+        "hosa-road",
+        "beratena-agrahara",
+        "electronic-city",
+        "konappana-agrahara",
+        "huskur-road",
+        "biocon-hebbagodi",
+        "bommasandra"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "attiguppe",
+      "name": "Attiguppe",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.961957,
+      "lng": 77.533582,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "baiyappanahalli",
+      "name": "Baiyappanahalli",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.990665,
+      "lng": 77.65259,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "banashankari",
+      "name": "Banashankari",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.915539,
+      "lng": 77.573629,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "benniganahalli",
+      "name": "Benniganahalli",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.99653,
+      "lng": 77.66846,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "beratena-agrahara",
+      "name": "Beratena Agrahara",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.86385,
+      "lng": 77.65798,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "biocon-hebbagodi",
+      "name": "Biocon Hebbagodi",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.82909,
+      "lng": 77.68133,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bommanahalli",
+      "name": "Bommanahalli",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.91066,
+      "lng": 77.62657,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "bommasandra",
+      "name": "Bommasandra",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.81933,
+      "lng": 77.68834,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "btm-layout",
+      "name": "BTM Layout",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.91656,
+      "lng": 77.60825,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "central-silk-board",
+      "name": "Central Silk Board",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.91652,
+      "lng": 77.62056,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "challaghatta",
+      "name": "Challaghatta",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.89742,
+      "lng": 77.46124,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chickpete",
+      "name": "Chickpete",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.967548,
+      "lng": 77.574798,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "chikkabidarakallu",
+      "name": "Chikkabidarakallu",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.051944,
+      "lng": 77.486389,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "city",
+      "name": "City",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.975841,
+      "lng": 77.565756,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "cubbon-park",
+      "name": "Cubbon Park",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.980901,
+      "lng": 77.597465,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dasarahalli",
+      "name": "Dasarahalli",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.043542,
+      "lng": 77.512379,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "deepanjali-nagar",
+      "name": "Deepanjali Nagar",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.952215,
+      "lng": 77.537101,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "doddakallasandra",
+      "name": "Doddakallasandra",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.884686,
+      "lng": 77.552751,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "dr-b-r-ambedkar-vidhana-soudha",
+      "name": "Dr. B. R. Ambedkar , Vidhana Soudha",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.97874,
+      "lng": 77.59164,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "electronic-city",
+      "name": "Electronic City",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.84649,
+      "lng": 77.67112,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "garudacharapalya",
+      "name": "Garudacharapalya",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.99356,
+      "lng": 77.70376,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "goraguntepalya",
+      "name": "Goraguntepalya",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.028481,
+      "lng": 77.540862,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "halasuru",
+      "name": "Halasuru",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.97566,
+      "lng": 77.62628,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hongasandra",
+      "name": "Hongasandra",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.90165,
+      "lng": 77.63208,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hoodi-junction",
+      "name": "Hoodi Junction",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.98873,
+      "lng": 77.71127,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hopefarm-channasandra",
+      "name": "Hopefarm Channasandra",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.98793,
+      "lng": 77.75409,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hosa-road",
+      "name": "Hosa Road",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.87078,
+      "lng": 77.65248,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "hosahalli",
+      "name": "Hosahalli",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.974303,
+      "lng": 77.545443,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "huskur-road",
+      "name": "Huskur Road",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.83901,
+      "lng": 77.67754,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "indiranagar",
+      "name": "Indiranagar",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.97833,
+      "lng": 77.63865,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jalahalli",
+      "name": "Jalahalli",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.039584,
+      "lng": 77.519838,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jayadeva-hospital",
+      "name": "Jayadeva Hospital",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.91673,
+      "lng": 77.60009,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jayanagar",
+      "name": "Jayanagar",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.929456,
+      "lng": 77.580287,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jayaprakash-nagar",
+      "name": "Jayaprakash Nagar",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.907423,
+      "lng": 77.573179,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "jnanabharathi",
+      "name": "Jnanabharathi",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.935556,
+      "lng": 77.512019,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kadugodi-tree-park",
+      "name": "Kadugodi Tree Park",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.98565,
+      "lng": 77.7469,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kengeri",
+      "name": "Kengeri",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.907954,
+      "lng": 77.476512,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kengeri-bus-terminal",
+      "name": "Kengeri Bus Terminal",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.914898,
+      "lng": 77.487593,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "konanakunte-cross",
+      "name": "Konanakunte Cross",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.889,
+      "lng": 77.562641,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "konappana-agrahara",
+      "name": "Konappana Agrahara",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.85648,
+      "lng": 77.66361,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "krishna-rajendra-market",
+      "name": "Krishna Rajendra Market",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.956445,
+      "lng": 77.5736,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "krishnarajapuram",
+      "name": "Krishnarajapuram",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.99999,
+      "lng": 77.67794,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kudlu-gate",
+      "name": "Kudlu Gate",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.88992,
+      "lng": 77.63929,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kundalahalli",
+      "name": "Kundalahalli",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.977461,
+      "lng": 77.715761,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "kuvempu-road",
+      "name": "Kuvempu Road",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.998502,
+      "lng": 77.556947,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "lalbagh",
+      "name": "Lalbagh",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.946287,
+      "lng": 77.580061,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "madavara",
+      "name": "Madavara",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.057421,
+      "lng": 77.472806,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "magadi-road",
+      "name": "Magadi Road",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.975658,
+      "lng": 77.555412,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mahadevapura",
+      "name": "Mahadevapura",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.99678,
+      "lng": 77.69217,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mahalakshmi",
+      "name": "Mahalakshmi",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.008337,
+      "lng": 77.548834,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "majestic",
+      "name": "Majestic",
+      "lines": [
+        "purple-line",
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.975689,
+      "lng": 77.57287,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "manjunathanagara",
+      "name": "Manjunathanagara",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.050278,
+      "lng": 77.494444,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mg-road",
+      "name": "MG Road",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.9755,
+      "lng": 77.6068,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "mysore-road",
+      "name": "Mysore Road",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.946727,
+      "lng": 77.530074,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nagasandra",
+      "name": "Nagasandra",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.048132,
+      "lng": 77.500126,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "nallurhalli",
+      "name": "Nallurhalli",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.976528,
+      "lng": 77.724763,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "national-college",
+      "name": "National College",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.950614,
+      "lng": 77.573736,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pantharapalya-nayandahalli",
+      "name": "Pantharapalya - Nayandahalli",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.94167,
+      "lng": 77.52512,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pattanagere",
+      "name": "Pattanagere",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.924415,
+      "lng": 77.498256,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "pattandur-agrahara",
+      "name": "Pattandur Agrahara",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.987613,
+      "lng": 77.738211,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "peenya",
+      "name": "Peenya",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.032987,
+      "lng": 77.533469,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "peenya-industry",
+      "name": "Peenya Industry",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.036477,
+      "lng": 77.525567,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "ragigudda",
+      "name": "Ragigudda",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.91711,
+      "lng": 77.58837,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rajajinagar",
+      "name": "Rajajinagar",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.000345,
+      "lng": 77.549748,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rajarajeshwari-nagar",
+      "name": "Rajarajeshwari Nagar",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.936727,
+      "lng": 77.519582,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "rashtreeya-vidyalaya-road",
+      "name": "Rashtreeya Vidyalaya Road",
+      "lines": [
+        "green-line",
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.921587,
+      "lng": 77.580261,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sampige-road",
+      "name": "Sampige Road",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.990545,
+      "lng": 77.570805,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sandal-soap-factory",
+      "name": "Sandal Soap Factory",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.014793,
+      "lng": 77.554021,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "silk-institute",
+      "name": "Silk Institute",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.86177,
+      "lng": 77.52999,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "singasandra",
+      "name": "Singasandra",
+      "lines": [
+        "yellow-line"
+      ],
+      "aliases": [],
+      "lat": 12.88069,
+      "lng": 77.64498,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sir-m-visveshwaraya",
+      "name": "Sir M. Visveshwaraya",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.974281,
+      "lng": 77.583946,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sitharama-palya",
+      "name": "Sitharama Palya",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.98092,
+      "lng": 77.70887,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "southend-circle",
+      "name": "Southend Circle",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.938321,
+      "lng": 77.580075,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "sri-sathya-sai-hospital",
+      "name": "Sri Sathya Sai Hospital",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.98102,
+      "lng": 77.72762,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "srirampura",
+      "name": "Srirampura",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.996526,
+      "lng": 77.563356,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "swami-vivekananda-road",
+      "name": "Swami Vivekananda Road",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.98591,
+      "lng": 77.645004,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "thalaghattapura",
+      "name": "Thalaghattapura",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.871424,
+      "lng": 77.538363,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "trinity",
+      "name": "Trinity",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.973,
+      "lng": 77.617,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vajarahalli",
+      "name": "Vajarahalli",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.877539,
+      "lng": 77.544745,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "vijayanagar",
+      "name": "Vijayanagar",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.970916,
+      "lng": 77.537402,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "whitefield",
+      "name": "Whitefield",
+      "lines": [
+        "purple-line"
+      ],
+      "aliases": [],
+      "lat": 12.99507,
+      "lng": 77.75777,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "yelachenahalli",
+      "name": "Yelachenahalli",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 12.895938,
+      "lng": 77.570169,
+      "coordSource": "surveyed"
+    },
+    {
+      "id": "yeshwanthpur",
+      "name": "Yeshwanthpur",
+      "lines": [
+        "green-line"
+      ],
+      "aliases": [],
+      "lat": 13.0232,
+      "lng": 77.5499,
+      "coordSource": "surveyed"
+    }
+  ],
+  "edges": [
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "challaghatta",
+      "to": "kengeri",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "kengeri",
+      "to": "kengeri-bus-terminal",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "kengeri-bus-terminal",
+      "to": "pattanagere",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "pattanagere",
+      "to": "jnanabharathi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "jnanabharathi",
+      "to": "rajarajeshwari-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "rajarajeshwari-nagar",
+      "to": "pantharapalya-nayandahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "pantharapalya-nayandahalli",
+      "to": "mysore-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "mysore-road",
+      "to": "deepanjali-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "deepanjali-nagar",
+      "to": "attiguppe",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "attiguppe",
+      "to": "vijayanagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "vijayanagar",
+      "to": "hosahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "hosahalli",
+      "to": "magadi-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "magadi-road",
+      "to": "city",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "city",
+      "to": "majestic",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "majestic",
+      "to": "sir-m-visveshwaraya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "sir-m-visveshwaraya",
+      "to": "dr-b-r-ambedkar-vidhana-soudha",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "dr-b-r-ambedkar-vidhana-soudha",
+      "to": "cubbon-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "cubbon-park",
+      "to": "mg-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "mg-road",
+      "to": "trinity",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "trinity",
+      "to": "halasuru",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "halasuru",
+      "to": "indiranagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "indiranagar",
+      "to": "swami-vivekananda-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "swami-vivekananda-road",
+      "to": "baiyappanahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "baiyappanahalli",
+      "to": "benniganahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "benniganahalli",
+      "to": "krishnarajapuram",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "krishnarajapuram",
+      "to": "mahadevapura",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "mahadevapura",
+      "to": "garudacharapalya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "garudacharapalya",
+      "to": "hoodi-junction",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "hoodi-junction",
+      "to": "sitharama-palya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "sitharama-palya",
+      "to": "kundalahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "kundalahalli",
+      "to": "nallurhalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "nallurhalli",
+      "to": "sri-sathya-sai-hospital",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "sri-sathya-sai-hospital",
+      "to": "pattandur-agrahara",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "pattandur-agrahara",
+      "to": "kadugodi-tree-park",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "kadugodi-tree-park",
+      "to": "hopefarm-channasandra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "purple-line",
+      "from": "hopefarm-channasandra",
+      "to": "whitefield",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "madavara",
+      "to": "chikkabidarakallu",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "chikkabidarakallu",
+      "to": "manjunathanagara",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "manjunathanagara",
+      "to": "nagasandra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "nagasandra",
+      "to": "dasarahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "dasarahalli",
+      "to": "jalahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "jalahalli",
+      "to": "peenya-industry",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "peenya-industry",
+      "to": "peenya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "peenya",
+      "to": "goraguntepalya",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "goraguntepalya",
+      "to": "yeshwanthpur",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "yeshwanthpur",
+      "to": "sandal-soap-factory",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "sandal-soap-factory",
+      "to": "mahalakshmi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "mahalakshmi",
+      "to": "rajajinagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "rajajinagar",
+      "to": "kuvempu-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "kuvempu-road",
+      "to": "srirampura",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "srirampura",
+      "to": "sampige-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "sampige-road",
+      "to": "majestic",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "majestic",
+      "to": "chickpete",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "chickpete",
+      "to": "krishna-rajendra-market",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "krishna-rajendra-market",
+      "to": "national-college",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "national-college",
+      "to": "lalbagh",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "lalbagh",
+      "to": "southend-circle",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "southend-circle",
+      "to": "jayanagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "jayanagar",
+      "to": "rashtreeya-vidyalaya-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "rashtreeya-vidyalaya-road",
+      "to": "banashankari",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "banashankari",
+      "to": "jayaprakash-nagar",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "jayaprakash-nagar",
+      "to": "yelachenahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "yelachenahalli",
+      "to": "konanakunte-cross",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "konanakunte-cross",
+      "to": "doddakallasandra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "doddakallasandra",
+      "to": "vajarahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "vajarahalli",
+      "to": "thalaghattapura",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "green-line",
+      "from": "thalaghattapura",
+      "to": "silk-institute",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "rashtreeya-vidyalaya-road",
+      "to": "ragigudda",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "ragigudda",
+      "to": "jayadeva-hospital",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "jayadeva-hospital",
+      "to": "btm-layout",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "btm-layout",
+      "to": "central-silk-board",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "central-silk-board",
+      "to": "bommanahalli",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "bommanahalli",
+      "to": "hongasandra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "hongasandra",
+      "to": "kudlu-gate",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "kudlu-gate",
+      "to": "singasandra",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "singasandra",
+      "to": "hosa-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "hosa-road",
+      "to": "beratena-agrahara",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "beratena-agrahara",
+      "to": "electronic-city",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "electronic-city",
+      "to": "konappana-agrahara",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "konappana-agrahara",
+      "to": "huskur-road",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "huskur-road",
+      "to": "biocon-hebbagodi",
+      "seconds": 140
+    },
+    {
+      "kind": "ride",
+      "line": "yellow-line",
+      "from": "biocon-hebbagodi",
+      "to": "bommasandra",
+      "seconds": 140
+    },
+    {
+      "kind": "interchange",
+      "from": "majestic",
+      "to": "majestic",
+      "fromLine": "purple-line",
+      "toLine": "green-line",
+      "seconds": 180,
+      "paidArea": true
+    },
+    {
+      "kind": "interchange",
+      "from": "rashtreeya-vidyalaya-road",
+      "to": "rashtreeya-vidyalaya-road",
+      "fromLine": "green-line",
+      "toLine": "yellow-line",
+      "seconds": 180,
+      "paidArea": true
+    }
+  ],
+  "interchanges": [
+    {
+      "station": "majestic",
+      "lines": [
+        "purple-line",
+        "green-line"
+      ],
+      "walkSeconds": 180
+    },
+    {
+      "station": "rashtreeya-vidyalaya-road",
+      "lines": [
+        "green-line",
+        "yellow-line"
+      ],
+      "walkSeconds": 180
+    }
+  ],
+  "transfers": [],
+  "airports": [],
+  "landmarks": []
+}

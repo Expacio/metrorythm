@@ -1,0 +1,81 @@
+{
+  "cityId": "jaipur",
+  "cityName": "Jaipur",
+  "lines": [
+    {
+      "wikidataId": "Q17053988",
+      "name": "Pink Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q20311991",
+          "name": "Badi Chaupar",
+          "lat": 26.92296,
+          "lng": 75.826814
+        },
+        {
+          "id": "Q20717371",
+          "name": "Chhoti Chaupar metro station",
+          "lat": 26.92471,
+          "lng": 75.81845
+        },
+        {
+          "id": "Q28180449",
+          "name": "Chandpole metro station",
+          "lat": 26.926388888,
+          "lng": 75.8075
+        },
+        {
+          "id": "Q28180440",
+          "name": "Sindhi Camp metro station",
+          "lat": 26.9225,
+          "lng": 75.799722222
+        },
+        {
+          "id": "Q28180437",
+          "name": "Railway Station metro station",
+          "lat": 26.918611111,
+          "lng": 75.79
+        },
+        {
+          "id": "Q28180430",
+          "name": "Civil Lines metro station",
+          "lat": 26.909722222,
+          "lng": 75.781388888
+        },
+        {
+          "id": "Q28180425",
+          "name": "Ram Nagar metro station",
+          "lat": 26.901944444,
+          "lng": 75.774722222
+        },
+        {
+          "id": "Q28180421",
+          "name": "Shyam Nagar metro station",
+          "lat": 26.896666666,
+          "lng": 75.770555555
+        },
+        {
+          "id": "Q28180413",
+          "name": "Vivek Vihar metro station",
+          "lat": 26.888888888,
+          "lng": 75.768611111
+        },
+        {
+          "id": "Q28180408",
+          "name": "New Aatish Market metro station",
+          "lat": 26.880277777,
+          "lng": 75.764722222
+        },
+        {
+          "id": "Q28180399",
+          "name": "Mansarovar metro station",
+          "lat": 26.879444444,
+          "lng": 75.75
+        }
+      ]
+    }
+  ],
+  "expectedStations": 11,
+  "importedStations": 11
+}

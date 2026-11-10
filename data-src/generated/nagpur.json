@@ -1,0 +1,250 @@
+{
+  "cityId": "nagpur",
+  "cityName": "Nagpur",
+  "lines": [
+    {
+      "wikidataId": "Q61996404",
+      "name": "Orange Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q55074918",
+          "name": "Khapri metro station",
+          "lat": 21.049335,
+          "lng": 79.048068
+        },
+        {
+          "id": "Q55074904",
+          "name": "New Airport metro station",
+          "lat": 21.066235,
+          "lng": 79.0558687
+        },
+        {
+          "id": "Q61367840",
+          "name": "Airport South metro station",
+          "lat": 21.079023,
+          "lng": 79.060487
+        },
+        {
+          "id": "Q61367834",
+          "name": "Airport metro station",
+          "lat": 21.086253,
+          "lng": 79.063761
+        },
+        {
+          "id": "Q61367824",
+          "name": "Ujjwal Nagar metro station",
+          "lat": 21.096541,
+          "lng": 79.066319
+        },
+        {
+          "id": "Q61367813",
+          "name": "Jaiprakash Nagar metro station",
+          "lat": 21.103611,
+          "lng": 79.068096
+        },
+        {
+          "id": "Q61367810",
+          "name": "Chhatrapati Square metro station",
+          "lat": 21.109281,
+          "lng": 79.069636
+        },
+        {
+          "id": "Q61367800",
+          "name": "Ajni Square metro station",
+          "lat": 21.118353,
+          "lng": 79.072109
+        },
+        {
+          "id": "Q61367795",
+          "name": "Rahate Colony",
+          "lat": 21.127589,
+          "lng": 79.075698
+        },
+        {
+          "id": "Q61367784",
+          "name": "Congress Nagar",
+          "lat": 21.127882,
+          "lng": 79.082513
+        },
+        {
+          "id": "Q59155303",
+          "name": "Sitabuldi metro station",
+          "lat": 21.141725,
+          "lng": 79.083708
+        },
+        {
+          "id": "Q61367770",
+          "name": "Zero Mile metro station",
+          "lat": 21.146703,
+          "lng": 79.080916
+        },
+        {
+          "id": "Q61367761",
+          "name": "Kasturchand Park",
+          "lat": 21.154239,
+          "lng": 79.081405
+        },
+        {
+          "id": "Q61367753",
+          "name": "Gaddi Godam Square",
+          "lat": 21.161646,
+          "lng": 79.083698
+        },
+        {
+          "id": "Q61367720",
+          "name": "Kadvi Square",
+          "lat": 21.168665,
+          "lng": 79.092368
+        },
+        {
+          "id": "Q61367714",
+          "name": "Indora Square",
+          "lat": 21.17359,
+          "lng": 79.100589
+        },
+        {
+          "id": "Q61367688",
+          "name": "Nari Road",
+          "lat": 21.179524,
+          "lng": 79.10995
+        },
+        {
+          "id": "Q61367677",
+          "name": "Automative Square",
+          "lat": 21.185793,
+          "lng": 79.11967
+        }
+      ]
+    },
+    {
+      "wikidataId": "Q62051025",
+      "name": "Aqua Line",
+      "loop": false,
+      "stations": [
+        {
+          "id": "Q61367864",
+          "name": "Prajapati Nagar",
+          "lat": 21.150243,
+          "lng": 79.148862
+        },
+        {
+          "id": "Q61367872",
+          "name": "Vaishnodevi Square",
+          "lat": 21.14797,
+          "lng": 79.13627
+        },
+        {
+          "id": "Q61070914",
+          "name": "Ambedkar Square",
+          "lat": 21.148287,
+          "lng": 79.129422
+        },
+        {
+          "id": "Q61367880",
+          "name": "Telephone Exchange",
+          "lat": 21.148785,
+          "lng": 79.118138
+        },
+        {
+          "id": "Q61367888",
+          "name": "Chitar Oli Square",
+          "lat": 21.149583,
+          "lng": 79.110319
+        },
+        {
+          "id": "Q61367893",
+          "name": "Agrasen Square",
+          "lat": 21.151011,
+          "lng": 79.102837
+        },
+        {
+          "id": "Q61367905",
+          "name": "Dosar Vaishya Square",
+          "lat": 21.15295,
+          "lng": 79.094864
+        },
+        {
+          "id": "Q61367918",
+          "name": "Nagpur Railway Station",
+          "lat": 21.151261,
+          "lng": 79.09037
+        },
+        {
+          "id": "Q61367911",
+          "name": "Cotton Market",
+          "lat": 21.14593,
+          "lng": 79.089792
+        },
+        {
+          "id": "Q59155303",
+          "name": "Sitabuldi metro station",
+          "lat": 21.141725,
+          "lng": 79.083708
+        },
+        {
+          "id": "Q61367928",
+          "name": "Jhansi Rani Square",
+          "lat": 21.140607,
+          "lng": 79.077605
+        },
+        {
+          "id": "Q61367931",
+          "name": "Institute of Engineers",
+          "lat": 21.138205,
+          "lng": 79.069968
+        },
+        {
+          "id": "Q61367945",
+          "name": "Shankar Nagar Square",
+          "lat": 21.136124,
+          "lng": 79.061534
+        },
+        {
+          "id": "Q61367950",
+          "name": "LAD College Square",
+          "lat": 21.13288,
+          "lng": 79.054796
+        },
+        {
+          "id": "Q61367956",
+          "name": "Dharampeth College metro station",
+          "lat": 21.128664,
+          "lng": 79.045867
+        },
+        {
+          "id": "Q61367967",
+          "name": "Subhash Nagar",
+          "lat": 21.123259,
+          "lng": 79.041995
+        },
+        {
+          "id": "Q61367971",
+          "name": "Rachana Ring Road Junction",
+          "lat": 21.121443,
+          "lng": 79.02919
+        },
+        {
+          "id": "Q61367984",
+          "name": "Vasudev Nagar",
+          "lat": 21.118758,
+          "lng": 79.019454
+        },
+        {
+          "id": "Q61367989",
+          "name": "Bansi Nagar",
+          "lat": 21.116364,
+          "lng": 79.012917
+        },
+        {
+          "id": "Q61367994",
+          "name": "Lokmanya Nagar metro station",
+          "lat": 21.110727,
+          "lng": 79.001649
+        }
+      ]
+    }
+  ],
+  "expectedStations": 37,
+  "importedStations": 37
+}

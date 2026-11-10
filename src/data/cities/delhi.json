@@ -13,6 +13,10 @@
     ],
     "notes": "Covers the Delhi Metro network (Phases I–III incl. operational Phase III/IV extensions), the Airport Express line, the Gurugram Rapid Metro, and the NMRC Aqua Line. Under-construction corridors are not included."
   },
+  "connectivity": {
+    "connected": true,
+    "components": 1
+  },
   "coordinates": {
     "available": true,
     "source": "Wikipedia (MediaWiki API) article coordinates, CC BY-SA. Fetched once at build time; not used at runtime.",
