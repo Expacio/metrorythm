@@ -209,12 +209,107 @@ export function MetroMap({ dataset, journey, highlight, onSelectStation }: Props
     return { x: ((clientX - r.left) / r.width) * WIDTH, y: ((clientY - r.top) / r.height) * HEIGHT };
   };
 
-  const onPointerDown = (e: React.PointerEvent) => {
-    const p = toSvg(e.clientX, e.clientY);
-    drag.current = { x: p.x, y: p.y, px: pan.x, py: pan.y, moved: false };
-    (e.currentTarget as Element).setPointerCapture?.(e.pointerId);
+  /**
+   * Current zoom/pan mirrored into a ref. The wheel listener is registered
+   * once, and the gesture handlers start from whatever the view is *now*, so
+   * both need a value that is not pinned to the render they were created in.
+   */
+  const view = useRef({ zoom, pan });
+  view.current = { zoom, pan };
+
+  /**
+   * Touch gestures.
+   *
+   * The SVG sets `touch-action: none`, which turns off the browser's own pinch
+   * and pan over the map — necessary, because otherwise a drag would scroll the
+   * page instead. That means both gestures have to be implemented here, and
+   * until now only single-finger panning was: a second finger simply overwrote
+   * the drag origin, so pinching yanked the map around instead of zooming.
+   *
+   * Every active pointer is tracked, so one finger pans and two pinch.
+   */
+  const pointers = useRef(new Map<number, Pt>());
+  const pinch = useRef<{
+    startDistance: number;
+    startZoom: number;
+    startPan: Pt;
+    /** Midpoint at gesture start, in SVG units — the point we zoom about. */
+    startMid: Pt;
+  } | null>(null);
+
+  /**
+   * Pointer capture keeps a finger bound to the map once it has started a
+   * gesture, even if it strays outside. It is an optimisation, not a
+   * requirement, and it throws if the browser has already let the pointer go —
+   * so a failure here must never stop the gesture itself being set up.
+   */
+  const capture = (el: Element, id: number, release = false) => {
+    try {
+      if (release) el.releasePointerCapture?.(id);
+      else el.setPointerCapture?.(id);
+    } catch {
+      /* pointer already gone — the gesture still works without capture */
+    }
   };
+
+  const activePoints = () => [...pointers.current.values()];
+  const distanceBetween = (a: Pt, b: Pt) => Math.hypot(a.x - b.x, a.y - b.y);
+  const midpointOf = (a: Pt, b: Pt) => ({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+
+  /** Begin (or re-begin) a one-finger pan from wherever that finger is now. */
+  const startDrag = (client: Pt) => {
+    const p = toSvg(client.x, client.y);
+    drag.current = { x: p.x, y: p.y, px: view.current.pan.x, py: view.current.pan.y, moved: false };
+  };
+
+  const startPinch = ([a, b]: Pt[]) => {
+    const mid = midpointOf(a, b);
+    pinch.current = {
+      startDistance: Math.max(1, distanceBetween(a, b)),
+      startZoom: view.current.zoom,
+      startPan: view.current.pan,
+      startMid: toSvg(mid.x, mid.y),
+    };
+    // A pinch is not a pan; drop the single-finger state so they cannot fight.
+    drag.current = null;
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    capture(e.currentTarget as Element, e.pointerId);
+
+    const points = activePoints();
+    if (points.length >= 2) startPinch(points);
+    else startDrag({ x: e.clientX, y: e.clientY });
+  };
+
   const onPointerMove = (e: React.PointerEvent) => {
+    if (!pointers.current.has(e.pointerId)) return;
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    const points = activePoints();
+
+    if (points.length >= 2 && pinch.current) {
+      const { startDistance, startZoom, startPan, startMid } = pinch.current;
+      const [a, b] = points;
+      const next = Math.min(
+        MAX_ZOOM,
+        Math.max(MIN_ZOOM, startZoom * (distanceBetween(a, b) / startDistance)),
+      );
+
+      // Hold the point between the fingers still while the scale changes, then
+      // follow the fingers if they also move, so pinch and two-finger drag work
+      // as one gesture.
+      const k = 1 / startZoom - 1 / next;
+      const mid = midpointOf(a, b);
+      const midNow = toSvg(mid.x, mid.y);
+      setPan({
+        x: startPan.x - (startMid.x - WIDTH / 2) * k + (midNow.x - startMid.x) / next,
+        y: startPan.y - (startMid.y - HEIGHT / 2) * k + (midNow.y - startMid.y) / next,
+      });
+      setZoom(next);
+      return;
+    }
+
     if (!drag.current) return;
     const p = toSvg(e.clientX, e.clientY);
     const dx = p.x - drag.current.x;
@@ -222,7 +317,27 @@ export function MetroMap({ dataset, journey, highlight, onSelectStation }: Props
     if (Math.abs(dx) + Math.abs(dy) > 3) drag.current.moved = true;
     setPan({ x: drag.current.px + dx / zoom, y: drag.current.py + dy / zoom });
   };
-  const endDrag = () => { drag.current = null; };
+
+  /**
+   * Lifting one finger of a pinch hands back to panning rather than ending the
+   * gesture, so the map does not jump when fingers come off one at a time.
+   */
+  const releasePointer = (e: React.PointerEvent) => {
+    pointers.current.delete(e.pointerId);
+    capture(e.currentTarget as Element, e.pointerId, true);
+
+    const points = activePoints();
+    if (points.length < 2) pinch.current = null;
+    if (points.length === 1) startDrag(points[0]);
+    else if (points.length === 0) drag.current = null;
+  };
+
+  const endDrag = () => {
+    if (pointers.current.size === 0) {
+      drag.current = null;
+      pinch.current = null;
+    }
+  };
 
   /**
    * Wheel zoom, anchored on the cursor so the map grows where you point.
@@ -235,9 +350,6 @@ export function MetroMap({ dataset, journey, highlight, onSelectStation }: Props
    * registered once; reading state through the closure would pin it to the
    * values from first render.
    */
-  const view = useRef({ zoom, pan });
-  view.current = { zoom, pan };
-
   useEffect(() => {
     const el = svgRef.current;
     if (!el) return;
@@ -371,7 +483,8 @@ export function MetroMap({ dataset, journey, highlight, onSelectStation }: Props
         className="h-full w-full cursor-grab touch-none active:cursor-grabbing"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
-        onPointerUp={endDrag}
+        onPointerUp={releasePointer}
+        onPointerCancel={releasePointer}
         onPointerLeave={() => { endDrag(); setHovered(null); }}
         role="img"
         aria-label={`${dataset.city.cityName} metro network map`}
