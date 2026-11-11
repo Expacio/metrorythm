@@ -88,15 +88,40 @@ describe('Rapid Metro Gurugram is a flat fare', () => {
 
 describe('Airport Express uses its own table, never DMRC slabs', () => {
   it('prefers a published station-to-station fare', () => {
-    expect(lookupStationPair(AIRPORT_EXPRESS, 'new-delhi', 'igi-airport-terminal-3')).toBe(65);
+    expect(lookupStationPair(AIRPORT_EXPRESS, 'new-delhi', 'igi-airport-terminal-3')).toBe(64);
   });
 
   it('looks pairs up in either direction', () => {
-    expect(lookupStationPair(AIRPORT_EXPRESS, 'igi-airport-terminal-3', 'new-delhi')).toBe(65);
+    expect(lookupStationPair(AIRPORT_EXPRESS, 'igi-airport-terminal-3', 'new-delhi')).toBe(64);
   });
 
-  it('is honestly labelled as estimated, not official', () => {
-    expect(AIRPORT_EXPRESS.confidence).toBe('estimated');
+  it('is official — the full 21-pair chart was read from DMRC', () => {
+    expect(AIRPORT_EXPRESS.confidence).toBe('official');
+  });
+
+  /**
+   * The reason this line needs a matrix at all: its fares are not monotonic in
+   * distance, so any slab table gets some pairs wrong in both directions.
+   */
+  it('prices a shorter hop above a longer one, as DMRC does', () => {
+    const longer = lookupStationPair(AIRPORT_EXPRESS, 'shivaji-stadium', 'dhaula-kuan')!;  // 6.98 km
+    const shorter = lookupStationPair(AIRPORT_EXPRESS, 'delhi-aerocity', 'dwarka-sector-21')!; // 6.35 km
+    expect(longer).toBe(21);
+    expect(shorter).toBe(32);
+    expect(shorter).toBeGreaterThan(longer);
+  });
+
+  it('covers every pair of the line\'s seven stations', () => {
+    const stations = [
+      'new-delhi', 'shivaji-stadium', 'dhaula-kuan', 'delhi-aerocity',
+      'igi-airport-terminal-3', 'dwarka-sector-21', 'yashobhoomi-dwarka-sector-25',
+    ];
+    for (const a of stations) {
+      for (const b of stations) {
+        if (a === b) continue;
+        expect(lookupStationPair(AIRPORT_EXPRESS, a, b)).toBeTypeOf('number');
+      }
+    }
   });
 
   it('never returns a DMRC slab value for an Airport Express segment', () => {
@@ -105,14 +130,16 @@ describe('Airport Express uses its own table, never DMRC slabs', () => {
       fromStationId: 'new-delhi', toStationId: 'igi-airport-terminal-3',
     });
     expect(seg.basisUsed).toBe('stationPair');
-    expect(seg.token).toBe(65);
+    expect(seg.token).toBe(64);
     expect(seg.token).not.toBe(fareForDistance(DMRC.slabs!, 20.2)); // 43 under DMRC
   });
 
   it('downgrades confidence when it has to fall back to a slab', () => {
+    // Not reachable via Airport Express any more, so this exercises the rule
+    // itself: a config that publishes pairs but is missing one must say so.
     const seg = calculateSegment({
       fareSystemId: 'airportExpress', km: 6, stations: 2,
-      fromStationId: 'dhaula-kuan', toStationId: 'delhi-aerocity',
+      fromStationId: 'not-a-station', toStationId: 'also-not-a-station',
     });
     expect(seg.basisUsed).toBe('distance');
     expect(seg.confidence).toBe('estimated');
@@ -176,7 +203,7 @@ describe('VALIDATION A — IGI Airport T3 → Hindon River', () => {
   it('charges the Airport Express leg from its own published pair fare', () => {
     const ael = j.fare.segments.find((s) => s.fareSystemId === 'airportExpress')!;
     expect(ael.basisUsed).toBe('stationPair');
-    expect(ael.token).toBe(65);
+    expect(ael.token).toBe(64);
   });
 
   it('charges ONE DMRC fare despite the Yellow→Red line change', () => {
@@ -193,8 +220,8 @@ describe('VALIDATION A — IGI Airport T3 → Hindon River', () => {
     expect(j.fare.token).toBe(j.fare.segments.reduce((a, s) => a + s.token, 0));
   });
 
-  it('is flagged estimated because the Airport Express table is unverified', () => {
-    expect(j.fare.confidence).toBe('estimated');
+  it('is fully official now that the Airport Express chart is published', () => {
+    expect(j.fare.confidence).toBe('official');
   });
 });
 
@@ -227,13 +254,13 @@ describe('VALIDATION C — IGI Airport T3 → New Delhi (Airport Express only)',
     expect(systems(j)).toEqual(['airportExpress']);
   });
 
-  it('uses the published ₹65 pair fare, not a DMRC slab', () => {
-    expect(j.fare.token).toBe(65);
+  it('uses the published ₹64 pair fare, not a DMRC slab', () => {
+    expect(j.fare.token).toBe(64);
     expect(j.fare.segments[0].basisUsed).toBe('stationPair');
   });
 
   it('applies the 10% stored-value discount', () => {
-    expect(j.fare.smartCard).toBe(Math.round(65 * 0.9));
+    expect(j.fare.smartCard).toBe(Math.round(64 * 0.9));
   });
 });
 

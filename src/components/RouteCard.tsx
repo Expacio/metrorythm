@@ -106,14 +106,22 @@ export function RouteCard({ journey, alsoModes, selected, onSelect, farePreferen
           {formatDuration(journey.rideSeconds)} riding
         </span>
         {journey.walkSeconds > 0 && (
-          <span className="inline-flex items-center gap-1">
+          <span
+            className="inline-flex items-center gap-1"
+            /* Walking and waiting are very different things to a rider, so the
+               split is spelled out rather than hidden behind one number. */
+            title={
+              `${formatDuration(journey.timing.interchangeWalk)} walking between platforms, `
+              + `${formatDuration(journey.timing.interchangeWait)} waiting for connections`
+            }
+          >
             <Repeat className="size-3.5" aria-hidden />
             {formatDuration(journey.walkSeconds)} changing
           </span>
         )}
         <span className="inline-flex items-center gap-1">
           <RouteIcon className="size-3.5" aria-hidden />
-          ~{journey.distanceKm} km
+          {journey.distanceConfidence === 'OFFICIAL' ? '' : '~'}{journey.distanceKm} km
         </span>
       </div>
     </button>

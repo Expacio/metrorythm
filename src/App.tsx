@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ArrowUpDown, Search, Moon, Sun, History, X,
-  AlertCircle, Info, Map as MapIcon, ListOrdered, ReceiptText, CreditCard, Ticket, BadgeCheck, TriangleAlert, ChevronDown, LocateFixed, Loader2,
+  AlertCircle, Info, Map as MapIcon, ListOrdered, ReceiptText, CreditCard, Ticket, BadgeCheck, TriangleAlert, LocateFixed, Loader2,
 } from 'lucide-react';
 
 import { CITIES, getCity } from './data';
-import type { CityDataset, Station } from './data/types';
+import type { CityDataset, Confidence, Station } from './data/types';
 import { createPlanner, type Journey, type RouteMode } from './engine/planner';
 import { payableFare, type FarePreference } from './engine/fare';
 import { findNearestCity, NEAREST_CITY_LIMIT_KM } from './engine/nearestCity';
 import { useGeolocation } from './hooks/useGeolocation';
-import { FARE_CONFIGS, FARE_DATA_VERSION } from './data/fares';
 import { createSearch } from './engine/search';
 import { useTheme } from './hooks/useTheme';
 import { useRecentSearches, useLocalStorage } from './hooks/useLocalStorage';
 
 import { StationInput } from './components/StationInput';
+import { CityPicker } from './components/CityPicker';
 import { RouteCard, formatDuration } from './components/RouteCard';
 import { JourneyTimeline } from './components/JourneyTimeline';
 import { MetroMap } from './components/MetroMap';
@@ -47,6 +47,35 @@ function engineFor(cityId: string) {
   engineCache.set(cityId, built);
   return built;
 }
+
+/**
+ * How a journey's timing confidence is shown.
+ *
+ * These are deliberately plain words rather than a badge: the point is that a
+ * reader can tell at a glance whether a number came from the operator or from
+ * our own arithmetic, without having to learn a legend.
+ */
+const CONFIDENCE_LABEL: Record<Confidence, string> = {
+  OFFICIAL: 'operator timings',
+  VERIFIED_SECONDARY: 'from official distances',
+  ESTIMATED: 'estimated',
+  UNKNOWN: 'unverified',
+};
+
+const CONFIDENCE_NOTE: Record<Confidence, string> = {
+  OFFICIAL: 'Taken from the operator\'s published timetable.',
+  VERIFIED_SECONDARY:
+    'Calculated from the operator\'s published distances and line speed, not a timetable.',
+  ESTIMATED: 'Calculated from station positions — no published figure was available.',
+  UNKNOWN: 'No reliable source for this journey\'s timings.',
+};
+
+const CONFIDENCE_STYLE: Record<Confidence, string> = {
+  OFFICIAL: 'text-ink-600 dark:text-ink-300',
+  VERIFIED_SECONDARY: 'text-ink-600 dark:text-ink-300',
+  ESTIMATED: 'font-semibold text-ink-900 dark:text-accent',
+  UNKNOWN: 'font-semibold text-ink-900 dark:text-accent',
+};
 
 /** A few genuinely useful starting points per city, rather than filler. */
 const QUICK_PAIRS: Record<string, { label: string; from: string; to: string }[]> = {
@@ -133,6 +162,21 @@ export default function App() {
     setTo(b);
     runPlan(a, b);
   };
+
+  /**
+   * A shared link already names its city, and switching networks would discard
+   * the route it carries — so those open exactly as sent, without a prompt.
+   */
+  const hasDeepLink = useMemo(() => {
+    const params = new URLSearchParams(window.location.search);
+    return !!(params.get('from') && params.get('to'));
+  }, []);
+
+  /** Ask for location on first load, so the right city is already loaded. */
+  useEffect(() => {
+    if (citySettled || hasDeepLink || geo.status !== 'idle') return;
+    geo.request();
+  }, [citySettled, hasDeepLink, geo.status, geo.request]);
 
   /**
    * When a fix arrives, switch to whichever network has a station closest to
@@ -276,24 +320,9 @@ export default function App() {
           </div>
 
           {/* City picker — 19 networks is too many for a button row */}
-          <label className="relative ml-1">
-            <span className="sr-only">City</span>
-            <select
-              value={cityId}
-              onChange={(e) => switchCity(e.target.value)}
-              className="appearance-none rounded-lg border border-ink-200 bg-white py-2 pl-3 pr-8 text-[13px] font-semibold text-ink-900 outline-none transition hover:border-ink-400 focus:border-accent focus:ring-4 focus:ring-accent/25 dark:border-ink-700 dark:bg-ink-800 dark:text-ink-50"
-            >
-              {CITIES.map((c) => (
-                <option key={c.city.cityId} value={c.city.cityId}>
-                  {c.city.cityName} · {c.stations.length}
-                </option>
-              ))}
-            </select>
-            <ChevronDown
-              className="pointer-events-none absolute right-2.5 top-1/2 size-3.5 -translate-y-1/2 text-ink-400"
-              aria-hidden
-            />
-          </label>
+          <div className="ml-1">
+            <CityPicker cities={CITIES} value={cityId} onChange={switchCity} />
+          </div>
 
           <button
             type="button"
@@ -309,10 +338,6 @@ export default function App() {
           </button>
 
           <div className="ml-auto flex items-center gap-2">
-            <span className="hidden items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-black sm:inline-flex">
-              <span className="size-1.5 rounded-full bg-black" aria-hidden />
-              Works offline
-            </span>
             <button
               type="button"
               onClick={toggle}
@@ -328,35 +353,27 @@ export default function App() {
         <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:gap-6">
           {/* ------------------------------------------------- left column */}
           <div className="min-w-0 space-y-4">
-            {/* First run: offer to locate. Never auto-prompts for permission. */}
-            {!citySettled && geo.status === 'idle' && (
+            {/* First run: the permission prompt is already up, so explain it. */}
+            {!citySettled && !hasDeepLink && (geo.status === 'idle' || geo.status === 'locating') && (
               <section className="mg-animate-in rounded-2xl border border-ink-300 bg-accent-soft p-4 dark:border-ink-700 dark:bg-accent/15">
                 <div className="flex items-start gap-2.5">
-                  <LocateFixed className="mt-0.5 size-4 shrink-0 text-ink-900 dark:text-accent" aria-hidden />
+                  <Loader2 className="mt-0.5 size-4 shrink-0 animate-spin text-ink-900 dark:text-accent" aria-hidden />
                   <div className="min-w-0">
                     <p className="text-[13.5px] font-semibold text-ink-900 dark:text-accent">
-                      Use your location to pick the nearest network?
+                      Finding the network nearest you…
                     </p>
                     <p className="mt-1 text-[12px] leading-relaxed text-ink-600 dark:text-ink-300">
-                      Matched on-device against {CITIES.length} networks. Your position is never
-                      sent anywhere — Metrorythm has no server to send it to.
+                      Allow location and Metrorythm picks your city automatically. Matched
+                      on-device against {CITIES.length} networks — your position is never sent
+                      anywhere, as Metrorythm has no server to send it to.
                     </p>
-                    <div className="mt-2.5 flex flex-wrap gap-1.5">
-                      <button
-                        type="button"
-                        onClick={geo.request}
-                        className="rounded-lg bg-accent px-3 py-1.5 text-[12.5px] font-bold text-black transition hover:bg-accent-strong"
-                      >
-                        Use my location
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => { setCitySettled(true); setGeoNote(null); }}
-                        className="rounded-lg px-3 py-1.5 text-[12.5px] font-semibold text-ink-600 transition hover:bg-ink-100 dark:text-ink-300 dark:hover:bg-ink-800"
-                      >
-                        Not now
-                      </button>
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => { setCitySettled(true); setGeoNote(null); }}
+                      className="mt-2.5 rounded-lg px-3 py-1.5 text-[12.5px] font-semibold text-ink-600 transition hover:bg-ink-100 dark:text-ink-300 dark:hover:bg-ink-800"
+                    >
+                      Not now
+                    </button>
                   </div>
                 </div>
               </section>
@@ -379,7 +396,13 @@ export default function App() {
 
             {/* Search panel */}
             <section className="rounded-2xl border border-ink-200 bg-white p-4 shadow-sm dark:border-ink-700 dark:bg-ink-900 sm:p-5">
-              <div className="relative grid gap-3">
+              {/*
+                The swap control sits in a row of its own between the two
+                fields. Floating it over them only works while both are empty —
+                once a station is picked the field grows and the button lands on
+                top of that field's clear button.
+              */}
+              <div className="grid gap-2">
                 <StationInput
                   label="From"
                   value={from}
@@ -390,6 +413,18 @@ export default function App() {
                   cityNameFor={(id) => CITIES.find((c) => c.city.cityId === id)?.city.cityName}
                   autoFocus
                 />
+                <div className="flex items-center gap-3">
+                  <span className="h-px flex-1 bg-ink-200 dark:bg-ink-700" aria-hidden />
+                  <button
+                    type="button"
+                    onClick={swap}
+                    disabled={!from && !to}
+                    aria-label="Swap origin and destination"
+                    className="grid size-9 shrink-0 place-items-center rounded-full border border-ink-200 bg-white text-ink-500 shadow-sm transition hover:border-ink-400 hover:text-ink-900 disabled:opacity-40 dark:border-ink-600 dark:bg-ink-800 dark:text-ink-300 dark:hover:text-accent"
+                  >
+                    <ArrowUpDown className="size-4" />
+                  </button>
+                </div>
                 <StationInput
                   label="To"
                   value={to}
@@ -399,14 +434,6 @@ export default function App() {
                   onSwitchCity={switchCity}
                   cityNameFor={(id) => CITIES.find((c) => c.city.cityId === id)?.city.cityName}
                 />
-                <button
-                  type="button"
-                  onClick={swap}
-                  disabled={!from && !to}
-                  aria-label="Swap origin and destination" className="absolute right-3 top-[52px] z-10 grid size-9 place-items-center rounded-full border border-ink-200 bg-white text-ink-500 shadow-sm transition hover:text-ink-900 disabled:opacity-40 dark:border-ink-600 dark:bg-ink-800 dark:text-ink-300 dark:hover:text-accent"
-                >
-                  <ArrowUpDown className="size-4" />
-                </button>
               </div>
 
               <button
@@ -565,6 +592,43 @@ export default function App() {
                   </div>
                 </div>
 
+                {/*
+                  Journey time, as its parts. A single number hides whether an
+                  estimate is mostly riding or mostly waiting for a connection,
+                  and the two are not equally certain.
+                */}
+                <div className="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[12px] text-ink-500 dark:text-ink-400">
+                  <span>{formatDuration(selected.timing.inTrain)} on board</span>
+                  {selected.timing.dwell > 0 && (
+                    <>
+                      <span aria-hidden>·</span>
+                      <span>{formatDuration(selected.timing.dwell)} at stations</span>
+                    </>
+                  )}
+                  {selected.timing.interchangeWalk > 0 && (
+                    <>
+                      <span aria-hidden>·</span>
+                      <span>{formatDuration(selected.timing.interchangeWalk)} walking</span>
+                    </>
+                  )}
+                  {selected.timing.interchangeWait > 0 && (
+                    <>
+                      <span aria-hidden>·</span>
+                      <span>{formatDuration(selected.timing.interchangeWait)} waiting</span>
+                    </>
+                  )}
+                  <span aria-hidden>·</span>
+                  <span
+                    className={CONFIDENCE_STYLE[selected.timeConfidence]}
+                    title={CONFIDENCE_NOTE[selected.timeConfidence]}
+                  >
+                    {CONFIDENCE_LABEL[selected.timeConfidence]}
+                  </span>
+                </div>
+                <p className="mt-1 text-[11.5px] text-ink-400">
+                  Excludes waiting for your first train.
+                </p>
+
                 <JourneyTimeline journey={selected} />
 
                 {/* ----------------------------------------- fare breakdown */}
@@ -613,7 +677,8 @@ export default function App() {
                           <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[11.5px] text-ink-500 dark:text-ink-400">
                             <span>
                               {seg.basisUsed === 'stationPair' && 'published station-to-station fare'}
-                              {seg.basisUsed === 'distance' && `distance slab · ~${seg.km} km`}
+                              {seg.basisUsed === 'distance'
+                                && `distance slab · ${selected.distanceConfidence === 'OFFICIAL' ? '' : '~'}${seg.km} km`}
                               {seg.basisUsed === 'stationCount' && `${seg.stations} stations travelled`}
                               {seg.basisUsed === 'flat' && 'flat fare'}
                             </span>
@@ -707,48 +772,6 @@ export default function App() {
         </div>
       </main>
 
-      {/* ------------------------------------------------------------ footer */}
-      <footer className="mt-6 border-t border-ink-200 bg-white px-4 py-6 dark:border-ink-800 dark:bg-ink-900 sm:px-6">
-        <div className="mx-auto max-w-7xl space-y-3 text-[12px] leading-relaxed text-ink-500 dark:text-ink-400">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-            <span className="font-semibold text-ink-700 dark:text-ink-200">
-              Transit data verified {dataset.dataVersion}
-            </span>
-            <span>·</span>
-            <span>{dataset.lines.filter((l) => !l.parentLine).length} lines, {dataset.stations.length} stations</span>
-            <span>·</span>
-            <span>{dataset.city.operators.join(', ')}</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-            <span className="font-semibold text-ink-700 dark:text-ink-200">
-              Fare data effective {FARE_DATA_VERSION}
-            </span>
-            <span>·</span>
-            {Object.values(FARE_CONFIGS).map((c) => (
-              <span key={c.fareSystemId}>
-                {c.operator}{' '}
-                <b className={c.confidence === 'official' ? 'text-ink-700 dark:text-ink-200' : 'text-ink-900 dark:text-accent'}>
-                  {c.confidence}
-                </b>
-              </span>
-            ))}
-          </div>
-          <p>
-            <b className="text-ink-700 dark:text-ink-200">Fares are rule-based, per operator.</b>{' '}
-            Each operator is billed using its own published table — DMRC by distance slab, the Noida
-            Aqua Line by number of stations, Rapid Metro at a flat fare. Changing lines inside one
-            operator&rsquo;s network never adds a fare. Anything not verifiable against an official
-            source is labelled <b>estimated</b> above rather than presented as fact.
-            Journey times are estimates and exclude waiting for the first train.
-          </p>
-          <p>{dataset.city.notes}</p>
-          <p>
-            Metrorythm runs entirely offline — all routing, search and fare calculation happens in your
-            browser against a local dataset. No API keys, no backend, no tracking.
-            {dataset.coordinates.source && ` Station coordinates: ${dataset.coordinates.source}`}
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

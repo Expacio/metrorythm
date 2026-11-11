@@ -1,0 +1,119 @@
+{
+ "netaji-subhash-place|red|pink": {
+  "minutes": 10,
+  "via": "kohat-enclave->shalimar-bagh"
+ },
+ "inderlok|red|green": {
+  "minutes": 5,
+  "via": "kanhaiya-nagar->ashok-park-main"
+ },
+ "kashmere-gate|red|yellow": {
+  "minutes": 10,
+  "via": "tis-hazari->civil-lines"
+ },
+ "kashmere-gate|red|violet": {
+  "minutes": 10,
+  "via": "tis-hazari->lal-qila"
+ },
+ "kashmere-gate|yellow|violet": {
+  "minutes": 5,
+  "via": "civil-lines->lal-qila"
+ },
+ "welcome|red|pink": {
+  "minutes": 5,
+  "via": "seelampur->east-azad-nagar"
+ },
+ "azadpur|yellow|pink": {
+  "error": "planner did not change at azadpur on adarsh-nagar->majlis-park"
+ },
+ "new-delhi|yellow|airport": {
+  "minutes": 10,
+  "via": "chawri-bazar->shivaji-stadium"
+ },
+ "rajiv-chowk|yellow|blue": {
+  "minutes": 5,
+  "via": "new-delhi->ramakrishna-ashram-marg"
+ },
+ "central-secretariat|yellow|violet": {
+  "minutes": 5,
+  "via": "patel-chowk->janpath"
+ },
+ "ina|yellow|pink": {
+  "minutes": 10,
+  "via": "jor-bagh->sarojini-nagar"
+ },
+ "hauz-khas|yellow|magenta": {
+  "minutes": 10,
+  "via": "green-park->iit-delhi"
+ },
+ "sikanderpur|yellow|rapid": {
+  "minutes": 10,
+  "via": "guru-dronacharya->sector-42-43"
+ },
+ "dwarka-sector-21|blue|airport": {
+  "minutes": 5,
+  "via": "dwarka-sector-8->igi-airport-terminal-3"
+ },
+ "dwarka|blue|grey": {
+  "minutes": 5,
+  "via": "dwarka-sector-14->nangli"
+ },
+ "janak-puri-west|blue|magenta": {
+  "minutes": 10,
+  "via": "uttam-nagar-east->dabri-mor-janakpuri-south"
+ },
+ "rajouri-garden|blue|pink": {
+  "minutes": 10,
+  "via": "tagore-garden->esi-hospital"
+ },
+ "kirti-nagar|blue|green-branch": {
+  "minutes": 5,
+  "via": "moti-nagar->satguru-ram-singh-marg"
+ },
+ "mandi-house|blue|violet": {
+  "minutes": 5,
+  "via": "barakhamba-road->ito"
+ },
+ "yamuna-bank|blue|blue-branch": {
+  "error": "planner did not change at yamuna-bank on indraprastha->laxmi-nagar"
+ },
+ "mayur-vihar-i|blue|pink": {
+  "minutes": 5,
+  "via": "akshardham->hazrat-nizamuddin"
+ },
+ "botanical-garden|blue|magenta": {
+  "minutes": 5,
+  "via": "noida-sector-18->okhla-bird-sanctuary"
+ },
+ "karkarduma|blue-branch|pink": {
+  "minutes": 5,
+  "via": "preet-vihar->karkarduma-court"
+ },
+ "anand-vihar-isbt|blue-branch|pink": {
+  "minutes": 5,
+  "via": "kaushambi->ip-extension"
+ },
+ "ashok-park-main|green|green-branch": {
+  "minutes": 5,
+  "via": "inderlok->satguru-ram-singh-marg"
+ },
+ "punjabi-bagh-west|green|pink": {
+  "minutes": 5,
+  "via": "punjabi-bagh->shakurpur"
+ },
+ "lajpat-nagar|violet|pink": {
+  "minutes": 5,
+  "via": "jangpura->south-extension"
+ },
+ "kalkaji-mandir|violet|magenta": {
+  "minutes": 10,
+  "via": "nehru-place->nehru-enclave"
+ },
+ "noida-sector-52|blue|aqua": {
+  "error": "planner did not change at noida-sector-52 on noida-sector-34->noida-sector-50"
+ },
+ "dhaula-kuan|airport|pink": {
+  "minutes": 5,
+  "via": "shivaji-stadium->delhi-cantt"
+ }
+}

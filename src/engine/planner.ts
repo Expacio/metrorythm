@@ -6,12 +6,20 @@
  * travel, estimated duration and an estimated fare per operator.
  */
 
-import type { CityDataset, Line, LineId, Station, StationId } from '../data/types';
+import type { CityDataset, Confidence, Line, LineId, Station, StationId } from '../data/types';
 import { buildGraph, nodeKey, type GraphEdge, type MetroGraph, type NodeKey } from './graph';
 import { dijkstra, type EdgeCostFn, type PathStep } from './dijkstra';
 import { computeFare, type FareBreakdown, type FareSegmentInput } from './fare';
 
 export type RouteMode = 'fastest' | 'cheapest' | 'fewest-interchanges';
+
+/** Worse confidence sorts higher, so `Math.max` picks the weakest link. */
+const CONFIDENCE_ORDER: Record<Confidence, number> = {
+  OFFICIAL: 0,
+  VERIFIED_SECONDARY: 1,
+  ESTIMATED: 2,
+  UNKNOWN: 3,
+};
 
 export const ROUTE_MODES: { id: RouteMode; label: string; description: string }[] = [
   { id: 'fastest', label: 'Fastest', description: 'Lowest total journey time' },
@@ -41,8 +49,36 @@ export interface TransferLeg {
   fromLine: Line;
   toLine: Line;
   seconds: number;
+  /** Walking between platforms. */
+  walkSeconds: number;
+  /** Expected wait for the next train — half the headway, where known. */
+  waitSeconds: number;
   paidArea: boolean;
   note?: string;
+  /**
+   * True when trains run through, so the passenger stays seated. Shown as a
+   * line change on the timeline but not counted as an interchange.
+   */
+  throughService?: boolean;
+}
+
+/**
+ * A journey time, kept as its parts.
+ *
+ * Reporting a single number hides whether an estimate is dominated by running,
+ * by dwelling or by a guessed wait — so the parts travel all the way to the UI
+ * and `total` is only ever their sum.
+ */
+export interface JourneyTiming {
+  /** Train in motion. */
+  inTrain: number;
+  /** Standing at intermediate stations. */
+  dwell: number;
+  /** Walking between platforms at interchanges. */
+  interchangeWalk: number;
+  /** Waiting for connecting trains. */
+  interchangeWait: number;
+  total: number;
 }
 
 export type JourneyLeg = RideLeg | TransferLeg;
@@ -58,10 +94,19 @@ export interface Journey {
   origin: Station;
   destination: Station;
   legs: JourneyLeg[];
-  /** Total estimated seconds including interchange walking. */
+  /** Total estimated seconds including interchange walking and waiting. */
   totalSeconds: number;
   rideSeconds: number;
   walkSeconds: number;
+  /** The same total, broken into its parts. */
+  timing: JourneyTiming;
+  /**
+   * Worst confidence across every timing input used. 'OFFICIAL' only when
+   * every leg came from a published timetable.
+   */
+  timeConfidence: Confidence;
+  /** Worst confidence across the distances used. */
+  distanceConfidence: Confidence;
   interchanges: number;
   /** Station hops travelled, excluding the origin. */
   stationCount: number;
@@ -86,29 +131,48 @@ export interface PlanResult {
 
 /* ------------------------------------------------------------------ costing */
 
-const INTERCHANGE_TIME_PENALTY_S = 0;
 /** Strongly discourage line changes when optimising for fewest interchanges. */
 const INTERCHANGE_BIG_PENALTY = 60 * 60;
-/** Switching operator means buying a second ticket; penalise in cheapest mode. */
+/** Switching operator usually means a second ticket. In km-equivalent. */
 const OPERATOR_SWITCH_KM_PENALTY = 12;
 
-function costFnFor(mode: RouteMode, graph: MetroGraph): EdgeCostFn {
+/**
+ * Cost functions used to GENERATE candidate routes — not to label them.
+ *
+ * None of these is trusted to decide which journey is "cheapest" or "fastest".
+ * They only produce a diverse pool of sensible routes; the labels are assigned
+ * afterwards by measuring each finished journey's real fare, real duration and
+ * real interchange count. That separation is what stops a card badged
+ * "Cheapest" from costing more than the one next to it.
+ */
+type CandidateStrategy = 'min-time' | 'min-interchanges' | 'min-distance' | 'min-operator-switches';
+
+const STRATEGIES: CandidateStrategy[] = [
+  'min-time', 'min-interchanges', 'min-distance', 'min-operator-switches',
+];
+
+function costFnFor(strategy: CandidateStrategy, graph: MetroGraph): EdgeCostFn {
   const lineFareSystem = (lineId: LineId) => graph.linesById.get(lineId)?.fareSystem;
 
-  if (mode === 'fastest') {
-    return (edge) => edge.seconds + (edge.kind !== 'ride' ? INTERCHANGE_TIME_PENALTY_S : 0);
-  }
+  if (strategy === 'min-time') return (edge) => edge.seconds;
 
-  if (mode === 'fewest-interchanges') {
+  if (strategy === 'min-interchanges') {
     return (edge) =>
-      edge.kind === 'ride' ? edge.seconds : INTERCHANGE_BIG_PENALTY + edge.seconds;
+      edge.kind === 'ride' || edge.throughService
+        ? edge.seconds
+        : INTERCHANGE_BIG_PENALTY + edge.seconds;
   }
 
-  // cheapest: minimise distance, and avoid crossing into a separate fare table.
+  if (strategy === 'min-distance') {
+    // A small constant keeps interchanges from being free, so the search does
+    // not wander through a station just because it costs no distance.
+    return (edge) => edge.km + (edge.kind === 'ride' ? 0 : 0.2);
+  }
+
+  // min-operator-switches: distance, but crossing a fare boundary is costly.
   return (edge, previous) => {
     let cost = edge.km;
     if (edge.kind !== 'ride') {
-      // A small time-equivalent so interchanges are not free.
       cost += 0.2;
       const prevSystem = previous ? lineFareSystem(previous.line) : undefined;
       const nextSystem = lineFareSystem(edge.line);
@@ -122,26 +186,47 @@ function costFnFor(mode: RouteMode, graph: MetroGraph): EdgeCostFn {
 
 /* ------------------------------------------------------- path -> journey */
 
+/**
+ * On a loop, `stations` wraps: the last entry is adjacent to the first. Going
+ * "forwards" from index 30 to index 2 is three hops, not twenty-eight back.
+ * These helpers pick the shorter arc instead of assuming i < j means forwards.
+ */
 function directionOf(line: Line, from: StationId, to: StationId, stations: Map<StationId, Station>): string {
   const i = line.stations.indexOf(from);
   const j = line.stations.indexOf(to);
   if (i === -1 || j === -1) return line.name;
-  const terminusId = j > i ? line.stations[line.stations.length - 1] : line.stations[0];
+
+  const loopAt = loopStartIndex(line);
+  const n = line.stations.length;
+
+  // Inside a ring there is no terminus, so name the far side of the loop —
+  // which is what the platform signs point at.
+  if (loopAt >= 0 && i >= loopAt && j >= loopAt) {
+    const ringLen = n - loopAt;
+    const fwd = (j - i + ringLen) % ringLen;
+    const forwards = fwd <= ringLen - fwd;
+    const half = Math.max(1, Math.floor(ringLen / 2));
+    const idx = loopAt + (((i - loopAt) + (forwards ? half : -half)) % ringLen + ringLen) % ringLen;
+    const far = stations.get(line.stations[idx]);
+    return far ? `towards ${far.name}` : line.name;
+  }
+
+  const terminusId = j > i ? line.stations[n - 1] : line.stations[0];
   const terminus = stations.get(terminusId);
   return terminus ? `towards ${terminus.name}` : line.name;
 }
 
-function stationsBetween(
-  line: Line,
-  from: StationId,
-  to: StationId,
-  stations: Map<StationId, Station>,
-): Station[] {
-  const i = line.stations.indexOf(from);
-  const j = line.stations.indexOf(to);
-  if (i === -1 || j === -1) return [];
-  const slice = i < j ? line.stations.slice(i + 1, j) : line.stations.slice(j + 1, i).reverse();
-  return slice.map((id) => stations.get(id)).filter((s): s is Station => !!s);
+/**
+ * Where the loop portion of a "lollipop" line starts, or -1 for a plain line.
+ *
+ * The Rapid Metro is a stem (Sector 55-56 → Sikanderpur) plus a one-way ring
+ * back to Sikanderpur, which `loopsBackTo` records. Treating the whole line as
+ * a ring would make its first and last stations adjacent, which they are not.
+ */
+function loopStartIndex(line: Line): number {
+  if (line.isLoop) return 0;
+  if (!line.loopsBackTo) return -1;
+  return line.stations.indexOf(line.loopsBackTo);
 }
 
 function buildJourney(
@@ -160,11 +245,16 @@ function buildJourney(
    */
   const fareSegments: FareSegmentInput[] = [];
 
-  let rideSeconds = 0;
-  let walkSeconds = 0;
   let stationCount = 0;
   let distanceKm = 0;
   let distanceApproximated = false;
+  const timing: JourneyTiming = {
+    inTrain: 0, dwell: 0, interchangeWalk: 0, interchangeWait: 0, total: 0,
+  };
+  let timeConfidence: Confidence = 'OFFICIAL';
+  let distanceConfidence: Confidence = 'OFFICIAL';
+  const worsen = (a: Confidence, b: Confidence): Confidence =>
+    (CONFIDENCE_ORDER[b] > CONFIDENCE_ORDER[a] ? b : a);
 
   // Group consecutive ride edges on the same line into one leg.
   let i = 0;
@@ -178,15 +268,38 @@ function buildJourney(
       let seconds = edge.seconds;
       let km = edge.km;
       let hops = 1;
+      let run = edge.timing.run;
+      let dwell = edge.timing.dwell;
+      timeConfidence = worsen(timeConfidence, edge.timeConfidence);
+      distanceConfidence = worsen(distanceConfidence, edge.kmConfidence);
+      /*
+       * Intermediate stations come from the path itself, not from index
+       * arithmetic over `line.stations`. Slicing the sequence breaks on any
+       * line that is not a simple list — the Rapid Metro's terminal loop, the
+       * Pink Line once its ring closes — because the station you pass through
+       * need not sit between the endpoints in array order.
+       */
+      const intermediate: Station[] = [];
 
       let j = i + 1;
       while (j < path.length && path[j].edge.kind === 'ride' && path[j].edge.line === edge.line) {
-        endStation = path[j].edge.toStation;
-        seconds += path[j].edge.seconds;
-        km += path[j].edge.km;
+        const next = path[j].edge;
+        const mid = stationsById.get(endStation);
+        if (mid) intermediate.push(mid);
+        endStation = next.toStation;
+        seconds += next.seconds;
+        km += next.km;
+        run += next.timing.run;
+        dwell += next.timing.dwell;
+        timeConfidence = worsen(timeConfidence, next.timeConfidence);
+        distanceConfidence = worsen(distanceConfidence, next.kmConfidence);
         hops += 1;
         j += 1;
       }
+
+      // The final station's dwell is not part of the journey — you get off.
+      dwell = Math.max(0, dwell - (path[j - 1].edge.timing.dwell ?? 0));
+      seconds = run + dwell;
 
       const fromSt = stationsById.get(startStation)!;
       const toSt = stationsById.get(endStation)!;
@@ -197,14 +310,15 @@ function buildJourney(
         line,
         from: fromSt,
         to: toSt,
-        intermediate: stationsBetween(line, startStation, endStation, stationsById),
+        intermediate,
         stationCount: hops,
         seconds,
         km,
         direction: directionOf(line, startStation, endStation, stationsById),
       });
 
-      rideSeconds += seconds;
+      timing.inTrain += run;
+      timing.dwell += dwell;
       stationCount += hops;
       distanceKm += km;
 
@@ -242,13 +356,19 @@ function buildJourney(
       fromLine: prevRide ? prevRide.line : fromLine,
       toLine: linesById.get(edge.line)!,
       seconds: edge.seconds,
+      walkSeconds: edge.timing.walk,
+      waitSeconds: edge.timing.wait,
       paidArea: edge.paidArea ?? true,
       note: edge.note,
+      throughService: edge.throughService,
     });
 
-    walkSeconds += edge.seconds;
+    timing.interchangeWalk += edge.timing.walk;
+    timing.interchangeWait += edge.timing.wait;
+    timeConfidence = worsen(timeConfidence, edge.timeConfidence);
     if (edge.kind === 'transfer') {
       distanceKm += edge.km;
+      distanceConfidence = worsen(distanceConfidence, edge.kmConfidence);
     }
     i += 1;
   }
@@ -258,16 +378,22 @@ function buildJourney(
     if (leg.type === 'ride' && !linesUsed.some((l) => l.id === leg.line.id)) linesUsed.push(leg.line);
   }
 
+  timing.total = timing.inTrain + timing.dwell + timing.interchangeWalk + timing.interchangeWait;
+
   return {
     mode,
     modes: [mode],
     origin,
     destination,
     legs,
-    totalSeconds: rideSeconds + walkSeconds,
-    rideSeconds,
-    walkSeconds,
-    interchanges: legs.filter((l) => l.type === 'transfer').length,
+    totalSeconds: timing.total,
+    rideSeconds: timing.inTrain + timing.dwell,
+    walkSeconds: timing.interchangeWalk + timing.interchangeWait,
+    timing,
+    timeConfidence,
+    distanceConfidence,
+    // Staying seated through a junction is not an interchange.
+    interchanges: legs.filter((l) => l.type === 'transfer' && !l.throughService).length,
     stationCount,
     distanceKm: Math.round(distanceKm * 10) / 10,
     fare: computeFare(fareSegments),
@@ -298,13 +424,53 @@ export function createPlanner(dataset: CityDataset) {
     const sources = origin.lines.map((l) => nodeKey(origin.id, l));
     const targets = new Set<NodeKey>(destination.lines.map((l) => nodeKey(destination.id, l)));
 
-    const modes = options.modes ?? (['fastest', 'cheapest', 'fewest-interchanges'] as RouteMode[]);
-    const journeys: Journey[] = [];
+    const wanted = options.modes ?? (['fastest', 'cheapest', 'fewest-interchanges'] as RouteMode[]);
 
-    for (const mode of modes) {
-      const result = dijkstra(graph, sources, targets, costFnFor(mode, graph));
+    /*
+     * Generate a pool of candidate routes, then label them by what they
+     * actually are. The old code ran one search per mode and took the result
+     * on trust — which is how a route badged "Cheapest" ended up costing ₹86
+     * when another on the same screen cost ₹85.
+     */
+    const candidates: Journey[] = [];
+    const seenPaths = new Set<string>();
+    for (const strategy of STRATEGIES) {
+      const result = dijkstra(graph, sources, targets, costFnFor(strategy, graph));
       if (!result.path || result.path.length === 0) continue;
-      journeys.push(buildJourney(graph, mode, result.path, origin, destination));
+      const key = result.path.map((s) => `${s.from}>${s.to}`).join('|');
+      if (seenPaths.has(key)) continue;
+      seenPaths.add(key);
+      candidates.push(buildJourney(graph, 'fastest', result.path, origin, destination));
+    }
+
+    // Pick the genuine winner for each objective, breaking ties on time so the
+    // badge lands on the better journey when two cost the same.
+    const best = (score: (j: Journey) => number): Journey | undefined =>
+      candidates.reduce<Journey | undefined>((acc, j) => {
+        if (!acc) return j;
+        const d = score(j) - score(acc);
+        if (d < 0) return j;
+        if (d === 0 && j.totalSeconds < acc.totalSeconds) return j;
+        return acc;
+      }, undefined);
+
+    const winners = new Map<RouteMode, Journey | undefined>([
+      ['fastest', best((j) => j.totalSeconds)],
+      ['cheapest', best((j) => j.fare.token)],
+      ['fewest-interchanges', best((j) => j.interchanges)],
+    ]);
+
+    const journeys: Journey[] = [];
+    for (const mode of wanted) {
+      const j = winners.get(mode);
+      if (!j) continue;
+      if (journeys.includes(j)) continue;
+      journeys.push(j);
+    }
+    // Assign every objective each journey actually wins.
+    for (const j of journeys) {
+      j.modes = wanted.filter((m) => winners.get(m) === j);
+      j.mode = j.modes[0] ?? 'fastest';
     }
 
     if (journeys.length === 0) {
@@ -318,28 +484,7 @@ export function createPlanner(dataset: CityDataset) {
       };
     }
 
-    // De-duplicate identical journeys produced by different modes. The surviving
-    // journey records every mode that produced it, so the UI can show one card
-    // badged "Fastest · Cheapest" rather than three identical cards.
-    const signatureOf = (j: Journey) =>
-      j.legs
-        .map((l) => (l.type === 'ride' ? `R:${l.line.id}:${l.from.id}>${l.to.id}` : `T:${l.at.id}`))
-        .join('|');
-
-    const unique: Journey[] = [];
-    const bySignature = new Map<string, Journey>();
-    for (const j of journeys) {
-      const sig = signatureOf(j);
-      const existing = bySignature.get(sig);
-      if (existing) {
-        if (!existing.modes.includes(j.mode)) existing.modes.push(j.mode);
-        continue;
-      }
-      bySignature.set(sig, j);
-      unique.push(j);
-    }
-
-    return { journeys: unique, origin, destination };
+    return { journeys, origin, destination };
   }
 
   return { graph, plan };

@@ -6,9 +6,9 @@ import { useCallback, useState } from 'react';
  * This is a built-in browser capability, not a service: no API key, no
  * third-party request from our code, and the coordinates stay on the device.
  *
- * Deliberately NOT called on mount. Firing a permission prompt at someone who
- * has not asked for it is hostile, so the caller triggers `request()` from an
- * explicit user action.
+ * The hook itself never fires on its own — the caller decides when. App.tsx
+ * requests once on first load so the nearest network is already selected, and
+ * skips that for shared links, which carry their own city.
  */
 
 export type GeoStatus = 'idle' | 'locating' | 'done' | 'denied' | 'unavailable' | 'error';

@@ -10,11 +10,15 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "build:data": "node scripts/build-data.mjs",
+    "build:data": "node scripts/build-data.mjs && npm run build:delhi && npm run build:hyderabad",
     "fetch:coords": "node scripts/fetch-coords.mjs",
     "cf:dev": "wrangler dev",
     "cf:deploy": "npm run build && wrangler deploy",
-    "cf:check": "wrangler deploy --dry-run"
+    "cf:check": "wrangler deploy --dry-run",
+    "build:delhi": "node scripts/apply-delhi-hops.mjs && node scripts/apply-delhi-interchanges.mjs",
+    "build:hyderabad": "node scripts/build-hyderabad.mjs",
+    "fetch:delhi": "node scripts/fetch-delhi-codes.mjs && node scripts/fetch-delhi-hops.mjs && node scripts/fetch-delhi-interchanges.mjs",
+    "validate": "node scripts/validate-datasets.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.71.0",

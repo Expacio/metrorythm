@@ -196,7 +196,12 @@ export const LINES = [
     fareSystem: 'dmrc',
     avgHopSeconds: 140,
     stations: [
-      'Inderlok', 'Ashok Park Main', 'Punjabi Bagh', 'Shivaji Park',
+      // Punjabi Bagh West is served by BOTH the Green and Pink lines and is
+      // their only interchange. It was missing from this sequence, which left
+      // every Green <-> Pink journey detouring via Inderlok or Kirti Nagar —
+      // Mundka to Rajouri Garden came out 15 minutes and one change too long.
+      // DMRC lists it under Line 5 as well as Line 7.
+      'Inderlok', 'Ashok Park Main', 'Punjabi Bagh', 'Punjabi Bagh West', 'Shivaji Park',
       'Madipur', 'Paschim Vihar East', 'Paschim Vihar West', 'Peera Garhi',
       'Udyog Nagar', 'Maharaja Surajmal Stadium', 'Nangloi',
       'Nangloi Railway Station', 'Rajdhani Park', 'Mundka',

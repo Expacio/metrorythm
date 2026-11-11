@@ -14,6 +14,8 @@
  * config is marked `estimated` and the UI says so, per-operator.
  */
 
+import HYDERABAD_PAIRS from './hyderabad-station-pairs.json';
+
 export type FareBasis = 'distance' | 'stationCount' | 'flat';
 
 /** How much we trust these numbers. Surfaced in the UI, never hidden. */
@@ -126,15 +128,11 @@ export const DMRC: FareConfig = {
   specialRules: [
     {
       id: 'single-fare-across-network',
-      description:
-        'A single distance-based fare covers the whole DMRC network. Interchanging '
-        + 'between DMRC lines inside the paid area never triggers an additional fare.',
+      description: 'One fare for the whole network — changing lines costs nothing extra.',
     },
     {
       id: 'sunday-holiday',
-      description:
-        'Concessional slabs apply on Sundays and the three national holidays '
-        + '(26 January, 15 August, 2 October).',
+      description: 'Cheaper on Sundays and on 26 Jan, 15 Aug and 2 Oct.',
     },
   ],
 };
@@ -148,16 +146,15 @@ export const DMRC: FareConfig = {
  * A journey that uses both the Airport Express and the regular network pays
  * one Airport Express fare plus one DMRC fare.
  *
- * ⚠ CONFIDENCE: estimated.
- * DMRC confirmed Airport Express fares rose by up to ₹5 on 25 Aug 2025 and that
- * the revised range is ₹11–₹75, but no official post-revision station-to-station
- * Airport Express chart could be sourced. The station pairs below are the widely
- * published pre-revision fares (New Delhi → Shivaji Stadium ₹20, Dhaula Kuan ₹30,
- * IGI T3 ₹60, Dwarka Sector 21 ₹60) carried forward with the announced increase
- * and bounded by the published ₹11–₹75 range.
+ * The fare is NOT a distance slab. DMRC's own planner returns ₹21 for the
+ * 6.98 km Shivaji Stadium → Dhaula Kuan but ₹32 for the shorter 6.35 km
+ * Delhi Aerocity → Dwarka Sector 21, and ₹54 for 15.94 km against ₹64 for
+ * 15.32 km. No monotonic slab table can reproduce that, which is why the
+ * previous slab-based estimate was wrong in both directions.
  *
- * These are ESTIMATES and the UI labels them as such. Replace `stationPairs`
- * with the official chart when one becomes available — nothing else changes.
+ * All 21 pairs below were read back from DMRC's journey planner on
+ * 2026-11-12, together with the route distance it quotes for each. The slabs
+ * further down now exist only as a fallback that should never be reached.
  */
 export const AIRPORT_EXPRESS: FareConfig = {
   fareSystemId: 'airportExpress',
@@ -168,22 +165,36 @@ export const AIRPORT_EXPRESS: FareConfig = {
   basis: 'distance',
   effectiveDate: '2025-08-25',
   effectiveDateIsPublished: true,
-  confidence: 'estimated',
+  confidence: 'official',
   sourceNote:
-    'DMRC announced Airport Express fares rose by up to ₹5 on 25 Aug 2025, with a '
-    + 'revised range of ₹11–₹75. No official post-revision station-to-station chart '
-    + 'could be sourced, so these values are derived from the published pre-revision '
-    + 'fares plus the announced increase, bounded by that range. ESTIMATED.',
-  // Fares from New Delhi, the line's city terminus and by far the most common origin.
+    'Complete 21-pair station-to-station chart read from DMRC\'s own journey planner '
+    + 'on 2026-11-12 (every combination of the line\'s seven stations). Fares are not '
+    + 'monotonic in distance, so no slab table can reproduce them.',
+  /** Every pair on the line. Order-independent; the lookup tries both ways. */
   stationPairs: {
     'new-delhi|shivaji-stadium': 21,
-    'new-delhi|dhaula-kuan': 32,
+    'new-delhi|dhaula-kuan': 43,
     'new-delhi|delhi-aerocity': 54,
-    'new-delhi|igi-airport-terminal-3': 65,
-    'new-delhi|dwarka-sector-21': 65,
+    'new-delhi|igi-airport-terminal-3': 64,
+    'new-delhi|dwarka-sector-21': 64,
     'new-delhi|yashobhoomi-dwarka-sector-25': 75,
+    'shivaji-stadium|dhaula-kuan': 21,
+    'shivaji-stadium|delhi-aerocity': 32,
+    'shivaji-stadium|igi-airport-terminal-3': 54,
+    'shivaji-stadium|dwarka-sector-21': 64,
+    'shivaji-stadium|yashobhoomi-dwarka-sector-25': 75,
+    'dhaula-kuan|delhi-aerocity': 21,
+    'dhaula-kuan|igi-airport-terminal-3': 32,
+    'dhaula-kuan|dwarka-sector-21': 54,
+    'dhaula-kuan|yashobhoomi-dwarka-sector-25': 64,
+    'delhi-aerocity|igi-airport-terminal-3': 21,
+    'delhi-aerocity|dwarka-sector-21': 32,
+    'delhi-aerocity|yashobhoomi-dwarka-sector-25': 43,
+    'igi-airport-terminal-3|dwarka-sector-21': 21,
+    'igi-airport-terminal-3|yashobhoomi-dwarka-sector-25': 32,
+    'dwarka-sector-21|yashobhoomi-dwarka-sector-25': 21,
   },
-  // Fallback for pairs not in the matrix above.
+  // Fallback only — the matrix above is complete, so this should never be hit.
   slabs: [
     { maxKm: 2, fare: 11 },
     { maxKm: 5, fare: 21 },
@@ -197,8 +208,7 @@ export const AIRPORT_EXPRESS: FareConfig = {
     {
       id: 'separate-from-dmrc',
       description:
-        'The Airport Express has its own fare table. A journey using both it and the '
-        + 'regular DMRC network is charged one fare for each.',
+        'The Airport Express bills separately — using it plus regular Metro means two fares.',
     },
   ],
 };
@@ -248,9 +258,7 @@ export const NMRC_AQUA: FareConfig = {
     {
       id: 'separate-corporation',
       description:
-        'NMRC is a separate corporation from DMRC. The Aqua Line is not part of the '
-        + 'Delhi Metro paid area — you must exit at Noida Sector 52 and re-enter at '
-        + 'Noida Sector 51, paying both operators.',
+        'Aqua Line is a separate network: exit at Noida Sector 52, re-enter at Sector 51, pay both.',
     },
   ],
 };
@@ -286,8 +294,7 @@ export const RAPID_METRO: FareConfig = {
     {
       id: 'combined-fare-sikanderpur',
       description:
-        'Entering or exiting via Rapid Metro Sikanderpur charges a combined fare for '
-        + 'both the Delhi Metro and Rapid Metro networks.',
+        'Via Sikanderpur you pay a combined fare for Delhi Metro and Rapid Metro.',
     },
   ],
 };
@@ -332,19 +339,17 @@ export const CMRL: FareConfig = {
     {
       id: 'single-fare-across-network',
       description:
-        'A single distance-based fare covers the whole Chennai Metro network. '
-        + 'Changing lines inside the paid area never triggers an additional fare.',
+        'One fare for the whole network — changing lines costs nothing extra.',
     },
     {
       id: 'cmrl-long-distance-uncertain',
       description:
-        'Journeys over 32 km: published sources disagree between ₹50 and ₹60, so '
-        + 'this fare is an estimate and may be ₹10 out.',
+        'Over 32 km, sources disagree (₹50 vs ₹60) — this fare may be ₹10 out.',
     },
     {
       id: 'cmrl-qr-discount',
       description:
-        'CMRL gives a flat 20% discount on smart cards and on digital QR tickets.',
+        '20% off with a smart card or QR ticket.',
     },
   ],
 };
@@ -402,8 +407,7 @@ function estimatedNetwork(
       {
         id: 'single-fare-across-network',
         description:
-          'A single distance-based fare covers the whole network; changing lines '
-          + 'inside the paid area never triggers an additional fare.',
+          'One fare for the whole network — changing lines costs nothing extra.',
       },
     ],
     ...extra,
@@ -439,35 +443,51 @@ export const NAMMA_METRO: FareConfig = {
   discounts: { smartCard: 0.05, offPeakExtra: 0 },
   specialRules: [{
     id: 'single-fare-across-network',
-    description: 'One distance-based fare covers the whole Namma Metro network.',
+    description: 'One fare for the whole network.',
   }],
 };
 
 /** Hyderabad Metro — finer-grained slabs than most Indian networks. */
+/**
+ * Hyderabad Metro — the one network in this app with a complete OFFICIAL fare
+ * matrix rather than a reconstructed slab table.
+ *
+ * `hyderabad-station-pairs.json` is generated by scripts/build-hyderabad.mjs
+ * from fare_rules.txt in HMRL's own GTFS feed: 3,080 station-to-station fares
+ * covering every pair on the network. The distance slabs below are kept only
+ * as a fallback for a pair the matrix somehow misses, and are flagged
+ * accordingly by the engine when they are used.
+ *
+ * The previous slab table here (₹10/15/25/30/35/40/45/50/55/60) was labelled
+ * `official` but did not match the operator's own feed, whose price points are
+ * ₹12/18/30/40/50/55/60/66/70/75. The matrix replaces it.
+ */
 export const HYDERABAD_METRO: FareConfig = {
   fareSystemId: 'hyderabadMetro',
-  operator: 'L&T Metro Rail Hyderabad',
+  operator: 'Hyderabad Metro Rail (L&T Metro)',
   label: 'Hyderabad Metro',
   currency: 'INR',
   fareType: 'token',
   basis: 'distance',
-  effectiveDate: '2026-11-10',
-  effectiveDateIsPublished: false,
+  effectiveDate: '2026-07-03',
+  effectiveDateIsPublished: true,
   confidence: 'official',
   sourceNote:
-    'Hyderabad Metro publishes ten distance bands from ₹10 to ₹60: 0–2 ₹10, 2–4 ₹15, '
-    + '4–6 ₹25, 6–8 ₹30, 8–10 ₹35, 10–14 ₹40, 14–18 ₹45, 18–22 ₹50, 22–26 ₹55, 26+ ₹60. '
-    + 'No effective date is published, so the date above is when this was verified.',
+    'Complete station-to-station fare matrix (3,080 pairs) from fare_rules.txt in the '
+    + 'Hyderabad Metro GTFS feed published via Open Data Telangana, valid from '
+    + '2026-07-03. Price points ₹12/18/30/40/50/55/60/66/70/75.',
+  stationPairs: HYDERABAD_PAIRS,
+  // Only reached if a pair is missing from the official matrix.
   slabs: [
-    { maxKm: 2, fare: 10 }, { maxKm: 4, fare: 15 }, { maxKm: 6, fare: 25 },
-    { maxKm: 8, fare: 30 }, { maxKm: 10, fare: 35 }, { maxKm: 14, fare: 40 },
-    { maxKm: 18, fare: 45 }, { maxKm: 22, fare: 50 }, { maxKm: 26, fare: 55 },
-    { maxKm: null, fare: 60 },
+    { maxKm: 2, fare: 12 }, { maxKm: 4, fare: 18 }, { maxKm: 8, fare: 30 },
+    { maxKm: 12, fare: 40 }, { maxKm: 16, fare: 50 }, { maxKm: 20, fare: 55 },
+    { maxKm: 24, fare: 60 }, { maxKm: 28, fare: 66 }, { maxKm: 32, fare: 70 },
+    { maxKm: null, fare: 75 },
   ],
   discounts: { smartCard: 0.1, offPeakExtra: 0 },
   specialRules: [{
     id: 'single-fare-across-network',
-    description: 'One distance-based fare covers all three Hyderabad Metro lines.',
+    description: 'One fare across all three lines.',
   }],
 };
 
@@ -495,7 +515,7 @@ export const KOLKATA_METRO: FareConfig = {
   discounts: { smartCard: 0.1, offPeakExtra: 0 },
   specialRules: [{
     id: 'kolkata-cheapest',
-    description: 'Kolkata Metro fares are capped at ₹30, the lowest of any Indian metro.',
+    description: 'Fares are capped at ₹30 — the lowest of any Indian metro.',
   }],
 };
 
@@ -522,7 +542,7 @@ export const KOCHI_METRO: FareConfig = {
   discounts: { smartCard: 0.1, offPeakExtra: 0 },
   specialRules: [{
     id: 'kochi-station-count',
-    description: 'Kochi Metro charges by number of stations travelled, not by distance.',
+    description: 'Charged by number of stations, not distance.',
   }],
 };
 

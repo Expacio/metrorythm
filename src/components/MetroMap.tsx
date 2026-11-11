@@ -224,36 +224,52 @@ export function MetroMap({ dataset, journey, highlight, onSelectStation }: Props
   };
   const endDrag = () => { drag.current = null; };
 
-  /** Wheel zoom anchored on the cursor, so the map grows where you point. */
-  const onWheel = (e: React.WheelEvent) => {
-    const p = toSvg(e.clientX, e.clientY);
-    const next = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom * Math.exp(-e.deltaY * 0.0016)));
-    const k = 1 / zoom - 1 / next;
-    setPan((prev) => ({ x: prev.x - (p.x - WIDTH / 2) * k, y: prev.y - (p.y - HEIGHT / 2) * k }));
-    setZoom(next);
-  };
+  /**
+   * Wheel zoom, anchored on the cursor so the map grows where you point.
+   *
+   * This has to be a native listener registered with `{ passive: false }`.
+   * React attaches `onWheel` passively at the root, where `preventDefault()`
+   * is ignored — so the page kept scrolling behind the map while it zoomed.
+   *
+   * `view` mirrors the current zoom/pan into a ref because the listener is
+   * registered once; reading state through the closure would pin it to the
+   * values from first render.
+   */
+  const view = useRef({ zoom, pan });
+  view.current = { zoom, pan };
+
+  useEffect(() => {
+    const el = svgRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const r = el.getBoundingClientRect();
+      const p = {
+        x: ((e.clientX - r.left) / r.width) * WIDTH,
+        y: ((e.clientY - r.top) / r.height) * HEIGHT,
+      };
+      const { zoom: z, pan: current } = view.current;
+      const next = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, z * Math.exp(-e.deltaY * 0.0016)));
+      if (next === z) return;
+      const k = 1 / z - 1 / next;
+      setPan({ x: current.x - (p.x - WIDTH / 2) * k, y: current.y - (p.y - HEIGHT / 2) * k });
+      setZoom(next);
+    };
+
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
 
   const zoomBy = (f: number) => setZoom((z) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, z * f)));
   const reset = () => { setZoom(1); setPan({ x: 0, y: 0 }); };
 
-  /* ------------------------------------------------------------ empty state */
-
-  if (plotted.length === 0) {
-    return (
-      <div className="grid h-full min-h-72 place-items-center rounded-2xl border border-dashed border-ink-300 bg-ink-50 p-8 text-center dark:border-ink-700 dark:bg-ink-800/40">
-        <div className="max-w-sm">
-          <Info className="mx-auto size-6 text-ink-400" aria-hidden />
-          <p className="mt-3 text-[14px] font-semibold text-ink-700 dark:text-ink-200">
-            No station coordinates in this build
-          </p>
-          <p className="mt-1.5 text-[13px] text-ink-500 dark:text-ink-400">
-            Routing and fares still work normally.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
+  /*
+   * Everything below runs before the empty-state return on purpose: React
+   * requires hooks in the same order every render, and the label useMemo used
+   * to sit after an early return, so a city with no coordinates changed the
+   * hook count. Computing labels for an empty map is free.
+   */
   /* --------------------------------------------------------------- drawing */
 
   // Counter-scale so strokes and markers keep a constant on-screen size.
@@ -328,6 +344,25 @@ export function MetroMap({ dataset, journey, highlight, onSelectStation }: Props
     return out;
   }, [interchanges, termini, plotted, pos, k, showAllLabels, showInterchangeLabels, routeIds]);
 
+  /* ------------------------------------------------------------ empty state */
+
+  if (plotted.length === 0) {
+    return (
+      <div className="grid h-full min-h-72 place-items-center rounded-2xl border border-dashed border-ink-300 bg-ink-50 p-8 text-center dark:border-ink-700 dark:bg-ink-800/40">
+        <div className="max-w-sm">
+          <Info className="mx-auto size-6 text-ink-400" aria-hidden />
+          <p className="mt-3 text-[14px] font-semibold text-ink-700 dark:text-ink-200">
+            No station coordinates in this build
+          </p>
+          <p className="mt-1.5 text-[13px] text-ink-500 dark:text-ink-400">
+            Routing and fares still work normally.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+
   return (
     <div className="relative h-full overflow-hidden rounded-2xl border border-ink-200 bg-ink-50 [--map-halo:#f7f7f7] dark:border-ink-700 dark:bg-ink-950 dark:[--map-halo:#000000]">
       <svg
@@ -338,7 +373,6 @@ export function MetroMap({ dataset, journey, highlight, onSelectStation }: Props
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerLeave={() => { endDrag(); setHovered(null); }}
-        onWheel={onWheel}
         role="img"
         aria-label={`${dataset.city.cityName} metro network map`}
       >
